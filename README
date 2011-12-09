@@ -9,4 +9,7 @@ apt-get install	libxmu-dev \
 		libusb-1.0-0 \
 		libusb-dev \
 		libhighgui-dev \
+		libboost-dev \
+		libboost-serialization-dev \
+		libboost-test-dev \
 		
