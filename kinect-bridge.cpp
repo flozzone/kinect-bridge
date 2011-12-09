@@ -17,6 +17,9 @@
  * Author: Nicolas Burrus <nicolas.burrus@uc3m.es>, (C) 2010
  */
 
+#include <fstream>
+
+#include <boost/archive/text_oarchive.hpp>
 #include <ntk/ntk.h>
 #include <ntk/utils/debug.h>
 #include <ntk/camera/openni_grabber.h>
@@ -25,6 +28,8 @@
 #include <QApplication>
 #include <QDir>
 #include <QMutex>
+
+#include "cvmat_serialization.h"
 
 using namespace cv;
 using namespace ntk;
@@ -71,7 +76,6 @@ int main(int argc, char **argv)
 
     namedWindow("depth");
     namedWindow("color");
-    namedWindow("users");
 
     char last_c = 0;
     while (true && (last_c != 27))
@@ -81,21 +85,36 @@ int main(int argc, char **argv)
         grabber.copyImageTo(image);
         post_processor.processImage(image);
 
-        // Prepare the depth view, mapped onto rgb frame.
-        cv::Mat1b debug_depth_img = normalize_toMat1b(image.mappedDepth());
+        cv::Mat depth_tx;
+        cv::Mat color_tx;
 
-        // Prepare the color view with skeleton and handpoint.
-        cv::Mat3b debug_color_img;
-        image.rgb().copyTo(debug_color_img);
+        {
 
-        // Prepare the user mask view as colors.
-        cv::Mat3b debug_users;
-        image.fillRgbFromUserLabels(debug_users);
+
+            // Prepare the depth view, mapped onto rgb frame.
+            cv::Mat1b debug_depth_img = normalize_toMat1b(image.mappedDepth());
+
+            debug_depth_img.copyTo(depth_tx);
+
+            // Prepare the color view with skeleton and handpoint.
+            cv::Mat3b debug_color_img;
+            image.rgb().copyTo(debug_color_img);
+        }
+
+        std::ofstream ofs("matrices.bin", std::ios::out | std::ios::binary);
+
+        { // use scope to ensure archive goes out of scope before stream
+
+          boost::archive::text_oarchive oa(ofs);
+          oa << depth_tx; //<< color_tx;
+        }
+
+        ofs.close();
 
         imshow("depth", debug_depth_img);
-        imshow("color", debug_color_img);
-        imshow("users", debug_users);
+        imshow("color", color_tx);
         last_c = (cv::waitKey(10) & 0xff);
     }
+
     grabber.stop();
 }

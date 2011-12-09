@@ -11,6 +11,8 @@ SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 SET(NESTK_USE_FREENECT 0)
 SET(NESTK_USE_OPENNI 1)
 
+add_definitions( "-g" )
+
 ADD_SUBDIRECTORY(external)
 
 ## nestk/UseNestk.cmake.in defines variable to use nestk.
