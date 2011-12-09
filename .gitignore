@@ -1,2 +1,9 @@
 # cmake build directory
 .build
+
+# swap files
+*~
+*.swp
+
+# user files
+*.user
