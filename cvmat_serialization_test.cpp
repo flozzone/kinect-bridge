@@ -1,5 +1,7 @@
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/archive/text_oarchive.hpp>
 #include <fstream>
 #include <boost/test/unit_test.hpp>
 
@@ -16,12 +18,8 @@ BOOST_AUTO_TEST_CASE(recordMat)
 
   { // use scope to ensure archive goes out of scope before stream
 
-    boost::archive::binary_oarchive oa(ofs);
-
-    {
-      oa << depths << colors;
-
-    }
+    boost::archive::text_oarchive oa(ofs);
+    oa << depths << colors;
   }
 
   ofs.close();
@@ -40,11 +38,7 @@ BOOST_AUTO_TEST_CASE(recordMat3b)
   { // use scope to ensure archive goes out of scope before stream
 
     boost::archive::binary_oarchive oa(ofs);
-
-    {
-      oa << tmp;
-
-    }
+    oa << tmp;
   }
 
   ofs.close();
