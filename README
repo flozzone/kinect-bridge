@@ -1,0 +1,1 @@
+Reads images from openni driver, serializes and transfers them over tcp.
