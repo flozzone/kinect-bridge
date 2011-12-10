@@ -3,6 +3,8 @@
 #include <opencv2/opencv.hpp>
 #include <boost/serialization/split_free.hpp>
 #include <boost/serialization/vector.hpp>
+#include <boost/archive/archive_exception.hpp>
+#include <fstream>
 
 BOOST_SERIALIZATION_SPLIT_FREE(::cv::Mat);
 namespace boost {
@@ -40,7 +42,25 @@ namespace boost {
       size_t data_size = m.cols * m.rows * elem_size;
       ar & boost::serialization::make_array(m.ptr(), data_size);
     }
+    // Try read next object from archive
+    template<class Archive>
+    bool try_stream_next(Archive &ar, const std::ifstream &s, cv::Mat &o)
+    {
+      bool success = false;
 
+      try {
+	ar >> o;
+	success = true;
+      } catch (const boost::archive::archive_exception &e) {
+	if (e.code != boost::archive::archive_exception::stream_error) {
+	  throw;
+	}
+      }
+
+      return success;
+    }
   }
 }
+
+
 

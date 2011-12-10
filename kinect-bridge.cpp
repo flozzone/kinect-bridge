@@ -83,36 +83,49 @@ int main(int argc, char **argv)
         // Wait for a new frame, get a local copy and postprocess it.
         grabber.waitForNextFrame();
         grabber.copyImageTo(image);
-        post_processor.processImage(image);
+	post_processor.processImage(image);
 
         cv::Mat depth_tx;
         cv::Mat color_tx;
 
-        {
+	{
+	    // Prepare the depth view, mapped onto rgb frame.
+	    cv::Mat1b debug_depth_img = normalize_toMat1b(image.mappedDepth());
+	    depth_tx = debug_depth_img;
+
+	    // Prepare the color view with skeleton and handpoint.
+	    Mat3b debug_color_img;
+	    image.rgb().copyTo(debug_color_img);
+	    color_tx = debug_color_img;
+	}
+
+	std::cout << "rows:" << color_tx.rows << std::endl;
+	std::cout << "cols:" << color_tx.cols << std::endl;
 
 
-            // Prepare the depth view, mapped onto rgb frame.
-            cv::Mat1b debug_depth_img = normalize_toMat1b(image.mappedDepth());
 
-            debug_depth_img.copyTo(depth_tx);
-
-            // Prepare the color view with skeleton and handpoint.
-            cv::Mat3b debug_color_img;
-            image.rgb().copyTo(debug_color_img);
-        }
-
-        std::ofstream ofs("matrices.bin", std::ios::out | std::ios::binary);
+	std::ofstream ofs("matrices_depth.bin", std::ios::out | std::ios::binary);
 
         { // use scope to ensure archive goes out of scope before stream
 
           boost::archive::text_oarchive oa(ofs);
-          oa << depth_tx; //<< color_tx;
+	  oa << color_tx; //<< color_tx;
         }
 
         ofs.close();
 
-        imshow("depth", debug_depth_img);
-        imshow("color", color_tx);
+
+	imshow("depth", depth_tx);
+	imshow("color", color_tx);
+
+	IplImage iplImage;
+
+	//cvConvertImage(&color_tx, &iplImage);
+	iplImage = color_tx;
+
+
+	//if(!cvSaveImage("test.tpl", &iplImage)) printf("Could not save: test.tpl\n");
+
         last_c = (cv::waitKey(10) & 0xff);
     }
 

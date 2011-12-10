@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 
 PROJECT(kinect-bridge)
 
+ENABLE_TESTING()
+
 set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "/usr/lib")
 
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
@@ -24,10 +26,20 @@ INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
 ############### kinect_bridge#################
 ##############################################
 
-FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework REQUIRED)
+FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams REQUIRED)
 
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+
+add_executable(test_cvserialization
+	cvmat_serialization_test.cpp
+	cvmat_serialization.h
+)
+
+target_link_libraries(test_cvserialization
+	${Boost_LIBRARIES}
+	nestk
+)
 
 set(kinect_bridge_HEADERS
 	cvmat_serialization.h
@@ -35,7 +47,6 @@ set(kinect_bridge_HEADERS
 
 set(kinect_bridge_SOURCES
 	kinect-bridge.cpp
-	cvmat_serialization_test.cpp
 )
 
 qt4_wrap_cpp(kinect_bridge_MOC ${kinect_bridge_HEADERS} OPTIONS -nw)
