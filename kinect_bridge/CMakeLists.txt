@@ -3,11 +3,12 @@
 ## contains most of the cmake find packages commands.
 INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
 
-FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams REQUIRED)
+FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system REQUIRED)
 
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 
 LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
@@ -17,11 +18,11 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
 set(kinect_bridge_HEADERS
 	cvmat_serialization.h
-	kinect_bridge.h
+	#kinect_bridge.h
 )
 
 set(kinect_bridge_SOURCES
-	kinect_bridge.cpp
+	#kinect_bridge.cpp
 )
 
 qt4_wrap_cpp(kinect_bridge_MOC ${kinect_bridge_HEADERS} OPTIONS -nw)
@@ -34,7 +35,52 @@ add_library(kinect_bridge
 
 target_link_libraries(kinect_bridge
 	${Boost_LIBRARIES}
+)
+
+#######################################
+####### kinect_bridge_client ##########
+#######################################
+
+set(kinect_bridge_client_SOURCES
+	kinect_bridge_client.cpp
+)
+
+set(kinect_bridge_client_HEADERS
+	kinect_bridge_connection.hpp
+)
+
+ADD_EXECUTABLE(kinect_bridge_client
+	${kinect_bridge_client_SOURCES}
+	${kinect_bridge_client_HEADERS}
+)
+
+TARGET_LINK_LIBRARIES(kinect_bridge_client
+	kinect_bridge
 	nestk
+	boost_system
+)
+
+#######################################
+####### kinect_bridge_server ##########
+#######################################
+
+set(kinect_bridge_server_SOURCES
+	kinect_bridge_server.cpp
+)
+
+set(kinect_bridge_server_HEADERS
+	kinect_bridge_connection.hpp
+)
+
+ADD_EXECUTABLE(kinect_bridge_server
+	${kinect_bridge_server_SOURCES}
+	${kinect_bridge_server_HEADERS}
+)
+
+TARGET_LINK_LIBRARIES(kinect_bridge_server
+	kinect_bridge
+	nestk
+	boost_system
 )
 
 #######################################
@@ -43,7 +89,7 @@ target_link_libraries(kinect_bridge
 
 set(kinect_bridge_demo_HEADERS
 	cvmat_serialization.h
-	kinect_bridge.h
+	#kinect_bridge.h
 )
 
 set(kinect_bridge_demo_SOURCES
@@ -65,5 +111,3 @@ target_link_libraries(kinect_bridge_demo
 )
 
 ADD_SUBDIRECTORY(test)
-#ADD_SUBDIRECTORY(server)
-#ADD_SUBDIRECTORY(client)
