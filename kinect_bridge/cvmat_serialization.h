@@ -1,4 +1,5 @@
-// file: cvmat_serilization.h
+#ifndef _KINECT_BRIDGE_CVMAT_SERIALIZATION_H_
+#define _KINECT_BRIDGE_CVMAT_SERIALIZATION_H_
 
 #include <opencv2/opencv.hpp>
 #include <boost/serialization/split_free.hpp>
@@ -61,6 +62,8 @@ namespace boost {
     }
   }
 }
+
+#endif //_KINECT_BRIDGE_CVMAT_SERIALIZATION_H_
 
 
 

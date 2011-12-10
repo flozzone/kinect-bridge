@@ -15,7 +15,7 @@
 
 #include <QMutex>
 
-#include "cvmat_serialization.h"
+#include "kinect_bridge/cvmat_serialization.h"
 
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MAIN
