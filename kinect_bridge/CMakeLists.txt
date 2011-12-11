@@ -12,17 +12,21 @@ LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
+
+# export some variables
+SET(ENV{CMAKE_BINARY_DIR} ${CMAKE_BINARY_DIR})
+
 #######################################
 ########## kinect_bridge ##############
 #######################################
 
 set(kinect_bridge_HEADERS
 	cvmat_serialization.h
-	#kinect_bridge.h
+	kinect_bridge.h
 )
 
 set(kinect_bridge_SOURCES
-	#kinect_bridge.cpp
+	kinect_bridge.cpp
 )
 
 qt4_wrap_cpp(kinect_bridge_MOC ${kinect_bridge_HEADERS} OPTIONS -nw)

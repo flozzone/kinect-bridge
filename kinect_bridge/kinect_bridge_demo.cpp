@@ -80,7 +80,7 @@ int main(int argc, char **argv)
     char last_c = 0;
     while (true && (last_c != 27))
     {
-        // Wait for a new frame, get a local copy and postprocess it.
+	// Wait for a new frame, get a local copy and postprocess it.
         grabber.waitForNextFrame();
         grabber.copyImageTo(image);
 	post_processor.processImage(image);

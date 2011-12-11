@@ -19,8 +19,10 @@
 
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MAIN
-#define BOOST_TEST_MODULE cvmat
+#define BOOST_TEST_MODULE test_CvMatSerialization
 #include <boost/test/unit_test.hpp>
+
+#define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
 
 BOOST_AUTO_TEST_SUITE( test_CvMatSerialization )
 
@@ -62,7 +64,7 @@ BOOST_FIXTURE_TEST_SUITE(test_CvMatSerialization, Fixture)
 BOOST_AUTO_TEST_CASE(loadJpegFromFile)
 {
     IplImage *image = 0;
-    image = cvLoadImage("Screenshot.jpeg");
+    image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
 
     BOOST_CHECK(image != 0);
 
@@ -80,7 +82,7 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerialized)
 {
 
     IplImage *image = 0;
-    image = cvLoadImage("Screenshot.jpeg");
+    image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
 
     BOOST_CHECK(image != 0);
 
@@ -138,7 +140,7 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerializedCompressed)
 {
 
     IplImage *image = 0;
-    image = cvLoadImage("Screenshot.jpeg");
+    image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
 
     BOOST_CHECK(image != 0);
 

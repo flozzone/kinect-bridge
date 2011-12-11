@@ -16,6 +16,9 @@
 #include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
 #include "kinect_bridge/cvmat_serialization.h"
+#include "kinect_bridge.h"
+
+#define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
 
 namespace s11n_example {
 
@@ -31,12 +34,34 @@ public:
   {
     // Create the data to be sent to each client.
       IplImage *image = 0;
-      image = cvLoadImage("Screenshot.jpeg");
+      image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
 
-      assert(image != 0);
+      assert((image != 0) && "No image 'image.jpeg' present in this directory");
 
-      cv::Mat tmp(image);
-      tmp.copyTo(this->image_);
+      cv::Mat color(image);
+
+      cv::Mat depth;
+      depth.create(color.size(), CV_8UC1);
+
+      std::cout << "channels:" << color.channels() << std::endl;
+
+      std::vector<cv::Mat> color_split;
+      cv::split(color, color_split);
+      depth = *color_split.begin();
+
+
+      color.copyTo(this->package_.m_color);
+      depth.copyTo(this->package_.m_depth);
+
+      std::cout << "channels:" << depth.channels() << std::endl;
+
+      //color.deallocate();
+      //depth.deallocate();
+
+      kb::PackageHeader header;
+      header.m_version = 3;
+
+      this->package_.m_header = kb::PackageHeader(header);
 
     // Start an accept operation for a new connection.
     connection_ptr new_conn(new connection(acceptor_.io_service()));
@@ -53,15 +78,17 @@ public:
       // Successfully accepted a new connection. Send the list of stocks to the
       // client. The connection::async_write() function will automatically
       // serialize the data structure for us.
-      conn->async_write(this->image_,
+      conn->async_write(this->package_,
 	  boost::bind(&server::handle_write, this,
 	    boost::asio::placeholders::error, conn));
 
+      /*
       // Start an accept operation for a new connection.
       connection_ptr new_conn(new connection(acceptor_.io_service()));
       acceptor_.async_accept(new_conn->socket(),
 	  boost::bind(&server::handle_accept, this,
 	    boost::asio::placeholders::error, new_conn));
+      */
     }
     else
     {
@@ -84,7 +111,7 @@ private:
   boost::asio::ip::tcp::acceptor acceptor_;
 
   /// The data to be sent to each client.
-  cv::Mat image_;
+  kb::Package package_;
 };
 
 } // namespace s11n_example

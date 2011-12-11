@@ -15,6 +15,7 @@
 #include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
 #include "kinect_bridge/cvmat_serialization.h"
+#include "kinect_bridge/kinect_bridge.h"
 
 namespace s11n_example {
 
@@ -49,7 +50,7 @@ public:
       // Successfully established connection. Start operation to read the list
       // of stocks. The connection::async_read() function will automatically
       // decode the data that is read from the underlying socket.
-      connection_.async_read(this->image_,
+      connection_.async_read(this->package_,
 	  boost::bind(&client::handle_read, this,
 	    boost::asio::placeholders::error));
     }
@@ -76,13 +77,30 @@ public:
   {
     if (!e)
     {
-	IplImage image = this->image_;
+	assert(this->package_.m_header.m_version == 3);
 
-	cvNamedWindow("loadSerializedConvertToIplAndDisplay");
-	cvShowImage("loadSerializedConvertToIplAndDisplay", &image);
+	std::cout << "version: " << this->package_.m_header.m_version << std::endl;
+
+	assert(this->package_.m_depth.empty() == false);
+	assert(this->package_.m_color.empty() == false);
+
+	if (this->package_.m_color.empty() == true) {
+	    std::cout << "package:empty" << std::endl;
+	} else {
+	    std::cout << "package:not empty" << std::endl;
+	}
+
+	IplImage image = this->package_.m_color;
+	IplImage depth = this->package_.m_depth;
+
+	cvNamedWindow("loadSerializedConvertToIplAndDisplay_color");
+	cvNamedWindow("loadSerializedConvertToIplAndDisplay_depth");
+
+	cvShowImage("loadSerializedConvertToIplAndDisplay_color", &image);
+	cvShowImage("loadSerializedConvertToIplAndDisplay_depth", &depth);
 	cvWaitKey(0);
-
-	cvDestroyWindow("loadSerializedConvertToIplAndDisplay");
+	cvDestroyWindow("loadSerializedConvertToIplAndDisplay_color");
+	cvDestroyWindow("loadSerializedConvertToIplAndDisplay_depth");
     }
     else
     {
@@ -99,7 +117,7 @@ private:
   connection connection_;
 
   /// The data received from the server.
-  cv::Mat image_;
+  kb::Package package_;
 };
 
 } // namespace s11n_example
