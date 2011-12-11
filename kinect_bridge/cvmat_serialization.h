@@ -53,7 +53,7 @@ namespace boost {
 	ar >> o;
 	success = true;
       } catch (const boost::archive::archive_exception &e) {
-	if (e.code != boost::archive::archive_exception::stream_error) {
+	if (e.code != boost::archive::archive_exception::output_stream_error) {
 	  throw;
 	}
       }

@@ -4,6 +4,8 @@ debian dependencies:
 
 needs libcv >= 2.2  (eventually build from source)
 
+needs boost >= 1.48
+
 apt-get install	libxmu-dev \
 		libxi-dev \
 		libusb-1.0-0 \
@@ -11,5 +13,7 @@ apt-get install	libxmu-dev \
 		libhighgui-dev \
 		libboost-dev \
 		libboost-serialization-dev \
+		libboost-system \
+		libboost-streamio \
 		libboost-test-dev \
 		
