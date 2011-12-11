@@ -14,6 +14,8 @@
 #include <boost/asio.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
+#include <boost/iostreams/filtering_streambuf.hpp>
+#include <boost/iostreams/filter/zlib.hpp>
 #include <boost/bind.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/tuple/tuple.hpp>
@@ -53,7 +55,11 @@ public:
   {
     // Serialize the data first so we know how large it is.
     std::ostringstream archive_stream;
-    boost::archive::text_oarchive archive(archive_stream);
+    boost::iostreams::filtering_ostreambuf out;
+    out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
+    out.push(archive_stream);
+
+    boost::archive::text_oarchive archive(out);
     archive << t;
     outbound_data_ = archive_stream.str();
 
