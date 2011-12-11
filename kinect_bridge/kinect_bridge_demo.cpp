@@ -108,8 +108,8 @@ int main(int argc, char **argv)
 
         { // use scope to ensure archive goes out of scope before stream
 
-          boost::archive::text_oarchive oa(ofs);
-	  oa << color_tx; //<< color_tx;
+	    boost::archive::text_oarchive oa(ofs);
+	    oa << color_tx; //<< color_tx;
         }
 
         ofs.close();
