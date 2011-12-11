@@ -14,6 +14,8 @@
 #include <boost/asio.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
+#include <boost/iostreams/filtering_stream.hpp>
+#include <boost/iostreams/filter/zlib.hpp>
 #include <boost/bind.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/tuple/tuple.hpp>
@@ -51,11 +53,21 @@ public:
     template <typename T, typename Handler>
     void async_write(const T& t, Handler handler)
     {
-	// Serialize the data first so we know how large it is.
-	std::ostringstream archive_stream;
-	boost::archive::text_oarchive archive(archive_stream);
-	archive << t;
-	outbound_data_ = archive_stream.str();
+	{
+	    std::ostringstream archive_stream;
+
+	    // define zlib filer chain
+	    boost::iostreams::filtering_ostream out;
+	    out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
+	    out.push(archive_stream);
+
+	    // Serialize the data first so we know how large it is.
+	    boost::archive::text_oarchive archive(out);
+
+	    archive << t;
+
+	    outbound_data_ = archive_stream.str();
+	}
 
 	// Format the header.
 	std::ostringstream header_stream;
@@ -145,8 +157,19 @@ public:
 	    {
 		std::string archive_data(&inbound_data_[0], inbound_data_.size());
 		std::istringstream archive_stream(archive_data);
-		boost::archive::text_iarchive archive(archive_stream);
+
+		// define zlib filter chain
+		boost::iostreams::filtering_istream in;
+		in.push(boost::iostreams::zlib_decompressor());
+		in.push(archive_stream);
+
+		boost::archive::text_iarchive archive(in);
 		archive >> t;
+	    }
+	    // catch boost::archive::archive_exception to catch eof
+	    catch (boost::archive::archive_exception & e)
+	    {
+		std::cerr << "end of data reached" << std::endl;
 	    }
 	    catch (std::exception& e)
 	    {

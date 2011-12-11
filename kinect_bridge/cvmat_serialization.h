@@ -60,8 +60,8 @@ bool try_stream_next(Archive &ar, const std::ifstream &s, cv::Mat &o)
 
     return success;
 }
-}
-}
+} // namespace serialization
+} // namespace boost
 
 #endif //_KINECT_BRIDGE_CVMAT_SERIALIZATION_H_
 
