@@ -70,13 +70,13 @@ public:
 	    out.push(archive_stream);
 
 	    // Serialize the data first so we know how large it is.
-	    boost::archive::text_oarchive archive(out);
+	    boost::archive::text_oarchive archive(out);	    
 
-	    assert(t->hasPackage() == true);
+	    assert(t->is_not_empty() == true);
 
-	    DBG_DEBUG("There are " << t->getSize() << " packages");
+	    //DBG_DEBUG("There are " << t->getSize() << " packages");
 
-	    Package package(t->get());
+	    Package package(t->tmp);
 
 	    assert(package.m_header.m_version == 3);
 
@@ -118,7 +118,7 @@ public:
 		= &connection::handle_read_header<T, Handler>;
 	boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
 				boost::bind(f,
-					    this, boost::asio::placeholders::error, t,
+					    this, boost::asio::placeholders::error, boost::ref(t),
 					    boost::make_tuple(handler)));
     }
 
@@ -156,7 +156,7 @@ public:
 		    = &connection::handle_read_data<T, Handler>;
 	    boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_),
 				    boost::bind(f, this,
-						boost::asio::placeholders::error, t, handler));
+						boost::asio::placeholders::error, boost::ref(t), handler));
 	}
     }
 
@@ -187,18 +187,9 @@ public:
 		Package package;
 		archive >> package;
 
-		int size = t->getSize();
+		t->push_front(package);
 
-		t->put(package);
-
-		DBG_TRACE("Buffersize is now " << t->getSize());
-
-		int size2  = t->getSize();
-
-		std::cout << "Buffersize is now " << t->getSize() << std::endl;
-		fflush(stdout);
-
-		assert(t->getSize() == (size+1));
+		assert(t->is_not_empty() == true);
 	    }
 	    // catch boost::archive::archive_exception to catch eof
 	    catch (boost::archive::archive_exception & e)

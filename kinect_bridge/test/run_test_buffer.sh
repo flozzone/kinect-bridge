@@ -2,12 +2,10 @@
 
 THIS=`dirname $0`
 
-TEST_SUITE=$1
-TEST_CASE=$2
-
-SPECIFIC="-t ${TEST_SUITE}/${TEST_SUITE}"
+TEST_SUITE="test_Buffer"
+TEST_CASE=$1
 if [ -n "$TEST_CASE" ]; then
-	SPECIFIC="${SPECIFIC}/${TEST_CASE}"
+	SPECIFIC="-t ${TEST_SUITE}/${TEST_CASE}"
 fi
 
 pushd $THIS/../../

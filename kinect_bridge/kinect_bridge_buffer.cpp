@@ -4,24 +4,47 @@
 
 DBG_IMPL_DEBUG_MODULE(KinectBridgeBuffer);
 
-namespace kb {
-int PackageBuffer::getSize() {
-    return m_packages.size();
+using namespace kb;
+
+
+
+PackageBuffer* PackageBuffer::m_instance = 0;
+
+PackageBuffer::PackageBuffer()
+{
+
+}
+
+PackageBuffer::~PackageBuffer() {
+    delete m_instance;
+}
+
+PackageBuffer* PackageBuffer::getInstance() {
+    if (PackageBuffer::m_instance == 0) {
+	PackageBuffer::m_instance = new PackageBuffer();
+    }
+    return PackageBuffer::m_instance;
+}
+
+void PackageBuffer::push(const Package& package) {
+    DBG_ENTER("");
+    m_buffer.push_front(package);
 }
 
 Package& PackageBuffer::get() {
-    DBG_TRACE("Buffer has " << m_packages.size() << " packages");
-    return m_packages.back();
-}
-
-void PackageBuffer::put(const kb::Package& package) {
     DBG_ENTER("");
-    m_packages.insert(m_packages.end(), package);
+    return m_buffer.back();
 }
 
 void PackageBuffer::pop() {
-    m_packages.pop_back();
+    DBG_ENTER("");
+    m_buffer.pop_back();
     return;
+}
+
+
+int PackageBuffer::getSize() {
+    return m_buffer.size();
 }
 
 bool PackageBuffer::hasPackage() {
@@ -30,4 +53,4 @@ bool PackageBuffer::hasPackage() {
     }
     return false;
 }
-} // namespace kb
+

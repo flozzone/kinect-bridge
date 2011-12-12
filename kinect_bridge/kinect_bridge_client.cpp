@@ -35,7 +35,8 @@ public:
     /// Constructor starts the asynchronous connect operation.
     client(boost::asio::io_service& io_service,
 	   const std::string& host, const std::string& service)
-	: connection_(io_service)
+	: connection_(io_service),
+	  m_buffer(kb::getBufSize())
     {
 	// Resolve the host name into an IP address.
 	boost::asio::ip::tcp::resolver resolver(io_service);
@@ -59,7 +60,7 @@ public:
 	    // Successfully established connection. Start operation to read the list
 	    // of stocks. The connection::async_read() function will automatically
 	    // decode the data that is read from the underlying socket.
-	    connection_.async_read(&this->packages_,
+	    connection_.async_read(&this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
 	}
@@ -88,21 +89,35 @@ public:
 	if (e.value() == 0)
 	{
 	    DBG_INFO("Successfull read package");
-	    DBG_DEBUG("Buffersize: " << this->packages_.getSize());
 
-	    if (this->packages_.hasPackage() != true) {
+	    if (this->m_buffer.is_not_empty() == false) {
 		DBG_WARN("Buffer is empty");
 	    } else {
-		kb::Package package(this->packages_.get());
+		kb::Package package;
+
+		assert(package.m_color.empty() == true);
+
+		DBG_DEBUG("Getting package from buffer");
+		this->m_buffer.pop_back(&package);
+		DBG_DEBUG("After getting package from buffer");
 
 		assert(package.m_color.empty() == false);
 
-		int version = this->packages_.get().m_header.m_version;
 
-		std::cout << "Got package with version:" << version << std::endl;
+		IplImage image = package.m_color;
+
+		cvNamedWindow("loadSerializedConvertToIplAndDisplay");
+		cvShowImage("loadSerializedConvertToIplAndDisplay", &image);
+		cvWaitKey(0);
+
+		cvDestroyWindow("loadSerializedConvertToIplAndDisplay");
+
+		assert(package.m_color.empty() == false);
+
+		DBG_TRACE("Got package with pversion: " << package.m_version << " and hversion: " << package.m_header.m_version);
 	    }
 
-	    connection_.async_read(&this->packages_,
+	    connection_.async_read(&this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
 	}
@@ -125,7 +140,7 @@ private:
     connection connection_;
 
     /// The data received from the server.
-    PackageBuffer packages_;
+    mutable kb::bounded_buffer<Package> m_buffer;
 };
 
 } // namespace kb

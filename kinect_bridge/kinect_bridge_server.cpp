@@ -37,7 +37,8 @@ public:
     /// connection.
     server(boost::asio::io_service& io_service, unsigned short port)
 	: acceptor_(io_service,
-	      boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port))
+	      boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
+	  m_buffer(kb::getBufSize())
     {
 	// Create the data to be sent to each client.
 	IplImage *image = 0;
@@ -71,15 +72,18 @@ public:
 
 	package.m_header = kb::PackageHeader(header);
 
-	assert((this->m_buffer.getSize() == 0) && "Buffer is not empty");
+	assert(( this->m_buffer.is_not_empty() == false) && "Buffer is not empty");
 
-	this->m_buffer.put(package);
+	this->m_buffer.push_front(package);
 
-	assert((this->m_buffer.getSize() == 1) && "Buffer has no elements");
+	assert(( this->m_buffer.is_not_empty() == true) && "Buffer has no elements");
 
-	Package tmp(this->m_buffer.get());
+	this->m_buffer.tmp = package;
 
-	assert((tmp.m_header.m_version == 3) && "Getting package failed");
+	//Package tmp;
+	//this->m_buffer.pop_back(&tmp);
+
+	//assert((tmp.m_header.m_version == 3) && "Getting package failed");
 
 	// Start an accept operation for a new connection.
 	connection_ptr new_conn(new connection(acceptor_.get_io_service()));
@@ -94,8 +98,6 @@ public:
 	if (!e)
 	{
 	    DBG_ENTER("Start writing first package");
-
-	    assert(this->m_buffer.get().m_header.m_version == 3);
 
 	    // Successfully accepted a new connection. Send the list of stocks to the
 	    // client. The connection::async_write() function will automatically
@@ -142,7 +144,7 @@ private:
     boost::asio::ip::tcp::acceptor acceptor_;
 
     /// The data to be sent to each client.
-    PackageBuffer m_buffer;
+    mutable kb::bounded_buffer<Package> m_buffer;
 };
 
 } // namespace kb

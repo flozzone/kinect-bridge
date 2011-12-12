@@ -58,3 +58,6 @@ target_link_libraries(test_buffer
 
 ADD_TEST(Buffer::storePackageGetCheckVersion
     "${CMAKE_CURRENT_SOURCE_DIR}/run_test_package.sh" "Buffer" "storePackageGetCheckVersion")
+ADD_TEST(Buffer::storePackageGetCheckVersionBoundedBuffer
+    "${CMAKE_CURRENT_SOURCE_DIR}/run_test_package.sh" "Buffer" "storePackageGetCheckVersionBoundedBuffer")
+

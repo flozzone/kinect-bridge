@@ -29,9 +29,9 @@ BOOST_AUTO_TEST_CASE( storePackageGetCheckVersion )
 {
     DBG_ENTER("storePackageGetCheckVersion");
 
-    kb::PackageBuffer buffer;
+    kb::PackageBuffer* buffer = kb::PackageBuffer::getInstance();
 
-    BOOST_CHECK(buffer.getSize() == 0);
+    BOOST_CHECK(kb::PackageBuffer::getInstance()->getSize() == 0);
 
     {
 	DBG_DEBUG("Create temporary package");
@@ -49,15 +49,50 @@ BOOST_AUTO_TEST_CASE( storePackageGetCheckVersion )
 
 	DBG_DEBUG("Store temporary package in buffer");
 
-	buffer.put(package);
+	kb::PackageBuffer::getInstance()->push(package);
+
+	BOOST_CHECK(kb::PackageBuffer::getInstance()->getSize() == 1);
     }
 
     DBG_DEBUG("Retrieve previous stored package from buffer");
 
-    BOOST_CHECK(buffer.getSize() == 1);
+    BOOST_CHECK(kb::PackageBuffer::getInstance()->getSize() == 1);
 
-    BOOST_CHECK(buffer.get().m_version == 1);
-    BOOST_CHECK(buffer.get().m_header.m_version == 2);
+    BOOST_CHECK(kb::PackageBuffer::getInstance()->get().m_version == 1);
+    BOOST_CHECK(kb::PackageBuffer::getInstance()->get().m_header.m_version == 2);
+}
+
+BOOST_AUTO_TEST_CASE( storePackageGetCheckVersionBoundedBuffer )
+{
+    DBG_ENTER("storePackageGetCheckVersionBoundedBuffer");
+
+    kb::bounded_buffer<kb::Package> buffer(5);
+
+    BOOST_CHECK(buffer.is_not_empty() == false);
+    {
+	DBG_DEBUG("Create temporary package");
+
+	kb::Package package;
+
+	BOOST_CHECK(package.m_version == 0);
+	BOOST_CHECK(package.m_header.m_version == 0);
+
+	package.m_version = 1;
+	package.m_header.m_version = 2;
+
+	BOOST_CHECK(package.m_version == 1);
+	BOOST_CHECK(package.m_header.m_version == 2);
+
+	DBG_DEBUG("Store temporary package in buffer");
+
+	buffer.push_front(package);
+
+	BOOST_CHECK(buffer.is_not_empty() == true);
+    }
+
+    DBG_DEBUG("Retrieve previous stored package from buffer");
+
+    BOOST_CHECK(buffer.is_not_empty() == true);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
