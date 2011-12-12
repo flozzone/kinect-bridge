@@ -13,19 +13,21 @@
 #include <boost/lexical_cast.hpp>
 #include <iostream>
 #include <vector>
+
+#include "kinect_bridge/kbDebug.h"
+
+DBG_IMPL_DEBUG_MODULE(KinectBridgeServer);
+
 #include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
 
-#include "kinect_bridge/cvmat_serialization.h"
-#include "kinect_bridge.h"
-#include "kinect_bridge/kbDebug.h"
+#include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/kinect_bridge_buffer.h"
 
 
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
 
-DBG_IMPL_DEBUG_MODULE(KinectBridgeServer);
-
-namespace s11n_example {
+namespace kb {
 
 /// Serves stock quote information to any client that connects to it.
 class server
@@ -48,18 +50,18 @@ public:
 	cv::Mat depth;
 	depth.create(color.size(), CV_8UC1);
 
-	std::cout << "channels:" << color.channels() << std::endl;
-	DBG_DEBUG("test");
+	DBG_TRACE("color channel count: " << color.channels());
 
 	std::vector<cv::Mat> color_split;
 	cv::split(color, color_split);
 	depth = *color_split.begin();
 
+	kb::Package package;
 
-	color.copyTo(this->package_.m_color);
-	depth.copyTo(this->package_.m_depth);
+	color.copyTo(package.m_color);
+	depth.copyTo(package.m_depth);
 
-	std::cout << "channels:" << depth.channels() << std::endl;
+	DBG_TRACE("depth channel count: " << depth.channels());
 
 	//color.deallocate();
 	//depth.deallocate();
@@ -67,7 +69,17 @@ public:
 	kb::PackageHeader header;
 	header.m_version = 3;
 
-	this->package_.m_header = kb::PackageHeader(header);
+	package.m_header = kb::PackageHeader(header);
+
+	assert((this->m_buffer.getSize() == 0) && "Buffer is not empty");
+
+	this->m_buffer.put(package);
+
+	assert((this->m_buffer.getSize() == 1) && "Buffer has no elements");
+
+	Package tmp(this->m_buffer.get());
+
+	assert((tmp.m_header.m_version == 3) && "Getting package failed");
 
 	// Start an accept operation for a new connection.
 	connection_ptr new_conn(new connection(acceptor_.get_io_service()));
@@ -81,10 +93,14 @@ public:
     {
 	if (!e)
 	{
+	    DBG_ENTER("Start writing first package");
+
+	    assert(this->m_buffer.get().m_header.m_version == 3);
+
 	    // Successfully accepted a new connection. Send the list of stocks to the
 	    // client. The connection::async_write() function will automatically
 	    // serialize the data structure for us.
-	    conn->async_write(this->package_,
+	    conn->async_write(&this->m_buffer,
 			      boost::bind(&server::handle_write, this,
 					  boost::asio::placeholders::error, conn));
 
@@ -110,6 +126,15 @@ public:
     {
 	// Nothing to do. The socket will be closed automatically when the last
 	// reference to the connection object goes away.
+
+	if (e.value() != 0) {
+	    DBG_INFO(e.message());
+	} else {
+	    DBG_DEBUG("Start writing next package: " << e.message() << " value:" << e.value());
+	    conn->async_write(&this->m_buffer,
+			      boost::bind(&server::handle_write, this,
+					  boost::asio::placeholders::error, conn));
+	}
     }
 
 private:
@@ -117,10 +142,10 @@ private:
     boost::asio::ip::tcp::acceptor acceptor_;
 
     /// The data to be sent to each client.
-    kb::Package package_;
+    PackageBuffer m_buffer;
 };
 
-} // namespace s11n_example
+} // namespace kb
 
 int main(int argc, char* argv[])
 {
@@ -136,10 +161,11 @@ int main(int argc, char* argv[])
 	}
 	unsigned short port = boost::lexical_cast<unsigned short>(argv[1]);
 
+	kbDebug_init();
 	kbDebug_loadConfig(std::string(argv[2]));
 
 	boost::asio::io_service io_service;
-	s11n_example::server server(io_service, port);
+	kb::server server(io_service, port);
 	io_service.run();
     }
     catch (std::exception& e)

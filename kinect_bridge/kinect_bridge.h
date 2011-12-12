@@ -41,14 +41,15 @@ class Package
 	ar & m_depth;
     }
 public:
-    Package() {};
+    Package() : m_version(0) {};
     Package(const Package&);
-    Package(const PackageHeader&, const cv::Mat&, const cv::Mat&);
     Package& operator=(const Package&);
 
     PackageHeader m_header;
     cv::Mat m_color;
     cv::Mat m_depth;
+
+    int m_version;
 };
 
 } // namespace kb

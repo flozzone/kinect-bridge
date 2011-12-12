@@ -25,19 +25,19 @@ set(kinect_bridge_HEADERS
 	kbDebug.h
 	cvmat_serialization.h
 	kinect_bridge.h
+	kinect_bridge_connection.hpp
+	kinect_bridge_buffer.h
 )
 
 set(kinect_bridge_SOURCES
 	kbDebug.cpp
 	kinect_bridge.cpp
+	kinect_bridge_buffer.cpp
 )
-
-qt4_wrap_cpp(kinect_bridge_MOC ${kinect_bridge_HEADERS} OPTIONS -nw)
 
 add_library(kinect_bridge
 	${kinect_bridge_HEADERS}
 	${kinect_bridge_SOURCES}
-	${kinect_bridge_MOC}
 )
 
 target_link_libraries(kinect_bridge
@@ -54,7 +54,6 @@ set(kinect_bridge_client_SOURCES
 )
 
 set(kinect_bridge_client_HEADERS
-	kinect_bridge_connection.hpp
 )
 
 ADD_EXECUTABLE(kinect_bridge_client
@@ -64,8 +63,8 @@ ADD_EXECUTABLE(kinect_bridge_client
 
 TARGET_LINK_LIBRARIES(kinect_bridge_client
 	kinect_bridge
-	nestk
 	boost_system
+	nestk
 )
 
 #######################################
@@ -77,7 +76,6 @@ set(kinect_bridge_server_SOURCES
 )
 
 set(kinect_bridge_server_HEADERS
-	kinect_bridge_connection.hpp
 )
 
 ADD_EXECUTABLE(kinect_bridge_server
@@ -86,9 +84,9 @@ ADD_EXECUTABLE(kinect_bridge_server
 )
 
 TARGET_LINK_LIBRARIES(kinect_bridge_server
-	kinect_bridge
-	nestk
 	boost_system
+	nestk
+	kinect_bridge
 )
 
 #######################################
@@ -106,7 +104,7 @@ set(kinect_bridge_demo_SOURCES
 
 qt4_wrap_cpp(kinect_bridge_demo_MOC ${kinect_bridge_demo_HEADERS} OPTIONS -nw)
 
-add_library(kinect_bridge_demo
+add_executable(kinect_bridge_demo
 	${kinect_bridge_demo_HEADERS}
 	${kinect_bridge_demo_SOURCES}
 	${kinect_bridge_demo_MOC}
@@ -114,8 +112,8 @@ add_library(kinect_bridge_demo
 
 target_link_libraries(kinect_bridge_demo
 	${Boost_LIBRARIES}
-	nestk
 	kinect_bridge
+	nestk
 )
 
 ADD_SUBDIRECTORY(test)

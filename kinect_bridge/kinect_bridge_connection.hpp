@@ -24,7 +24,14 @@
 #include <sstream>
 #include <vector>
 
-namespace s11n_example {
+#include "kinect_bridge/cvmat_serialization.h"
+#include <kinect_bridge/kbDebug.h>
+#include <kinect_bridge/kinect_bridge.h>
+#include <kinect_bridge/kinect_bridge_buffer.h>
+
+
+
+namespace kb {
 
 /// The connection class provides serialization primitives on top of a socket.
 /**
@@ -51,12 +58,13 @@ public:
 
     /// Asynchronously write a data structure to the socket.
     template <typename T, typename Handler>
-    void async_write(const T& t, Handler handler)
+    void async_write(T* t, Handler handler)
     {
+	DBG_ENTER("Start writing header and data");
 	{
 	    std::ostringstream archive_stream;
 
-	    // define zlib filer chain
+	    // define zlib filter chain
 	    boost::iostreams::filtering_ostream out;
 	    out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
 	    out.push(archive_stream);
@@ -64,7 +72,15 @@ public:
 	    // Serialize the data first so we know how large it is.
 	    boost::archive::text_oarchive archive(out);
 
-	    archive << t;
+	    assert(t->hasPackage() == true);
+
+	    DBG_DEBUG("There are " << t->getSize() << " packages");
+
+	    Package package(t->get());
+
+	    assert(package.m_header.m_version == 3);
+
+	    archive << package;
 
 	    outbound_data_ = archive_stream.str();
 	}
@@ -92,16 +108,17 @@ public:
 
     /// Asynchronously read a data structure from the socket.
     template <typename T, typename Handler>
-    void async_read(T& t, Handler handler)
+    void async_read(T* t, Handler handler)
     {
+	DBG_ENTER("Start reading header");
 	// Issue a read operation to read exactly the number of bytes in a header.
 	void (connection::*f)(
 		    const boost::system::error_code&,
-		    T&, boost::tuple<Handler>)
+		    T*, boost::tuple<Handler>)
 		= &connection::handle_read_header<T, Handler>;
 	boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
 				boost::bind(f,
-					    this, boost::asio::placeholders::error, boost::ref(t),
+					    this, boost::asio::placeholders::error, t,
 					    boost::make_tuple(handler)));
     }
 
@@ -110,8 +127,9 @@ public:
     /// created using boost::bind as a parameter.
     template <typename T, typename Handler>
     void handle_read_header(const boost::system::error_code& e,
-			    T& t, boost::tuple<Handler> handler)
+			    T* t, boost::tuple<Handler> handler)
     {
+	DBG_ENTER("Finished reading header");
 	if (e)
 	{
 	    boost::get<0>(handler)(e);
@@ -129,23 +147,25 @@ public:
 		return;
 	    }
 
+	    DBG_ENTER("Start reading data");
 	    // Start an asynchronous call to receive the data.
 	    inbound_data_.resize(inbound_data_size);
 	    void (connection::*f)(
 			const boost::system::error_code&,
-			T&, boost::tuple<Handler>)
+			T*, boost::tuple<Handler>)
 		    = &connection::handle_read_data<T, Handler>;
 	    boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_),
 				    boost::bind(f, this,
-						boost::asio::placeholders::error, boost::ref(t), handler));
+						boost::asio::placeholders::error, t, handler));
 	}
     }
 
     /// Handle a completed read of message data.
     template <typename T, typename Handler>
     void handle_read_data(const boost::system::error_code& e,
-			  T& t, boost::tuple<Handler> handler)
+			  T* t, boost::tuple<Handler> handler)
     {
+	DBG_ENTER("Finished reading data");
 	if (e)
 	{
 	    boost::get<0>(handler)(e);
@@ -164,12 +184,26 @@ public:
 		in.push(archive_stream);
 
 		boost::archive::text_iarchive archive(in);
-		archive >> t;
+		Package package;
+		archive >> package;
+
+		int size = t->getSize();
+
+		t->put(package);
+
+		DBG_TRACE("Buffersize is now " << t->getSize());
+
+		int size2  = t->getSize();
+
+		std::cout << "Buffersize is now " << t->getSize() << std::endl;
+		fflush(stdout);
+
+		assert(t->getSize() == (size+1));
 	    }
 	    // catch boost::archive::archive_exception to catch eof
 	    catch (boost::archive::archive_exception & e)
 	    {
-		std::cerr << "end of data reached" << std::endl;
+		DBG_DEBUG("end of data reached");
 	    }
 	    catch (std::exception& e)
 	    {
@@ -206,6 +240,6 @@ private:
 
 typedef boost::shared_ptr<connection> connection_ptr;
 
-} // namespace s11n_example
+} // namespace kb
 
 #endif // _KINECT_BRIDGE_KINECT_BRIDGE_CONNECTION_HPP_

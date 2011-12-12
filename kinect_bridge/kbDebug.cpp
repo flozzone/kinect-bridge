@@ -40,6 +40,9 @@ void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff)
 	// open logger configuration file
 	PropertyConfigurator::doConfigure(LOG4CPLUS_TEXT(filename));
 
+	std::cout << "Using log configuration at " << filename << std::endl;
+	fflush(stdout);
+
 	if (forceAdditivityOff) {
 		// force the 'additivity' flag of all loggers to 'false'
 		// (so that we don't need to explicitly write it in log.properties for each logger)

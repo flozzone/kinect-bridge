@@ -13,19 +13,14 @@
 #include <ntk/camera/openni_grabber.h>
 #endif
 
-#include <QMutex>
-
-#include "kinect_bridge/cvmat_serialization.h"
-
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MAIN
 #define BOOST_TEST_MODULE test_CvMatSerialization
 #include <boost/test/unit_test.hpp>
 
+#include "kinect_bridge/cvmat_serialization.h"
+
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
-
-BOOST_AUTO_TEST_SUITE( test_CvMatSerialization )
-
 
 struct Fixture {
 #ifdef KINECT_DEBUG
@@ -58,6 +53,7 @@ struct Fixture {
 #endif //KINECT_DEBUG
     }
 };
+
 
 BOOST_FIXTURE_TEST_SUITE(test_CvMatSerialization, Fixture)
 
@@ -204,6 +200,5 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
 }
 
 BOOST_AUTO_TEST_SUITE_END()
-}
 
 

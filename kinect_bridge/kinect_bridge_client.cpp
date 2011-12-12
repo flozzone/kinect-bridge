@@ -12,16 +12,21 @@
 #include <boost/bind.hpp>
 #include <iostream>
 #include <vector>
-#include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
-#include <boost/serialization/vector.hpp>
 
-#include "kinect_bridge/cvmat_serialization.h"
-#include "kinect_bridge/kinect_bridge.h"
 #include "kinect_bridge/kbDebug.h"
 
 DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 
-namespace s11n_example {
+
+#include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
+#include <boost/serialization/vector.hpp>
+
+#include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/kinect_bridge_buffer.h"
+
+
+
+namespace kb {
 
 /// Downloads stock quote information from a server.
 class client
@@ -54,7 +59,7 @@ public:
 	    // Successfully established connection. Start operation to read the list
 	    // of stocks. The connection::async_read() function will automatically
 	    // decode the data that is read from the underlying socket.
-	    connection_.async_read(this->package_,
+	    connection_.async_read(&this->packages_,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
 	}
@@ -72,44 +77,43 @@ public:
 	    // An error occurred. Log it and return. Since we are not starting a new
 	    // operation the io_service will run out of work to do and the client will
 	    // exit.
-	    std::cerr << e.message() << std::endl;
+	    std::cerr << "handle_connect: message:" << e.message() << std::endl;
 	}
     }
 
     /// Handle completion of a read operation.
     void handle_read(const boost::system::error_code& e)
     {
-	if (!e)
+	DBG_ENTER("Finished reading package");
+	if (e.value() == 0)
 	{
-	    assert(this->package_.m_header.m_version == 3);
+	    DBG_INFO("Successfull read package");
+	    DBG_DEBUG("Buffersize: " << this->packages_.getSize());
 
-	    std::cout << "version: " << this->package_.m_header.m_version << std::endl;
-
-	    assert(this->package_.m_depth.empty() == false);
-	    assert(this->package_.m_color.empty() == false);
-
-	    if (this->package_.m_color.empty() == true) {
-		std::cout << "package:empty" << std::endl;
+	    if (this->packages_.hasPackage() != true) {
+		DBG_WARN("Buffer is empty");
 	    } else {
-		std::cout << "package:not empty" << std::endl;
+		kb::Package package(this->packages_.get());
+
+		assert(package.m_color.empty() == false);
+
+		int version = this->packages_.get().m_header.m_version;
+
+		std::cout << "Got package with version:" << version << std::endl;
 	    }
 
-	    IplImage image = this->package_.m_color;
-	    IplImage depth = this->package_.m_depth;
-
-	    cvNamedWindow("loadSerializedConvertToIplAndDisplay_color");
-	    cvNamedWindow("loadSerializedConvertToIplAndDisplay_depth");
-
-	    cvShowImage("loadSerializedConvertToIplAndDisplay_color", &image);
-	    cvShowImage("loadSerializedConvertToIplAndDisplay_depth", &depth);
-	    cvWaitKey(0);
-	    cvDestroyWindow("loadSerializedConvertToIplAndDisplay_color");
-	    cvDestroyWindow("loadSerializedConvertToIplAndDisplay_depth");
+	    connection_.async_read(&this->packages_,
+				   boost::bind(&client::handle_read, this,
+					       boost::asio::placeholders::error));
 	}
 	else
 	{
-	    // An error occurred.
-	    std::cerr << e.message() << std::endl;
+	    if (e.value() == 0) {
+		DBG_INFO("Successfull read stream");
+	    } else {
+		// An error occurred.
+		DBG_FATAL(e.message() << " code:" << e.value());
+	    }
 	}
 
 	// Since we are not starting a new operation the io_service will run out of
@@ -121,10 +125,10 @@ private:
     connection connection_;
 
     /// The data received from the server.
-    kb::Package package_;
+    PackageBuffer packages_;
 };
 
-} // namespace s11n_example
+} // namespace kb
 
 int main(int argc, char* argv[])
 {
@@ -137,15 +141,18 @@ int main(int argc, char* argv[])
 	    return 1;
 	}
 
-	kbDebug_loadConfig(std::string(argv[2]));
+	kbDebug_init();
+	kbDebug_loadConfig(std::string(argv[3]));
+
+	DBG_ENTER("");
 
 	boost::asio::io_service io_service;
-	s11n_example::client client(io_service, argv[1], argv[2]);
+	kb::client client(io_service, argv[1], argv[2]);
 	io_service.run();
     }
     catch (std::exception& e)
     {
-	std::cerr << e.what() << std::endl;
+	std::cerr << "Exception:" << e.what() << std::endl;
     }
 
     return 0;
