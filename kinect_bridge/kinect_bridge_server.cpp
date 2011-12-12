@@ -15,10 +15,15 @@
 #include <vector>
 #include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
+
 #include "kinect_bridge/cvmat_serialization.h"
 #include "kinect_bridge.h"
+#include "kinect_bridge/kbDebug.h"
+
 
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
+
+DBG_IMPL_DEBUG_MODULE(KinectBridgeServer);
 
 namespace s11n_example {
 
@@ -44,6 +49,7 @@ public:
 	depth.create(color.size(), CV_8UC1);
 
 	std::cout << "channels:" << color.channels() << std::endl;
+	DBG_DEBUG("test");
 
 	std::vector<cv::Mat> color_split;
 	cv::split(color, color_split);
@@ -118,15 +124,19 @@ private:
 
 int main(int argc, char* argv[])
 {
+
+
     try
     {
 	// Check command line arguments.
-	if (argc != 2)
+	if (argc != 3)
 	{
-	    std::cerr << "Usage: server <port>" << std::endl;
+	    std::cerr << "Usage: server <port> <log.properties>" << std::endl;
 	    return 1;
 	}
 	unsigned short port = boost::lexical_cast<unsigned short>(argv[1]);
+
+	kbDebug_loadConfig(std::string(argv[2]));
 
 	boost::asio::io_service io_service;
 	s11n_example::server server(io_service, port);

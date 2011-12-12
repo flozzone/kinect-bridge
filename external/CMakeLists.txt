@@ -1,1 +1,2 @@
+ADD_SUBDIRECTORY(log4cplus)
 ADD_SUBDIRECTORY(nestk)

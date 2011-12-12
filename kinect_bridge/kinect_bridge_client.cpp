@@ -14,8 +14,12 @@
 #include <vector>
 #include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
+
 #include "kinect_bridge/cvmat_serialization.h"
 #include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/kbDebug.h"
+
+DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 
 namespace s11n_example {
 
@@ -127,11 +131,13 @@ int main(int argc, char* argv[])
     try
     {
 	// Check command line arguments.
-	if (argc != 3)
+	if (argc != 4)
 	{
-	    std::cerr << "Usage: client <host> <port>" << std::endl;
+	    std::cerr << "Usage: client <host> <port> <log.properties>" << std::endl;
 	    return 1;
 	}
+
+	kbDebug_loadConfig(std::string(argv[2]));
 
 	boost::asio::io_service io_service;
 	s11n_example::client client(io_service, argv[1], argv[2]);

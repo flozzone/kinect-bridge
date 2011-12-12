@@ -11,6 +11,7 @@ LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/external/log4cplus/include)
 
 
 # export some variables
@@ -21,11 +22,13 @@ SET(ENV{CMAKE_BINARY_DIR} ${CMAKE_BINARY_DIR})
 #######################################
 
 set(kinect_bridge_HEADERS
+	kbDebug.h
 	cvmat_serialization.h
 	kinect_bridge.h
 )
 
 set(kinect_bridge_SOURCES
+	kbDebug.cpp
 	kinect_bridge.cpp
 )
 
@@ -39,6 +42,7 @@ add_library(kinect_bridge
 
 target_link_libraries(kinect_bridge
 	${Boost_LIBRARIES}
+	log4cplus
 )
 
 #######################################
