@@ -32,8 +32,8 @@ Package& Package::operator=(const Package& package) {
 	m_header = package.m_header;
 
 	m_version = package.m_version;
-	m_color = package.m_color;
-	m_depth = package.m_depth;
+	package.m_color.copyTo(m_color);
+	package.m_depth.copyTo(m_depth);
     }
     return *this;
 }
