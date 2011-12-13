@@ -65,6 +65,7 @@ public:
     /// Handle completion of a read operation.
     void handle_read(const boost::system::error_code& e)
     {
+	std::cout << "code: " << e.value() << std::endl;
 	if (!e)
 	{
 	    // Print out the data that was received.
