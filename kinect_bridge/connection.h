@@ -25,9 +25,9 @@
 #include <vector>
 
 #include "kinect_bridge/cvmat_serialization.h"
-#include <kinect_bridge/kbDebug.h>
-#include <kinect_bridge/kinect_bridge.h>
-#include <kinect_bridge/kinect_bridge_buffer.h>
+#include "kinect_bridge/kbDebug.h"
+#include "kinect_bridge/package.h"
+#include "kinect_bridge/package_buffer.h"
 
 
 

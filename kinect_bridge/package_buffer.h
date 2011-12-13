@@ -9,7 +9,7 @@
 #include <boost/progress.hpp>
 #include <boost/bind.hpp>
 
-#include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/package.h"
 #include <boost/circular_buffer.hpp>
 
 #define BUF_SIZE 20

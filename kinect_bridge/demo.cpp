@@ -29,7 +29,7 @@
 #include <QDir>
 #include <QMutex>
 
-#include "cvmat_serialization.h"
+#include "kinect_bridge/cvmat_serialization.h"
 
 using namespace cv;
 using namespace ntk;

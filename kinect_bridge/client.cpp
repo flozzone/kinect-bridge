@@ -17,14 +17,11 @@
 
 DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 
-
-#include "kinect_bridge/kinect_bridge_connection.hpp" // Must come before boost/serialization headers.
+#include "kinect_bridge/connection.h" // Must come before boost/serialization headers.
 #include <boost/serialization/vector.hpp>
 
-#include "kinect_bridge/kinect_bridge.h"
-#include "kinect_bridge/kinect_bridge_buffer.h"
-
-
+#include "kinect_bridge/package.h"
+#include "kinect_bridge/package_buffer.h"
 
 namespace kb {
 

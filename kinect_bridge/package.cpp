@@ -1,5 +1,5 @@
-#include "kinect_bridge/kbDebug.h"
-#include "kinect_bridge.h"
+#include "kbDebug.h"
+#include "package.h"
 #include "kinect_bridge/cvmat_serialization.h"
 
 DBG_IMPL_DEBUG_MODULE(KinectBridge);
