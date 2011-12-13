@@ -1,12 +1,12 @@
-#include "kinect_bridge/kinect_bridge_buffer.h"
-#include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/package_buffer.h"
+#include "kinect_bridge/package.h"
 #include "kinect_bridge/kbDebug.h"
 
 DBG_IMPL_DEBUG_MODULE(KinectBridgeBuffer);
 
 using namespace kb;
 
-
+TestBuffer* TestBuffer::m_instance = 0;
 
 PackageBuffer* PackageBuffer::m_instance = 0;
 

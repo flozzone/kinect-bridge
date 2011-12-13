@@ -9,7 +9,7 @@
 #include <boost/progress.hpp>
 #include <boost/bind.hpp>
 
-#include "kinect_bridge/kinect_bridge.h"
+#include "kinect_bridge/package.h"
 #include <boost/circular_buffer.hpp>
 
 #define BUF_SIZE 20
@@ -67,6 +67,26 @@ private:
     boost::condition m_not_full;
 };
 
+
+class TestBuffer {
+public:
+    int data;
+    static TestBuffer* getInstance() {
+	if (TestBuffer::m_instance == 0) {
+	    TestBuffer::m_instance = new TestBuffer();
+	}
+	return TestBuffer::m_instance;
+    }
+private:
+    TestBuffer() : data(0) {};
+    ~TestBuffer() {
+	delete TestBuffer::m_instance;
+    }
+
+    static TestBuffer* m_instance;
+};
+
+//TestBuffer* TestBuffer::m_instance = 0;
 
 
 class PackageBuffer {

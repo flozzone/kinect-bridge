@@ -3,8 +3,8 @@
 #define BOOST_TEST_MODULE test_Package
 #include <boost/test/unit_test.hpp>
 
-#include "kinect_bridge/kinect_bridge.h"
-#include "kinect_bridge/kinect_bridge_buffer.h"
+#include "kinect_bridge/package.h"
+#include "kinect_bridge/package_buffer.h"
 #include "kinect_bridge/kbDebug.h"
 
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"

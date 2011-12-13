@@ -24,15 +24,15 @@ SET(ENV{CMAKE_BINARY_DIR} ${CMAKE_BINARY_DIR})
 set(kinect_bridge_HEADERS
 	kbDebug.h
 	cvmat_serialization.h
-	kinect_bridge.h
-	kinect_bridge_connection.hpp
-	kinect_bridge_buffer.h
+	package.h
+	connection.h
+	package_buffer.h
 )
 
 set(kinect_bridge_SOURCES
 	kbDebug.cpp
-	kinect_bridge.cpp
-	kinect_bridge_buffer.cpp
+	package.cpp
+	package_buffer.cpp
 )
 
 add_library(kinect_bridge
@@ -50,7 +50,7 @@ target_link_libraries(kinect_bridge
 #######################################
 
 set(kinect_bridge_client_SOURCES
-	kinect_bridge_client.cpp
+	client.cpp
 )
 
 set(kinect_bridge_client_HEADERS
@@ -72,7 +72,7 @@ TARGET_LINK_LIBRARIES(kinect_bridge_client
 #######################################
 
 set(kinect_bridge_server_SOURCES
-	kinect_bridge_server.cpp
+	server.cpp
 )
 
 set(kinect_bridge_server_HEADERS
@@ -99,7 +99,7 @@ set(kinect_bridge_demo_HEADERS
 )
 
 set(kinect_bridge_demo_SOURCES
-	kinect_bridge_demo.cpp
+	demo.cpp
 )
 
 qt4_wrap_cpp(kinect_bridge_demo_MOC ${kinect_bridge_demo_HEADERS} OPTIONS -nw)
