@@ -20,6 +20,7 @@ PackageHeader & PackageHeader::operator=(const PackageHeader& header) {
 Package::Package(const Package &package)
 {
     DBG_ENTER("CopyConstructor version:" << package.m_version);
+    DBG_ERROR("CopyPackage");
     m_header = kb::PackageHeader(package.m_header);
 
     m_version = package.m_version;
@@ -28,6 +29,7 @@ Package::Package(const Package &package)
 }
 
 Package& Package::operator=(const Package& package) {
+    DBG_ERROR("CopyPackage");
     if (this != &package) {
 	m_header = package.m_header;
 

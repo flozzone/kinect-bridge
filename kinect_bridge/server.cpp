@@ -37,9 +37,10 @@ public:
     /// connection.
     server(boost::asio::io_service& io_service, unsigned short port)
 	: acceptor_(io_service,
-	      boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
-	  m_buffer(kb::getBufSize())
+	      boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port))//,
+	  //m_buffer(kb::getBufSize())
     {
+
 	// Create the data to be sent to each client.
 	IplImage *image = 0;
 	image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
@@ -57,33 +58,23 @@ public:
 	cv::split(color, color_split);
 	depth = *color_split.begin();
 
-	kb::Package package;
+	kb::Package* package = new Package();
 
-	color.copyTo(package.m_color);
-	depth.copyTo(package.m_depth);
+	color.copyTo(package->m_color);
+	depth.copyTo(package->m_depth);
 
 	DBG_TRACE("depth channel count: " << depth.channels());
 
 	//color.deallocate();
 	//depth.deallocate();
 
-	kb::PackageHeader header;
-	header.m_version = 3;
+	package->m_header.m_version = 3;
 
-	package.m_header = kb::PackageHeader(header);
+	package->m_version = 2;
 
-	assert(( this->m_buffer.is_not_empty() == false) && "Buffer is not empty");
+	m_buffer.push_back(package);
 
-	this->m_buffer.push_front(package);
-
-	assert(( this->m_buffer.is_not_empty() == true) && "Buffer has no elements");
-
-	this->m_buffer.tmp = package;
-
-	//Package tmp;
-	//this->m_buffer.pop_back(&tmp);
-
-	//assert((tmp.m_header.m_version == 3) && "Getting package failed");
+	DBG_INFO("starting  buffer size: " << m_buffer.size());
 
 	// Start an accept operation for a new connection.
 	connection_ptr new_conn(new connection(acceptor_.get_io_service()));
@@ -97,12 +88,12 @@ public:
     {
 	if (!e)
 	{
-	    DBG_ENTER("Start writing first package");
+	    //DBG_ENTER("Start writing first package");
 
 	    // Successfully accepted a new connection. Send the list of stocks to the
 	    // client. The connection::async_write() function will automatically
 	    // serialize the data structure for us.
-	    conn->async_write(&this->m_buffer,
+	    conn->async_write(this->m_buffer,
 			      boost::bind(&server::handle_write, this,
 					  boost::asio::placeholders::error, conn));
 
@@ -132,8 +123,9 @@ public:
 	if (e.value() != 0) {
 	    DBG_INFO(e.message());
 	} else {
-	    DBG_DEBUG("Start writing next package: " << e.message() << " value:" << e.value());
-	    conn->async_write(&this->m_buffer,
+	    //DBG_DEBUG("Start writing next package: " << e.message() << " value:" << e.value());
+
+	    conn->async_write(this->m_buffer,
 			      boost::bind(&server::handle_write, this,
 					  boost::asio::placeholders::error, conn));
 	}
@@ -144,7 +136,7 @@ private:
     boost::asio::ip::tcp::acceptor acceptor_;
 
     /// The data to be sent to each client.
-    mutable kb::bounded_buffer<Package> m_buffer;
+    std::vector<Package*> m_buffer;
 };
 
 } // namespace kb

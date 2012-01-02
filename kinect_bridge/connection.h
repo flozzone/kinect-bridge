@@ -28,6 +28,7 @@
 #include "kinect_bridge/kbDebug.h"
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
+#include "stock.hpp"
 
 
 
@@ -58,29 +59,31 @@ public:
 
     /// Asynchronously write a data structure to the socket.
     template <typename T, typename Handler>
-    void async_write(T* t, Handler handler)
+    void async_write(T& t, Handler handler)
     {
-	DBG_ENTER("Start writing header and data");
+	//DBG_ENTER("Start writing header and data");
+
 	{
 	    std::ostringstream archive_stream;
 
 	    // define zlib filter chain
 	    boost::iostreams::filtering_ostream out;
-	    out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
+	    //out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
+
 	    out.push(archive_stream);
 
 	    // Serialize the data first so we know how large it is.
 	    boost::archive::text_oarchive archive(out);	    
 
-	    assert(t->is_not_empty() == true);
+	    Package* package = t.front();
 
-	    //DBG_DEBUG("There are " << t->getSize() << " packages");
+	    assert(!package->m_color.empty());
 
-	    Package package(t->tmp);
+	    DBG_ERROR("Sent version " << version);
+	    package->m_header.m_version = version;
+	    version++;
 
-	    assert(package.m_header.m_version == 3);
-
-	    archive << package;
+	    archive << *package;
 
 	    outbound_data_ = archive_stream.str();
 	}
@@ -108,13 +111,13 @@ public:
 
     /// Asynchronously read a data structure from the socket.
     template <typename T, typename Handler>
-    void async_read(T* t, Handler handler)
+    void async_read(T& t, Handler handler)
     {
-	DBG_ENTER("Start reading header");
+	//DBG_ENTER("Start reading header");
 	// Issue a read operation to read exactly the number of bytes in a header.
 	void (connection::*f)(
 		    const boost::system::error_code&,
-		    T*, boost::tuple<Handler>)
+		    T&, boost::tuple<Handler>)
 		= &connection::handle_read_header<T, Handler>;
 	boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
 				boost::bind(f,
@@ -127,9 +130,9 @@ public:
     /// created using boost::bind as a parameter.
     template <typename T, typename Handler>
     void handle_read_header(const boost::system::error_code& e,
-			    T* t, boost::tuple<Handler> handler)
+			    T& t, boost::tuple<Handler> handler)
     {
-	DBG_ENTER("Finished reading header");
+	//DBG_TRACE("Finished reading header");
 	if (e)
 	{
 	    boost::get<0>(handler)(e);
@@ -147,12 +150,12 @@ public:
 		return;
 	    }
 
-	    DBG_ENTER("Start reading data");
+	    //DBG_ENTER("Start reading data");
 	    // Start an asynchronous call to receive the data.
 	    inbound_data_.resize(inbound_data_size);
 	    void (connection::*f)(
 			const boost::system::error_code&,
-			T*, boost::tuple<Handler>)
+			T&, boost::tuple<Handler>)
 		    = &connection::handle_read_data<T, Handler>;
 	    boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_),
 				    boost::bind(f, this,
@@ -163,9 +166,9 @@ public:
     /// Handle a completed read of message data.
     template <typename T, typename Handler>
     void handle_read_data(const boost::system::error_code& e,
-			  T* t, boost::tuple<Handler> handler)
+			  T& t, boost::tuple<Handler> handler)
     {
-	DBG_ENTER("Finished reading data");
+	//DBG_TRACE("Finished reading data");
 	if (e)
 	{
 	    boost::get<0>(handler)(e);
@@ -173,31 +176,38 @@ public:
 	else
 	{
 	    // Extract the data structure from the data just received.
+	    Package* package = new Package();
 	    try
 	    {
 		std::string archive_data(&inbound_data_[0], inbound_data_.size());
 		std::istringstream archive_stream(archive_data);
 
-		// define zlib filter chain
+		// create filter chain
 		boost::iostreams::filtering_istream in;
-		in.push(boost::iostreams::zlib_decompressor());
+		//in.push(boost::iostreams::zlib_decompressor());
 		in.push(archive_stream);
-
 		boost::archive::text_iarchive archive(in);
-		Package package;
-		archive >> package;
 
-		t->push_front(package);
+		// start
+		archive >> *package;
 
-		assert(t->is_not_empty() == true);
+		t.push_back(package);
+
+		DBG_TRACE("buffer-size: " << t.size());
 	    }
 	    // catch boost::archive::archive_exception to catch eof
 	    catch (boost::archive::archive_exception & e)
 	    {
-		DBG_DEBUG("end of data reached");
+		if (e.code == boost::archive::archive_exception::input_stream_error) {
+		    t.push_back(package);
+		    //DBG_TRACE("connection read: package->m_header.m_version: " << package->m_header.m_version);
+		} else {
+		    DBG_ERROR("archive exception cought code:" << e.code);
+		}
 	    }
 	    catch (std::exception& e)
 	    {
+		DBG_ERROR("std::exception cought");
 		// Unable to decode data.
 		boost::system::error_code error(boost::asio::error::invalid_argument);
 		boost::get<0>(handler)(error);
@@ -227,7 +237,11 @@ private:
 
     /// Holds the inbound data.
     std::vector<char> inbound_data_;
+
+    static int version;
 };
+
+int connection::version = 1;
 
 typedef boost::shared_ptr<connection> connection_ptr;
 

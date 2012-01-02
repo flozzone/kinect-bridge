@@ -41,7 +41,7 @@ class Package
 	ar & m_depth;
     }
 public:
-    Package() : m_version(0) {};
+    Package() : m_version(-1) {};
     Package(const Package&);
     Package& operator=(const Package&);
 

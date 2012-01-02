@@ -12,6 +12,8 @@
 #include <boost/bind.hpp>
 #include <iostream>
 #include <vector>
+#include <time.h>
+#include <math.h>
 
 #include "kinect_bridge/kbDebug.h"
 
@@ -22,6 +24,7 @@ DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
+#include "stock.hpp"
 
 namespace kb {
 
@@ -32,8 +35,8 @@ public:
     /// Constructor starts the asynchronous connect operation.
     client(boost::asio::io_service& io_service,
 	   const std::string& host, const std::string& service)
-	: connection_(io_service),
-	  m_buffer(kb::getBufSize())
+	: connection_(io_service)//,
+	//m_buffer(kb::getBufSize())
     {
 	// Resolve the host name into an IP address.
 	boost::asio::ip::tcp::resolver resolver(io_service);
@@ -54,10 +57,12 @@ public:
     {
 	if (!e)
 	{
+	    //assert(this->m_buffer.size() == 0);
+	    DBG_ERROR("bufferPointer (handle_connect)=" << &this->m_buffer);
 	    // Successfully established connection. Start operation to read the list
 	    // of stocks. The connection::async_read() function will automatically
 	    // decode the data that is read from the underlying socket.
-	    connection_.async_read(&this->m_buffer,
+	    connection_.async_read(this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
 	}
@@ -82,39 +87,38 @@ public:
     /// Handle completion of a read operation.
     void handle_read(const boost::system::error_code& e)
     {
-	DBG_ENTER("Finished reading package");
+	//DBG_ENTER("Finished reading package");
 	if (e.value() == 0)
 	{
-	    DBG_INFO("Successfull read package");
+	    //DBG_TRACE("client: buffer size: "  <<  m_buffer.size());
 
-	    if (this->m_buffer.is_not_empty() == false) {
-		DBG_WARN("Buffer is empty");
-	    } else {
-		kb::Package package;
+	    struct timespec current;
+	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
 
-		assert(package.m_color.empty() == true);
+	    long diff = ((current.tv_sec* pow(10, 9)) + current.tv_nsec) - m_nsec;
+	    float sec = diff / pow(10, 9);
+	    char tmp[255];
 
-		DBG_DEBUG("Getting package from buffer");
-		this->m_buffer.pop_back(&package);
-		DBG_DEBUG("After getting package from buffer");
+	    kb::Package* package = m_buffer.back();
+	    m_buffer.pop_back();
 
-		assert(package.m_color.empty() == false);
+	    sprintf(tmp, "Retrieving package (%i) took: %.5f sec", package->m_header.m_version, sec);
+	    DBG_INFO(tmp);
+
+	    assert(package->m_color.empty() == false);
+
+	    //IplImage image = package->m_depth;
+	    //cvShowImage("image", &image);
+
+	    assert(package->m_color.empty() == false);
+
+	    delete(package);
 
 
-		IplImage image = package.m_color;
+	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
+	    m_nsec = (current.tv_sec * pow(10, 9)) + current.tv_nsec;
 
-		cvNamedWindow("loadSerializedConvertToIplAndDisplay");
-		cvShowImage("loadSerializedConvertToIplAndDisplay", &image);
-		cvWaitKey(0);
-
-		cvDestroyWindow("loadSerializedConvertToIplAndDisplay");
-
-		assert(package.m_color.empty() == false);
-
-		DBG_TRACE("Got package with pversion: " << package.m_version << " and hversion: " << package.m_header.m_version);
-	    }
-
-	    connection_.async_read(&this->m_buffer,
+	    connection_.async_read(this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
 	}
@@ -134,13 +138,18 @@ public:
 
 private:
     /// The connection to the server.
-    connection connection_;
+    mutable connection connection_;
+
+   struct timespec m_time;
+   long m_nsec;
 
     /// The data received from the server.
-    mutable kb::bounded_buffer<Package> m_buffer;
+    std::vector<Package*> m_buffer;
 };
 
 } // namespace kb
+
+int foo = 1;
 
 int main(int argc, char* argv[])
 {
@@ -158,6 +167,9 @@ int main(int argc, char* argv[])
 
 	DBG_ENTER("");
 
+	cvNamedWindow("image");
+
+
 	boost::asio::io_service io_service;
 	kb::client client(io_service, argv[1], argv[2]);
 	io_service.run();
@@ -166,6 +178,8 @@ int main(int argc, char* argv[])
     {
 	std::cerr << "Exception:" << e.what() << std::endl;
     }
+
+    cvDestroyWindow("image");
 
     return 0;
 }
