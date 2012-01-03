@@ -34,6 +34,64 @@
 
 namespace kb {
 
+class TimeProfiler {
+    static std::map<std::string, long> times;
+
+    static float m_speedAv;
+    static long m_speedCount;
+    static float m_pppAv;
+    static long m_pppCount;
+public:
+    static void setSpeed(size_t size, float sec) {
+	m_speedCount++;
+	m_speedAv += ((float)size / sec);
+	DBG_TRACE("set speed to size:" << size << " sec:" << sec << " av:" << m_speedAv);
+    }
+
+    static float getSpeed() {
+	return (m_speedAv / m_speedCount);
+    }
+
+    static void setPPP(float sec) {
+	m_pppCount++;
+	m_pppAv += ((float)1/sec);
+    }
+
+    static float getPPP() {
+	return (m_pppAv / m_pppCount);
+    }
+
+    static void start(const char* id) {
+	struct timespec current;
+	assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
+	times[std::string(id)] = (current.tv_sec * pow(10, 9)) + current.tv_nsec;
+    }
+
+    static float stop(const char* id) {
+	if (times[std::string(id)] != 0) {
+	    struct timespec current;
+	    char tmp[255];
+
+	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
+	    long diff = ((current.tv_sec* pow(10, 9)) + current.tv_nsec) - times[std::string(id)];
+	    float sec = diff / pow(10, 9);
+
+
+	    sprintf(tmp, "TIME: %s took: %.5f sec", id, sec);
+	    DBG_INFO(tmp);
+
+	    times.erase(std::string(id));
+	    return sec;
+	}
+	return -1;
+    }
+};
+std::map<std::string, long> TimeProfiler::times = std::map<std::string, long>();
+float TimeProfiler::m_speedAv = 0;
+long TimeProfiler::m_speedCount = 0;
+float TimeProfiler::m_pppAv = 0;
+long TimeProfiler::m_pppCount = 0;
+
 /// The connection class provides serialization primitives on top of a socket.
 /**
  * Each message sent using this class consists of:

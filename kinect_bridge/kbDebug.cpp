@@ -54,3 +54,9 @@ void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff)
 	}
 }
 
+
+std::map<std::string, long> TimeProfiler::times = std::map<std::string, long>();
+float TimeProfiler::m_speedAv = 0;
+long TimeProfiler::m_speedCount = 0;
+float TimeProfiler::m_pppAv = 0;
+long TimeProfiler::m_pppCount = 0;

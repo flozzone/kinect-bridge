@@ -62,6 +62,7 @@ public:
 	    // Successfully established connection. Start operation to read the list
 	    // of stocks. The connection::async_read() function will automatically
 	    // decode the data that is read from the underlying socket.
+	    TimeProfiler::start("read Package");
 	    connection_.async_read(this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));
@@ -87,22 +88,20 @@ public:
     /// Handle completion of a read operation.
     void handle_read(const boost::system::error_code& e)
     {
+	float sec = TimeProfiler::stop("read Package");
+	TimeProfiler::setPPP(sec);
+
 	//DBG_ENTER("Finished reading package");
 	if (e.value() == 0)
 	{
 	    //DBG_TRACE("client: buffer size: "  <<  m_buffer.size());
 
-	    struct timespec current;
-	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-
-	    long diff = ((current.tv_sec* pow(10, 9)) + current.tv_nsec) - m_nsec;
-	    float sec = diff / pow(10, 9);
-	    char tmp[255];
 
 	    kb::Package* package = m_buffer.back();
 	    m_buffer.pop_back();
 
-	    sprintf(tmp, "Retrieving package (%i) took: %.5f sec", package->m_header.m_version, sec);
+	    char tmp[255];
+	    sprintf(tmp, "Read package (%i) took: %.5f sec speed: %0.2f pack/sec", package->m_header.m_version, sec, TimeProfiler::getPPP());
 	    DBG_INFO(tmp);
 
 	    assert(package->m_color.empty() == false);
@@ -114,10 +113,7 @@ public:
 
 	    delete(package);
 
-
-	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-	    m_nsec = (current.tv_sec * pow(10, 9)) + current.tv_nsec;
-
+	    TimeProfiler::start("read Package");
 	    connection_.async_read(this->m_buffer,
 				   boost::bind(&client::handle_read, this,
 					       boost::asio::placeholders::error));

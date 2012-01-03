@@ -1,6 +1,9 @@
 #ifndef __KINECT_BRIDGE_KBDEBUG_H
 #define __KINECT_BRIDGE_KBDEBUG_H
 
+#include <math.h>
+
+
 //////////////////////////////////////////////////////////////////////
 // debug functions provided by log4cplus debugging library			//
 //////////////////////////////////////////////////////////////////////
@@ -118,6 +121,58 @@ std::ostream& operator <<(std::ostream &str, const QSet<T> &set)
 
 void kbDebug_init();
 void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff = true);
+
+class TimeProfiler {
+    static std::map<std::string, long> times;
+
+    static float m_speedAv;
+    static long m_speedCount;
+    static float m_pppAv;
+    static long m_pppCount;
+public:
+    static void setSpeed(size_t size, float sec) {
+	m_speedCount++;
+	m_speedAv += ((float)size / sec);
+    }
+
+    static float getSpeed() {
+	return (m_speedAv / m_speedCount);
+    }
+
+    static void setPPP(float sec) {
+	m_pppCount++;
+	m_pppAv += ((float)1/sec);
+    }
+
+    static float getPPP() {
+	return (m_pppAv / m_pppCount);
+    }
+
+    static void start(const char* id) {
+	struct timespec current;
+	assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
+	times[std::string(id)] = (current.tv_sec * pow(10, 9)) + current.tv_nsec;
+    }
+
+    static float stop(const char* id) {
+	if (times[std::string(id)] != 0) {
+	    struct timespec current;
+	    //char tmp[255];
+
+	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
+	    long diff = ((current.tv_sec* pow(10, 9)) + current.tv_nsec) - times[std::string(id)];
+	    float sec = diff / pow(10, 9);
+
+
+	    //sprintf(tmp, "TIME: %s took: %.5f sec", id, sec);
+
+	    times.erase(std::string(id));
+
+	    return sec;
+	}
+	return -1;
+    }
+};
 
 
 #endif // __KINECT_BRIDGE_KBDEBUG_H
