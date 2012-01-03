@@ -36,45 +36,12 @@ server::server(boost::asio::io_service& io_service, unsigned short port)
     : acceptor_(io_service,
 	  boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port))
     , m_grabber(m_ni_driver, KINECT_ID)
-    //m_buffer(kb::getBufSize())
 {
 
     initKinect();
 
-    // Create the data to be sent to each client.
-    IplImage *image = 0;
-    image = cvLoadImage(KINECT_BRIDGE_TEST_IMAGE);
-
-    assert((image != 0) && "No image 'image.jpeg' present in this directory");
-
-    cv::Mat color(image);
-
-    cv::Mat depth;
-    depth.create(color.size(), CV_8UC1);
-
-    DBG_TRACE("color channel count: " << color.channels());
-
-    std::vector<cv::Mat> color_split;
-    cv::split(color, color_split);
-    depth = *color_split.begin();
-
-    kb::Package* package = new Package();
-
-    color.copyTo(package->m_color);
-    depth.copyTo(package->m_depth);
-
-    DBG_TRACE("depth channel count: " << depth.channels());
-
-    //color.deallocate();
-    //depth.deallocate();
-
-    package->m_header.m_version = 3;
-
-    package->m_version = 2;
-
+    Package* package = new Package();
     m_buffer.push_back(package);
-
-    DBG_INFO("starting  buffer size: " << m_buffer.size());
 
     // Start an accept operation for a new connection.
     connection_ptr new_conn(new connection(acceptor_.get_io_service()));
@@ -98,9 +65,10 @@ void server::handle_accept(const boost::system::error_code& e, connection_ptr co
 	// Successfully accepted a new connection. Send the list of stocks to the
 	// client. The connection::async_write() function will automatically
 	// serialize the data structure for us.
-	conn->async_write(this->m_buffer,
-			  boost::bind(&server::handle_write, this,
-				      boost::asio::placeholders::error, conn));
+	//conn->async_write(this->m_buffer,
+	//		  boost::bind(&server::handle_write, this,
+	//			      boost::asio::placeholders::error, conn));
+	send_package(boost::system::error_code(), conn);
 
 	/*
       // Start an accept operation for a new connection.
@@ -120,7 +88,7 @@ void server::handle_accept(const boost::system::error_code& e, connection_ptr co
 }
 
 /// Handle completion of a write operation.
-void server::handle_write(const boost::system::error_code& e, connection_ptr conn)
+void server::send_package(const boost::system::error_code& e, connection_ptr conn)
 {
     // Nothing to do. The socket will be closed automatically when the last
     // reference to the connection object goes away.
@@ -151,7 +119,7 @@ void server::handle_write(const boost::system::error_code& e, connection_ptr con
 	m_buffer.push_back(package);
 
 	conn->async_write(this->m_buffer,
-			  boost::bind(&server::handle_write, this,
+			  boost::bind(&server::send_package, this,
 				      boost::asio::placeholders::error, conn));
     }
 }

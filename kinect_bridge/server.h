@@ -51,7 +51,7 @@ public:
     void handle_accept(const boost::system::error_code& e, connection_ptr conn);
 
     /// Handle completion of a write operation.
-    void handle_write(const boost::system::error_code& e, connection_ptr conn);
+    void send_package(const boost::system::error_code& e, connection_ptr conn);
 
 private:
     void initKinect();

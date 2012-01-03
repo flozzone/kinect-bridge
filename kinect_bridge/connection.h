@@ -75,17 +75,19 @@ public:
 	    // Serialize the data first so we know how large it is.
 	    boost::archive::binary_oarchive archive(out);
 
-	    Package* package = t.back();
+
+	    Package package = *t.back();
+	    delete(t.back());
 	    t.pop_back();
 
 
-	    assert(!package->m_color.empty());
+	    //assert(!package.m_color.empty());
 
 	    DBG_ERROR("Sent version " << version);
-	    package->m_header.m_version = version;
+	    package.m_header.m_version = version;
 	    version++;
 
-	    archive << *package;
+	    archive << package;
 
 	    outbound_data_ = archive_stream.str();
 	}
