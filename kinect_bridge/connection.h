@@ -12,8 +12,8 @@
 #define _KINECT_BRIDGE_KINECT_BRIDGE_CONNECTION_HPP_
 
 #include <boost/asio.hpp>
-#include <boost/archive/text_iarchive.hpp>
-#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/binary_oarchive.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/zlib.hpp>
 #include <boost/bind.hpp>
@@ -73,7 +73,7 @@ public:
 	    out.push(archive_stream);
 
 	    // Serialize the data first so we know how large it is.
-	    boost::archive::text_oarchive archive(out);	    
+	    boost::archive::binary_oarchive archive(out);
 
 	    Package* package = t.front();
 
@@ -186,7 +186,7 @@ public:
 		boost::iostreams::filtering_istream in;
 		//in.push(boost::iostreams::zlib_decompressor());
 		in.push(archive_stream);
-		boost::archive::text_iarchive archive(in);
+		boost::archive::binary_iarchive archive(in);
 
 		// start
 		archive >> *package;
