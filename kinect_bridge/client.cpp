@@ -26,6 +26,9 @@ DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 #include "kinect_bridge/package_buffer.h"
 #include "stock.hpp"
 
+#include <ntk/ntk.h>
+
+
 namespace kb {
 
 /// Downloads stock quote information from a server.
@@ -38,6 +41,12 @@ public:
 	: connection_(io_service)//,
 	//m_buffer(kb::getBufSize())
     {
+
+	cv::namedWindow("color");
+	cv::namedWindow("depth");
+	//cvNamedWindow("color");
+	//cvNamedWindow("depth");
+
 	// Resolve the host name into an IP address.
 	boost::asio::ip::tcp::resolver resolver(io_service);
 	boost::asio::ip::tcp::resolver::query query(host, service);
@@ -49,6 +58,10 @@ public:
 	connection_.socket().async_connect(endpoint,
 					   boost::bind(&client::handle_connect, this,
 						       boost::asio::placeholders::error, ++endpoint_iterator));
+    }
+
+    ~client() {
+	cv::destroyAllWindows();
     }
 
     /// Handle completion of a connect operation.
@@ -106,8 +119,23 @@ public:
 
 	    assert(package->m_color.empty() == false);
 
-	    //IplImage image = package->m_depth;
-	    //cvShowImage("image", &image);
+
+	    //IplImage ipl_color = package->m_color;
+	    //IplImage ipl_depth = package->m_depth;
+	    //cvShowImage("color", &ipl_color);
+
+	    //cv::imshow("color", package->m_color);
+
+	    //cv::namedWindow("image");
+	    //cv::imshow("image", package->m_depth);
+	    cv::imshow("color", package->m_color);
+	    cv::imshow("depth", package->m_depth);
+	    //cv::waitKey(0);
+	    //cv::destroyWindow("image");
+
+
+
+	    //cvShowImage("depth", &ipl_depth);
 
 	    assert(package->m_color.empty() == false);
 
@@ -136,8 +164,8 @@ private:
     /// The connection to the server.
     mutable connection connection_;
 
-   struct timespec m_time;
-   long m_nsec;
+    struct timespec m_time;
+    long m_nsec;
 
     /// The data received from the server.
     std::vector<Package*> m_buffer;
@@ -145,7 +173,7 @@ private:
 
 } // namespace kb
 
-int foo = 1;
+
 
 int main(int argc, char* argv[])
 {
@@ -163,9 +191,6 @@ int main(int argc, char* argv[])
 
 	DBG_ENTER("");
 
-	cvNamedWindow("image");
-
-
 	boost::asio::io_service io_service;
 	kb::client client(io_service, argv[1], argv[2]);
 	io_service.run();
@@ -174,8 +199,6 @@ int main(int argc, char* argv[])
     {
 	std::cerr << "Exception:" << e.what() << std::endl;
     }
-
-    cvDestroyWindow("image");
 
     return 0;
 }

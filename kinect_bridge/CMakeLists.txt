@@ -54,6 +54,7 @@ set(kinect_bridge_client_SOURCES
 )
 
 set(kinect_bridge_client_HEADERS
+	client.h
 )
 
 ADD_EXECUTABLE(kinect_bridge_client
@@ -76,6 +77,7 @@ set(kinect_bridge_server_SOURCES
 )
 
 set(kinect_bridge_server_HEADERS
+	server.h
 )
 
 ADD_EXECUTABLE(kinect_bridge_server
