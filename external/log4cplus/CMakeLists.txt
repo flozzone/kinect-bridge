@@ -147,5 +147,5 @@ if (WIN32)
   target_link_libraries (log4cplus ws2_32 advapi32)
 endif ()
 
-add_subdirectory (loggingserver)
-add_subdirectory (tests)
+#add_subdirectory (loggingserver)
+#add_subdirectory (tests)
