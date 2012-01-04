@@ -69,54 +69,57 @@ TARGET_LINK_LIBRARIES(kinect_bridge_client
 	opencv_highgui
 )
 
-#######################################
-####### kinect_bridge_server ##########
-#######################################
+IF(UNIX)
 
-set(kinect_bridge_server_SOURCES
-	server.cpp
-)
+    #######################################
+    ####### kinect_bridge_server ##########
+    #######################################
 
-set(kinect_bridge_server_HEADERS
-	server.h
-)
+    set(kinect_bridge_server_SOURCES
+	    server.cpp
+    )
 
-ADD_EXECUTABLE(kinect_bridge_server
-	${kinect_bridge_server_SOURCES}
-	${kinect_bridge_server_HEADERS}
-)
+    set(kinect_bridge_server_HEADERS
+	    server.h
+    )
 
-TARGET_LINK_LIBRARIES(kinect_bridge_server
-	boost_system
-	nestk
-	kinect_bridge
-)
+    ADD_EXECUTABLE(kinect_bridge_server
+	    ${kinect_bridge_server_SOURCES}
+	    ${kinect_bridge_server_HEADERS}
+    )
 
-#######################################
-######## kinect_bridge_demo ###########
-#######################################
+    TARGET_LINK_LIBRARIES(kinect_bridge_server
+	    boost_system
+	    nestk
+	    kinect_bridge
+    )
 
-set(kinect_bridge_demo_HEADERS
-	cvmat_serialization.h
-	#kinect_bridge.h
-)
+    #######################################
+    ######## kinect_bridge_demo ###########
+    #######################################
 
-set(kinect_bridge_demo_SOURCES
-	demo.cpp
-)
+    set(kinect_bridge_demo_HEADERS
+	    cvmat_serialization.h
+	    #kinect_bridge.h
+    )
 
-qt4_wrap_cpp(kinect_bridge_demo_MOC ${kinect_bridge_demo_HEADERS} OPTIONS -nw)
+    set(kinect_bridge_demo_SOURCES
+	    demo.cpp
+    )
 
-add_executable(kinect_bridge_demo
-	${kinect_bridge_demo_HEADERS}
-	${kinect_bridge_demo_SOURCES}
-	${kinect_bridge_demo_MOC}
-)
+    qt4_wrap_cpp(kinect_bridge_demo_MOC ${kinect_bridge_demo_HEADERS} OPTIONS -nw)
 
-target_link_libraries(kinect_bridge_demo
-	${Boost_LIBRARIES}
-	kinect_bridge
-	nestk
-)
+    add_executable(kinect_bridge_demo
+	    ${kinect_bridge_demo_HEADERS}
+	    ${kinect_bridge_demo_SOURCES}
+	    ${kinect_bridge_demo_MOC}
+    )
+
+    target_link_libraries(kinect_bridge_demo
+	    ${Boost_LIBRARIES}
+	    kinect_bridge
+	    nestk
+    )
+ENDIF(UNIX)
 
 ADD_SUBDIRECTORY(test)
