@@ -3,7 +3,7 @@
 ## contains most of the cmake find packages commands.
 INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
 
-FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system thread REQUIRED)
+FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system thread signals REQUIRED)
 
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 

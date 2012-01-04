@@ -13,6 +13,8 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
+#include <boost/signal.hpp>
+#include <boost/signals.hpp>
 #include <iostream>
 #include <vector>
 #include <time.h>
@@ -32,10 +34,11 @@
 using namespace kb;
 
 client::client(boost::asio::io_service& io_service,
-	       const std::string& host, const std::string& service, kb::client::packageHandler ph)
+	       const std::string& host, const std::string& service, kb::client::t_packageHandler ph)
     : connection_(io_service)
-    , m_packageHandler(ph)
 {
+
+    m_packageReadySig.connect(ph);
 
     cv::namedWindow("color");
     cv::namedWindow("depth");
@@ -118,11 +121,8 @@ void client::handle_read(const boost::system::error_code& e)
 
 	assert(package->m_color.empty() == false);
 
-	if (m_packageHandler != 0) {
-	    m_packageHandler(package);
-	}
-
-	//delete(package);
+	// call the package handler
+	m_packageReadySig(package);
 
 	TimeProfiler::start("read Package");
 	connection_.async_read(this->m_buffer,
@@ -147,12 +147,17 @@ PackageGrabber::PackageGrabber(const char* host, const char* port, const char* l
     : m_host(host)
     , m_port(port)
     , m_log_properties(log_properties)
-    , m_packageHandler(0)
 {
 }
 
-void PackageGrabber::setPackageHandler(kb::client::packageHandler ph) {
-    m_packageHandler = ph;
+PackageGrabber::~PackageGrabber()
+{
+    //delete m_client;
+}
+
+void PackageGrabber::setPackageHandler(const kb::client::t_packageHandler handler)
+{
+    m_packageHandler = handler;
 }
 
 void PackageGrabber::operator()() {
@@ -164,7 +169,7 @@ void PackageGrabber::operator()() {
     try
     {
 	boost::asio::io_service io_service;
-	kb::client client(io_service, m_host.c_str(), m_port.c_str(), m_packageHandler);
+	m_client = new kb::client(io_service, m_host.c_str(), m_port.c_str(), m_packageHandler);
 	io_service.run();
     } catch (std::exception& e)
     {

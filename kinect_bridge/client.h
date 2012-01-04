@@ -14,6 +14,8 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
+#include <boost/signal.hpp>
+
 #include <iostream>
 #include <vector>
 #include <time.h>
@@ -37,12 +39,11 @@ namespace kb {
 class client
 {
 public:
-    typedef void (*packageHandler)(const Package* package);
-
+    typedef void (*t_packageHandler)(const Package* package);
 
     /// Constructor starts the asynchronous connect operation.
     client(boost::asio::io_service& io_service,
-	   const std::string& host, const std::string& service, packageHandler ph = 0);
+	   const std::string& host, const std::string& service, t_packageHandler ph = 0);
     ~client();
 
     /// Handle completion of a connect operation.
@@ -56,27 +57,28 @@ private:
     /// The connection to the server.
     mutable connection connection_;
 
-    struct timespec m_time;
-    long m_nsec;
-    packageHandler m_packageHandler;
-
     /// The data received from the server.
     std::vector<Package*> m_buffer;
+
+    boost::signal<void (const Package*)> m_packageReadySig;
 };
 
 class PackageGrabber {
 public:
     PackageGrabber(const char* host, const char* port, const char* log_properties);
-    void setPackageHandler(kb::client::packageHandler ph);
+    ~PackageGrabber();
+    void setPackageHandler(const kb::client::t_packageHandler);
     void operator()();
 
     boost::thread* start();
-private:
+
+ private:
+    kb::client* m_client;
     std::string m_host;
     std::string m_port;
     std::string m_log_properties;
     boost::thread* m_thread;
-    kb::client::packageHandler m_packageHandler;
+    kb::client::t_packageHandler m_packageHandler;
 };
 
 } // namespace kb
