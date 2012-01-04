@@ -65,7 +65,8 @@ ADD_EXECUTABLE(kinect_bridge_client
 TARGET_LINK_LIBRARIES(kinect_bridge_client
 	kinect_bridge
 	boost_system
-	nestk
+	opencv_core
+	opencv_highgui
 )
 
 #######################################

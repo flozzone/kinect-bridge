@@ -1,33 +1,4 @@
 #include "kbDebug.h"
-#include <QDebug>
-
-template <class T>
-std::ostream& qtDbg(std::ostream &str, const T &t)
-{
-	QString buf;
-	QDebug(&buf) << t;
-	return str << buf.toStdString();
-}
-
-std::ostream& operator <<(std::ostream &str, const QVariant &v)
-{
-	return qtDbg(str, v);
-}
-
-std::ostream& operator <<(std::ostream &str, const QString &v)
-{
-	return (str << v.toStdString());
-}
-
-std::ostream& operator <<(std::ostream &str, const QByteArray &v)
-{
-	return qtDbg(str, v);
-}
-
-std::ostream& operator <<(std::ostream &str, const QList<QVariantHash> &v)
-{
-	return qtDbg(str, v);
-}
 
 void kbDebug_init()
 {
