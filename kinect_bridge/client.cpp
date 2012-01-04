@@ -25,7 +25,6 @@
 
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
-#include "stock.hpp"
 
 #include <ntk/ntk.h>
 

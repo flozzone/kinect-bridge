@@ -28,14 +28,11 @@ DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
-#include "stock.hpp"
 
 #include <ntk/ntk.h>
 
 
 namespace kb {
-
-
 /// Downloads stock quote information from a server.
 class client
 {
