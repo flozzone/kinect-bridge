@@ -1,7 +1,10 @@
+
+if(UNIX)
 ## nestk/UseNestk.cmake.in defines variable to use nestk.
 ## It itself includes nestk/deps/cmake/UseEmbeddedNestkDeps.cmake that
 ## contains most of the cmake find packages commands.
 INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
+endif(UNIX)
 
 FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system thread signals REQUIRED)
 
