@@ -55,7 +55,7 @@ set(kinect_bridge_SOURCES
 	package_buffer.cpp
 )
 
-add_library(kinect_bridge
+add_library(kinect_bridge STATIC
 	${kinect_bridge_HEADERS}
 	${kinect_bridge_SOURCES}
 )
