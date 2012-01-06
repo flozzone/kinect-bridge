@@ -22,7 +22,10 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
-#include <vector>
+
+#define _SECURE_SCL 0
+#define _HAS_ITERATOR_DEBUGGING 0
+//#include <vector>
 
 #include "kinect_bridge/cvmat_serialization.h"
 #include "kinect_bridge/kbDebug.h"
@@ -75,9 +78,9 @@ public:
 	    boost::archive::binary_oarchive archive(out);
 
 
-	    Package package = *t.back();
-	    delete(t.back());
-	    t.pop_back();
+	    //Package package = *t.back();
+	    //delete(t.back());
+	    //t.pop_back();
 
 
 	    //assert(!package.m_color.empty());
@@ -194,15 +197,18 @@ public:
 		// start
 		archive >> *package;
 
-		t.push_back(package);
+		//t.push_back(package);
+		t = package;
 
-		DBG_TRACE("buffer-size: " << t.size());
+		//DBG_TRACE("buffer-size: " << t.size());
 	    }
 	    // catch boost::archive::archive_exception to catch eof
 	    catch (boost::archive::archive_exception & e)
 	    {
 		if (e.code == boost::archive::archive_exception::input_stream_error) {
-		    t.push_back(package);
+			DBG_ERROR("archive exception");
+			t = package;
+		    //t.push_back(package);
 		    //DBG_TRACE("connection read: package->m_header.m_version: " << package->m_header.m_version);
 		} else {
 		    DBG_ERROR("archive exception cought code:" << e.code);

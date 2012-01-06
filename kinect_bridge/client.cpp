@@ -8,28 +8,25 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //
 
+#define _SECURE_SCL 0
+#define _HAS_ITERATOR_DEBUGGING 0
+
 #include "client.h"
 
-#include <boost/asio.hpp>
-#include <boost/bind.hpp>
-#include <boost/thread.hpp>
-#include <boost/signal.hpp>
-#include <boost/signals.hpp>
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <time.h>
 #include <math.h>
 
-#include "kinect_bridge/kbDebug.h"
-
 #include "kinect_bridge/connection.h" // Must come before boost/serialization headers.
-#include <boost/serialization/vector.hpp>
+//#include <boost/serialization/vector.hpp>
 
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
 
 #include <opencv2/opencv.hpp>
 
+#include "kinect_bridge/kbDebug.h"
 
 using namespace kb;
 
@@ -37,15 +34,17 @@ client::client(boost::asio::io_service& io_service,
 	       const std::string& host, const std::string& service, kb::client::t_packageHandler ph)
     : connection_(io_service)
 {
+	DBG_ENTER("");
+    //m_packageReadySig.connect(ph);
 
-    m_packageReadySig.connect(ph);
-
+	DBG_TRACE("create namedWindows");
     cv::namedWindow("color");
     cv::namedWindow("depth");
     //cvNamedWindow("color");
     //cvNamedWindow("depth");
 
     // Resolve the host name into an IP address.
+	DBG_TRACE("Resolve host name");
     boost::asio::ip::tcp::resolver resolver(io_service);
     boost::asio::ip::tcp::resolver::query query(host, service);
     boost::asio::ip::tcp::resolver::iterator endpoint_iterator =
@@ -68,12 +67,12 @@ void client::handle_connect(const boost::system::error_code& e,
     if (!e)
     {
 	//assert(this->m_buffer.size() == 0);
-	DBG_ERROR("bufferPointer (handle_connect)=" << &this->m_buffer);
+	//DBG_ERROR("bufferPointer (handle_connect)=" << &this->m_buffer);
 	// Successfully established connection. Start operation to read the list
 	// of stocks. The connection::async_read() function will automatically
 	// decode the data that is read from the underlying socket.
 	//TimeProfiler::start("read Package");
-	connection_.async_read(this->m_buffer,
+	connection_.async_read(this->m_package,
 			       boost::bind(&client::handle_read, this,
 					   boost::asio::placeholders::error));
     }
@@ -107,8 +106,9 @@ void client::handle_read(const boost::system::error_code& e)
 	//DBG_TRACE("client: buffer size: "  <<  m_buffer.size());
 
 
-	kb::Package* package = m_buffer.back();
-	m_buffer.pop_back();
+	//kb::Package* package = m_buffer.back();
+	kb::Package* package = m_package;
+	//m_buffer.pop_back();
 
 	char tmp[255];
 	//sprintf(tmp, "Read package (%i) took: %.5f sec speed: %0.2f pack/sec", package->m_header.m_version, sec, TimeProfiler::getPPP());
@@ -118,15 +118,16 @@ void client::handle_read(const boost::system::error_code& e)
 	assert(package->m_color.empty() == false);
 
 	cv::imshow("color", package->m_color);
-	cv::imshow("depth", package->m_depth);
+	//cv::imshow("depth", package->m_depth);
+	cv::waitKey(0);
 
 	assert(package->m_color.empty() == false);
 
 	// call the package handler
-	m_packageReadySig(package);
+	//m_packageReadySig(package);
 
 	//TimeProfiler::start("read Package");
-	connection_.async_read(this->m_buffer,
+	connection_.async_read(this->m_package,
 			       boost::bind(&client::handle_read, this,
 					   boost::asio::placeholders::error));
     }
@@ -144,10 +145,9 @@ void client::handle_read(const boost::system::error_code& e)
     // work to do and the client will exit.
 }
 
-PackageGrabber::PackageGrabber(const char* host, const char* port, const char* log_properties)
+PackageGrabber::PackageGrabber(const char* host, const char* port)
     : m_host(host)
     , m_port(port)
-    , m_log_properties(log_properties)
 {
 }
 
@@ -162,15 +162,15 @@ void PackageGrabber::setPackageHandler(const kb::client::t_packageHandler handle
 }
 
 void PackageGrabber::operator()() {
-    kbDebug_init();
-    kbDebug_loadConfig(m_log_properties);
-
     DBG_ENTER("");
 
     try
     {
 	boost::asio::io_service io_service;
+	DBG_TRACE("create client");
 	m_client = new kb::client(io_service, m_host.c_str(), m_port.c_str(), m_packageHandler);
+	DBG_TRACE("end create client");
+
 	io_service.run();
     } catch (std::exception& e)
     {
@@ -190,6 +190,8 @@ void myPackage(const Package* package) {
 
 int main(int argc, char* argv[])
 {
+	std::cout << "starting client" << std::endl;
+
     // Check command line arguments.
     if (argc != 4)
     {
@@ -197,8 +199,15 @@ int main(int argc, char* argv[])
 	return 1;
     }
 
-    kb::PackageGrabber pgrabber(argv[1], argv[2], argv[3]);
-    pgrabber.setPackageHandler(&myPackage);
+	std::cout << "load logging" << std::endl;
+	kbDebug_init();
+	kbDebug_loadConfig(argv[3]);
+	std::cout << "finished loading logging" << std::endl;
+	DBG_INFO("Starting grabber");
+	std::cout << "testlog" << std::endl;
+
+    kb::PackageGrabber pgrabber(argv[1], argv[2]);
+    //pgrabber.setPackageHandler(&myPackage);
     pgrabber.start()->join();
 
     return 0;
