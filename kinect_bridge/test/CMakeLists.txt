@@ -11,7 +11,7 @@ add_executable(test_cvmatserialization
 
 target_link_libraries(test_cvmatserialization
 	${Boost_LIBRARIES}
-	nestk
+	${OpenCV_LIBS}
 	kinect_bridge
 )
 
@@ -24,7 +24,7 @@ add_executable(test_package
 )
 
 target_link_libraries(test_package
-	nestk
+	${OpenCV_LIBS}
 	kinect_bridge
 )
 
@@ -52,7 +52,7 @@ add_executable(test_buffer
 )
 
 target_link_libraries(test_buffer
-	nestk
+	${OpenCV_LIBS}
 	kinect_bridge
 )
 

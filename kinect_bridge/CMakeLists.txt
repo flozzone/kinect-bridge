@@ -141,6 +141,6 @@ IF(UNIX)
     )
 ENDIF(UNIX)
 
-if(UNIX)
+#if(UNIX)
 ADD_SUBDIRECTORY(test)
-endif(UNIX)
+#endif(UNIX)

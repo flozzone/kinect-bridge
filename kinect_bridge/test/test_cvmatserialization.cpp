@@ -155,7 +155,7 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerializedCompressed)
     try {
 	namespace io = boost::iostreams;
 	io::filtering_ostream out;
-	out.push(io::zlib_compressor(io::zlib::best_speed));
+	//out.push(io::zlib_compressor(io::zlib::best_speed));
 	out.push(ofs);
 
 	boost::archive::text_oarchive oa(out);
@@ -177,7 +177,7 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
     try {
 	namespace io = boost::iostreams;
 	io::filtering_istream in;
-	in.push(io::zlib_decompressor());
+	//in.push(io::zlib_decompressor());
 	in.push(ifs);
 
 	boost::archive::text_iarchive ia(in);
