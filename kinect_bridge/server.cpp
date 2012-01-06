@@ -40,8 +40,8 @@ server::server(boost::asio::io_service& io_service, unsigned short port)
 
     initKinect();
 
-    Package* package = new Package();
-    m_buffer.push_back(package);
+    //Package* package = new Package();
+    //m_buffer.push_back(package);
 
     // Start an accept operation for a new connection.
     connection_ptr new_conn(new connection(acceptor_.get_io_service()));
@@ -116,9 +116,10 @@ void server::send_package(const boost::system::error_code& e, connection_ptr con
 	// Prepare the depth view, mapped onto rgb frame.
 	package->m_depth = normalize_toMat1b(image.mappedDepth());
 
-	m_buffer.push_back(package);
+	//m_buffer.push_back(package);
+	m_package = package;
 
-	conn->async_write(this->m_buffer,
+	conn->async_write(this->m_package,
 			  boost::bind(&server::send_package, this,
 				      boost::asio::placeholders::error, conn));
     }

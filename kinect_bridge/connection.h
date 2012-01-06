@@ -80,7 +80,7 @@ public:
 	    boost::archive::text_oarchive archive(out);
 
 
-	    //Package package = *t.back();
+	    Package package = *t;
 	    //delete(t.back());
 	    //t.pop_back();
 

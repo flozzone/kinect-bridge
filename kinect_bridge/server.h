@@ -60,7 +60,8 @@ private:
     boost::asio::ip::tcp::acceptor acceptor_;
 
     /// The data to be sent to each client.
-    std::vector<Package*> m_buffer;
+    //std::vector<Package*> m_buffer;
+    Package* m_package;
 
     OpenniDriver m_ni_driver;
     OpenniGrabber m_grabber;
