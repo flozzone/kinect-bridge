@@ -75,7 +75,6 @@ public:
 	    // define zlib filter chain
 	    boost::iostreams::filtering_ostream out;
 	    //out.push(boost::iostreams::zlib_compressor(boost::iostreams::zlib::best_speed));
-
 	    out.push(archive_stream);
 
 
@@ -221,14 +220,6 @@ public:
 		} else {
 		    DBG_ERROR("archive exception cought code:" << e.code);
 		}
-	    }
-	    catch (std::exception& e)
-	    {
-		DBG_ERROR("std::exception cought");
-		// Unable to decode data.
-		boost::system::error_code error(boost::asio::error::invalid_argument);
-		boost::get<0>(handler)(error);
-		return;
 	    }
 
 	    // Inform caller that data has been received ok.
