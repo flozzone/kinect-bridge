@@ -42,6 +42,9 @@ SET(ENV{CMAKE_BINARY_DIR} ${CMAKE_BINARY_DIR})
 #######################################
 
 set(kinect_bridge_HEADERS
+	portable_binary_archive.hpp
+	portable_binary_iarchive.hpp
+	portable_binary_oarchive.hpp
 	kbDebug.h
 	cvmat_serialization.h
 	package.h
@@ -50,6 +53,8 @@ set(kinect_bridge_HEADERS
 )
 
 set(kinect_bridge_SOURCES
+	portable_binary_iarchive.cpp
+	portable_binary_oarchive.cpp
 	kbDebug.cpp
 	package.cpp
 	package_buffer.cpp

@@ -16,6 +16,8 @@
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
+#include "portable_binary_iarchive.hpp"
+#include "portable_binary_oarchive.hpp"
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/zlib.hpp>
 #include <boost/bind.hpp>
@@ -77,7 +79,9 @@ public:
 	    out.push(archive_stream);
 
 	    // Serialize the data first so we know how large it is.
-	    boost::archive::text_oarchive archive(out);
+	    //boost::archive::text_oarchive archive(out);
+	    //boost::archive::binary_oarchive archive(out);
+	    portable_binary_oarchive archive(out);
 
 
 	    Package package = *t;
@@ -194,7 +198,9 @@ public:
 		boost::iostreams::filtering_istream in;
 		//in.push(boost::iostreams::zlib_decompressor());
 		in.push(archive_stream);
-		boost::archive::text_iarchive archive(in);
+		//boost::archive::text_iarchive archive(in);
+		//boost::archive::binary_iarchive archive(in);
+		portable_binary_iarchive archive(in);
 
 		// start
 		archive >> *package;
