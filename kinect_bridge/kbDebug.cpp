@@ -46,19 +46,17 @@ float TimeProfiler::getPPP() {
 }
 
 void TimeProfiler::start(const char* id) {
-    helpers::Time current;
-    DBG_TRACE("start at usec" << helpers::Time::gettimeofday().usec());
-    times[string(id)] = current.usec();
+    long usec = helpers::Time::gettimeofday().usec();
+    usec += (helpers::Time::gettimeofday().sec() * pow((double)10, 6));
+    times[string(id)] = usec;
 }
 
 float TimeProfiler::stop(const char* id) {
     if (times[string(id)] != 0) {
-	helpers::Time current;
-	long diff = (current.usec() - times[string(id)]);
-	float sec = diff / pow((double)10, 9);
-
-
-	//sprintf(tmp, "TIME: %s took: %.5f sec", id, sec);
+	long usec = helpers::Time::gettimeofday().usec();
+	usec += (helpers::Time::gettimeofday().sec() * pow((double)10, 6));
+	long diff = (usec - times[string(id)]);
+	float sec = diff / pow((double)10, 6);
 
 	times.erase(string(id));
 
