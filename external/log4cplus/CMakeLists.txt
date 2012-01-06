@@ -117,8 +117,8 @@ elseif (WIN32)
     include/log4cplus/helpers/syncprims-win32.h)
 
   # Comment out the following lines if you want non-Unicode version.
-  add_definitions (-DUNICODE -D_UNICODE -UMBCS -U_MBCS)
-  set (log4cplus_postfix "${log4cplus_postfix}U")
+  #add_definitions (-DUNICODE -D_UNICODE -UMBCS -U_MBCS)
+  #set (log4cplus_postfix "${log4cplus_postfix}U")
   
   #add_definitions (-DLOG4CPLUS_STATIC)
   #set (log4cplus_postfix "${log4cplus_postfix}S")

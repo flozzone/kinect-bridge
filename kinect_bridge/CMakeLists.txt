@@ -6,11 +6,11 @@ if(UNIX)
 INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
 endif(UNIX)
 
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
-LINK_DIRECTORIES("${PROJECT_BINARY_DIR}/lib")
-LINK_DIRECTORIES("c:/Users/Rene/kinect-bridge/.build/lib")
-LINK_DIRECTORIES("c:/Users/Rene/kinect-bridge/.build/lib/Debug")
+LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
 
+# boost
 if(WIN32)
 	set(BOOST_ROOT "c:/Program Files/boost/boost_1_47")
 	set(OpenCV_DIR "c:/Program Files/OpenCV2.3.1/opencv")
@@ -23,16 +23,14 @@ LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 # CMP0015 - link_directories() treats paths relative to the source dir
 cmake_policy(SET CMP0015 NEW)
 
+# OpenCV
 FIND_PACKAGE(OpenCV COMPONENTS core highgui)
 
 if(WIN32)
 	LINK_DIRECTORIES("c:/Program Files/OpenCV2.3.1/opencv/build/x86/vc9/lib")
-	#LINK_DIRECTORIES("c:/Program Files/boost/boost_1_47/lib")
-#	INCLUDE_DIRECTORIES("c:/Program Files/OpenCV2.3.1/opencv/build/include")
-	#INCLUDE_DIRECTORIES("c:/Program Files/boost/boost_1_47/boost")
 endif(WIN32)
 
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
+# log4cplus
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/external/log4cplus/include)
 
 
@@ -57,7 +55,7 @@ set(kinect_bridge_SOURCES
 	package_buffer.cpp
 )
 
-add_library(kinect_bridge SHARED
+add_library(kinect_bridge
 	${kinect_bridge_HEADERS}
 	${kinect_bridge_SOURCES}
 )
