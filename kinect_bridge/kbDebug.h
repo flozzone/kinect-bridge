@@ -61,7 +61,6 @@ using namespace std;
 void kbDebug_init();
 void kbDebug_loadConfig(const string &filename, bool forceAdditivityOff = true);
 
-#ifdef TEST
 
 class TimeProfiler {
     static map<string, long> times;
@@ -71,51 +70,19 @@ class TimeProfiler {
     static float m_pppAv;
     static long m_pppCount;
 public:
-    static void setSpeed(size_t size, float sec) {
-	m_speedCount++;
-	m_speedAv += ((float)size / sec);
-    }
+    static void setSpeed(size_t size, float sec);
 
-    static float getSpeed() {
-	return (m_speedAv / m_speedCount);
-    }
+    static float getSpeed();
 
-    static void setPPP(float sec) {
-	m_pppCount++;
-	m_pppAv += ((float)1/sec);
-    }
+    static void setPPP(float sec);
 
-    static float getPPP() {
-	return (m_pppAv / m_pppCount);
-    }
+    static float getPPP();
 
-	static void start(const char* id) {
-		struct timespec current;
-	assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-	times[string(id)] = (current.tv_sec * pow((double)10, 9)) + current.tv_nsec;
-    }
+    static void start(const char* id);
 
-    static float stop(const char* id) {
-	if (times[string(id)] != 0) {
-		struct timespec current;
-	    //char tmp[255];
-
-	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-	    long diff = ((current.tv_sec* pow((double)10, 9)) + current.tv_nsec) - times[string(id)];
-	    float sec = diff / pow((double)10, 9);
-
-
-	    //sprintf(tmp, "TIME: %s took: %.5f sec", id, sec);
-
-	    times.erase(string(id));
-
-	    return sec;
-	}
-	return -1;
-    }
+    static float stop(const char* id);
 };
 
-#endif // TEST
 
 
 #endif // __KINECT_BRIDGE_KBDEBUG_H
