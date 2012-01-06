@@ -31,7 +31,7 @@ DBG_IMPL_DEBUG_MODULE(KinectBridgeClient);
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
 
-#include <ntk/ntk.h>
+#include <opencv2/opencv.hpp>
 
 
 namespace kb {

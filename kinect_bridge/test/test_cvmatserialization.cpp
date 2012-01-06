@@ -6,8 +6,7 @@
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/zlib.hpp>
 #include <fstream>
-#include <ntk/ntk.h>
-#include <ntk/utils/debug.h>
+#include <opencv2/opencv.hpp>
 
 #ifdef KINECT_DEBUG
 #include <ntk/camera/openni_grabber.h>
@@ -21,6 +20,8 @@
 #include "kinect_bridge/cvmat_serialization.h"
 
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
+
+using namespace std;
 
 struct Fixture {
 #ifdef KINECT_DEBUG
@@ -99,7 +100,7 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerialized)
 	    boost::archive::text_oarchive oa(ofs);
 	    oa << this->tempImage;
 	} catch (boost::archive::archive_exception e) {
-	    BOOST_FAIL(QString("archive has thrown exception with code" + e.code).data());
+	    BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
 	}
 
 	ofs.close();
@@ -116,7 +117,7 @@ BOOST_AUTO_TEST_CASE(loadSerializedConvertToIplAndDisplay)
 	boost::archive::text_iarchive ia(ifs);
 	ia >> this->tempImage;
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(QString("archive has thrown exception with code" + e.code).data());
+	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
     }
 
     ifs.close();
@@ -160,7 +161,7 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerializedCompressed)
 	boost::archive::text_oarchive oa(out);
 	oa << this->tempImage;
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(QString("archive has thrown exception with code" + e.code).data());
+	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
     }
 
     ofs.close();
@@ -183,7 +184,7 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
 
 	ia >> this->tempImage;
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(QString("archive has thrown exception with code" + e.code).data());
+	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
     }
 
     ifs.close();

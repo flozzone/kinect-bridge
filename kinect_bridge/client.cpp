@@ -28,7 +28,7 @@
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
 
-#include <ntk/ntk.h>
+#include <opencv2/opencv.hpp>
 
 
 using namespace kb;
@@ -72,7 +72,7 @@ void client::handle_connect(const boost::system::error_code& e,
 	// Successfully established connection. Start operation to read the list
 	// of stocks. The connection::async_read() function will automatically
 	// decode the data that is read from the underlying socket.
-	TimeProfiler::start("read Package");
+	//TimeProfiler::start("read Package");
 	connection_.async_read(this->m_buffer,
 			       boost::bind(&client::handle_read, this,
 					   boost::asio::placeholders::error));
@@ -98,8 +98,8 @@ void client::handle_connect(const boost::system::error_code& e,
 /// Handle completion of a read operation.
 void client::handle_read(const boost::system::error_code& e)
 {
-    float sec = TimeProfiler::stop("read Package");
-    TimeProfiler::setPPP(sec);
+    //float sec = TimeProfiler::stop("read Package");
+    //TimeProfiler::setPPP(sec);
 
     //DBG_ENTER("Finished reading package");
     if (e.value() == 0)
@@ -111,7 +111,8 @@ void client::handle_read(const boost::system::error_code& e)
 	m_buffer.pop_back();
 
 	char tmp[255];
-	sprintf(tmp, "Read package (%i) took: %.5f sec speed: %0.2f pack/sec", package->m_header.m_version, sec, TimeProfiler::getPPP());
+	//sprintf(tmp, "Read package (%i) took: %.5f sec speed: %0.2f pack/sec", package->m_header.m_version, sec, TimeProfiler::getPPP());
+	sprintf(tmp, "Read package (%i) took: SEC sec speed: SPEED pack/sec", package->m_header.m_version);
 	DBG_INFO(tmp);
 
 	assert(package->m_color.empty() == false);
@@ -124,7 +125,7 @@ void client::handle_read(const boost::system::error_code& e)
 	// call the package handler
 	m_packageReadySig(package);
 
-	TimeProfiler::start("read Package");
+	//TimeProfiler::start("read Package");
 	connection_.async_read(this->m_buffer,
 			       boost::bind(&client::handle_read, this,
 					   boost::asio::placeholders::error));

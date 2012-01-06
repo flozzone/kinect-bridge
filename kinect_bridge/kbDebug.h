@@ -1,7 +1,13 @@
 #ifndef __KINECT_BRIDGE_KBDEBUG_H
 #define __KINECT_BRIDGE_KBDEBUG_H
 
+#ifdef _MSC_VER       // Identifies MS compilers (crude test for Windows!)
+#include <Windows.h>
+#endif
+
 #include <math.h>
+#include <ctime>
+#include <string.h>
 
 
 //////////////////////////////////////////////////////////////////////
@@ -19,6 +25,7 @@
 #include <iomanip>
 
 using namespace log4cplus;
+using namespace std;
 
 // create static instance of debug module
 #define DBG_IMPL_DEBUG_MODULE( module ) static Logger debugModule = Logger::getInstance(#module)
@@ -55,10 +62,12 @@ using namespace log4cplus;
 #define DBG_SET_DEBUG_LEVEL( level ) debugModule.setLogLevel( level )
 
 void kbDebug_init();
-void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff = true);
+void kbDebug_loadConfig(const string &filename, bool forceAdditivityOff = true);
+
+#ifdef TEST
 
 class TimeProfiler {
-    static std::map<std::string, long> times;
+    static map<string, long> times;
 
     static float m_speedAv;
     static long m_speedCount;
@@ -83,31 +92,33 @@ public:
 	return (m_pppAv / m_pppCount);
     }
 
-    static void start(const char* id) {
-	struct timespec current;
+	static void start(const char* id) {
+		struct timespec current;
 	assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-	times[std::string(id)] = (current.tv_sec * pow(10, 9)) + current.tv_nsec;
+	times[string(id)] = (current.tv_sec * pow((double)10, 9)) + current.tv_nsec;
     }
 
     static float stop(const char* id) {
-	if (times[std::string(id)] != 0) {
-	    struct timespec current;
+	if (times[string(id)] != 0) {
+		struct timespec current;
 	    //char tmp[255];
 
 	    assert(clock_gettime(CLOCK_MONOTONIC, &current) == 0);
-	    long diff = ((current.tv_sec* pow(10, 9)) + current.tv_nsec) - times[std::string(id)];
-	    float sec = diff / pow(10, 9);
+	    long diff = ((current.tv_sec* pow((double)10, 9)) + current.tv_nsec) - times[string(id)];
+	    float sec = diff / pow((double)10, 9);
 
 
 	    //sprintf(tmp, "TIME: %s took: %.5f sec", id, sec);
 
-	    times.erase(std::string(id));
+	    times.erase(string(id));
 
 	    return sec;
 	}
 	return -1;
     }
 };
+
+#endif // TEST
 
 
 #endif // __KINECT_BRIDGE_KBDEBUG_H

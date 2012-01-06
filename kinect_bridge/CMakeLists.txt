@@ -6,12 +6,31 @@ if(UNIX)
 INCLUDE("${nestk_BINARY_DIR}/UseEmbeddedNestk.cmake")
 endif(UNIX)
 
-FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system thread signals REQUIRED)
-
-INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
-
-LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/lib")
+LINK_DIRECTORIES("${PROJECT_BINARY_DIR}/lib")
+LINK_DIRECTORIES("c:/Users/Rene/kinect-bridge/.build/lib")
+LINK_DIRECTORIES("c:/Users/Rene/kinect-bridge/.build/lib/Debug")
+
+if(WIN32)
+	set(BOOST_ROOT "c:/Program Files/boost/boost_1_47")
+	set(OpenCV_DIR "c:/Program Files/OpenCV2.3.1/opencv")
+endif(WIN32)
+
+FIND_PACKAGE(Boost COMPONENTS serialization unit_test_framework iostreams system thread signals REQUIRED)
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+
+# CMP0015 - link_directories() treats paths relative to the source dir
+cmake_policy(SET CMP0015 NEW)
+
+FIND_PACKAGE(OpenCV COMPONENTS core highgui)
+
+if(WIN32)
+	LINK_DIRECTORIES("c:/Program Files/OpenCV2.3.1/opencv/build/x86/vc9/lib")
+	#LINK_DIRECTORIES("c:/Program Files/boost/boost_1_47/lib")
+#	INCLUDE_DIRECTORIES("c:/Program Files/OpenCV2.3.1/opencv/build/include")
+	#INCLUDE_DIRECTORIES("c:/Program Files/boost/boost_1_47/boost")
+endif(WIN32)
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/external/log4cplus/include)
@@ -38,7 +57,7 @@ set(kinect_bridge_SOURCES
 	package_buffer.cpp
 )
 
-add_library(kinect_bridge
+add_library(kinect_bridge SHARED
 	${kinect_bridge_HEADERS}
 	${kinect_bridge_SOURCES}
 )
@@ -66,10 +85,9 @@ ADD_EXECUTABLE(kinect_bridge_client
 )
 
 TARGET_LINK_LIBRARIES(kinect_bridge_client
+	${Boost_LIBRARIES}
+	${OpenCV_LIBS}
 	kinect_bridge
-	boost_system
-	opencv_core
-	opencv_highgui
 )
 
 IF(UNIX)
@@ -92,7 +110,7 @@ IF(UNIX)
     )
 
     TARGET_LINK_LIBRARIES(kinect_bridge_server
-	    boost_system
+	    ${Boost_LIBRARIES}
 	    nestk
 	    kinect_bridge
     )
@@ -125,4 +143,6 @@ IF(UNIX)
     )
 ENDIF(UNIX)
 
+if(UNIX)
 ADD_SUBDIRECTORY(test)
+endif(UNIX)
