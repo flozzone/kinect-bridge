@@ -88,9 +88,9 @@ ADD_EXECUTABLE(kinect_bridge_client
 )
 
 TARGET_LINK_LIBRARIES(kinect_bridge_client
+	kinect_bridge
 	${Boost_LIBRARIES}
 	${OpenCV_LIBS}
-	kinect_bridge
 )
 
 IF(UNIX)
