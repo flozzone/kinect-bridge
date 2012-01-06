@@ -3,7 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <boost/serialization/split_free.hpp>
-//#include <boost/serialization/vector.hpp>
+#include <boost/serialization/vector.hpp>
 #include <boost/archive/archive_exception.hpp>
 #include <fstream>
 
