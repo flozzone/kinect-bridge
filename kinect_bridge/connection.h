@@ -78,24 +78,23 @@ public:
 
 	    out.push(archive_stream);
 
-	    // Serialize the data first so we know how large it is.
-	    //boost::archive::text_oarchive archive(out);
-	    //boost::archive::binary_oarchive archive(out);
-	    portable_binary_oarchive archive(out);
-
 
 	    Package package = *t;
 	    //delete(t.back());
 	    //t.pop_back();
-
-
 	    //assert(!package.m_color.empty());
 
 	    DBG_ERROR("Sent version " << version);
 	    package.m_header.m_version = version;
 	    version++;
 
-	    archive << package;
+	    {
+		// Serialize the data first so we know how large it is.
+		//boost::archive::text_oarchive archive(out);
+		//boost::archive::binary_oarchive archive(out);
+		portable_binary_oarchive archive(out);
+		archive << package;
+	    }
 
 	    outbound_data_ = archive_stream.str();
 	}
@@ -198,12 +197,13 @@ public:
 		boost::iostreams::filtering_istream in;
 		//in.push(boost::iostreams::zlib_decompressor());
 		in.push(archive_stream);
-		//boost::archive::text_iarchive archive(in);
-		//boost::archive::binary_iarchive archive(in);
-		portable_binary_iarchive archive(in);
 
-		// start
-		archive >> *package;
+		{
+		    //boost::archive::text_iarchive archive(in);
+		    //boost::archive::binary_iarchive archive(in);
+		    portable_binary_iarchive archive(in);
+		    archive >> *package;
+		}
 
 		//t.push_back(package);
 		t = package;
@@ -214,8 +214,8 @@ public:
 	    catch (boost::archive::archive_exception & e)
 	    {
 		if (e.code == boost::archive::archive_exception::input_stream_error) {
-			DBG_ERROR("archive exception");
-			t = package;
+		    DBG_ERROR("archive exception");
+		    t = package;
 		    //t.push_back(package);
 		    //DBG_TRACE("connection read: package->m_header.m_version: " << package->m_header.m_version);
 		} else {
