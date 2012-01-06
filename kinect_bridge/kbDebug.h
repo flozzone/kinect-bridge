@@ -1,9 +1,6 @@
 #ifndef __KINECT_BRIDGE_KBDEBUG_H
 #define __KINECT_BRIDGE_KBDEBUG_H
 
-#ifdef _MSC_VER       // Identifies MS compilers (crude test for Windows!)
-#include <Windows.h>
-#endif
 
 #include <math.h>
 #include <ctime>
