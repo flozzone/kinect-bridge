@@ -133,7 +133,7 @@ long TimeProfiler::getMsec()
 {
 	long usec = helpers::Time::gettimeofday().usec();
     usec += (helpers::Time::gettimeofday().sec() * 1000000);
-	DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
+	//DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
     return usec;
 }
 std::map<std::string, long> TimeProfiler::m_times = std::map<std::string, long>();
