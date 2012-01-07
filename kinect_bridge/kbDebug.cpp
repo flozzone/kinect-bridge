@@ -52,19 +52,64 @@ float TimeProfiler::getPPP() {
 
 void TimeProfiler::start(const char* id) {
 	m_times[string(id)] = getMsec();
+	m_bytes[string(id)] = 0;
 }
 
-float TimeProfiler::stop(const char* id) {
-	if (m_times[string(id)] != 0) {
-		t_ms msec = getMsec();
+void TimeProfiler::setBytes(const char*id, long bytes)
+{
+	if (m_times.find(string(id)) == m_times.end()) {
+		DBG_WARN("TimeProfiler: No data found for id " << id);
+		return;
+	}
+
+	m_bytes[string(id)] += bytes;
+	return;
+}
+
+TimeProfiler::t_status TimeProfiler::stop(const char* id, TimeProfiler::e_print print) {
+	t_status status;
+	status.bytes = -1;
+	status.speed = -1;
+	status.timeDiff = -1;
+
+	if (m_times.find(string(id)) == m_times.end()) {
+		DBG_WARN("TimeProfiler: No data found for id " << id);
+		return status;
+	}
+
+	// calculate timeDiff
+	t_ms msec = getMsec();
 	t_ms diff = (msec - m_times[string(id)]);
-	float sec = diff / 1000000.0;
+	status.timeDiff = diff / 1000000.0;
+
+	// calculate speed
+	status.speed = m_bytes[string(id)] / status.timeDiff;
+
+	// set bytes
+	status.bytes = m_bytes[string(id)];
+
+	char tmp[255];
+	tmp[0] = 0;
+	switch (print)
+	{
+	case print_all : {
+		sprintf(tmp, "TP[%s] took: %.3f sec, %0.2f kB/sec"
+			, id, status.timeDiff, status.speed/1000);
+		DBG_INFO(tmp);
+		break;
+	}
+	case print_time_only : {
+		sprintf(tmp, "TP[%s] took: %.3f sec"
+			, id, status.timeDiff);
+		DBG_INFO(tmp);
+		break;
+
+	}
+	}
 
 	m_times.erase(string(id));
-
-	return sec;
-    }
-    return -1;
+	m_bytes.erase(string(id));
+	return status;
 }
 
 #ifdef _MSC_VER // Identifies MS compilers
@@ -94,6 +139,7 @@ long TimeProfiler::getMsec()
 std::map<std::string, long> TimeProfiler::m_times = std::map<std::string, long>();
 #endif // _MSC_VER
 
+std::map<std::string, long> TimeProfiler::m_bytes = std::map<std::string, long>();
 float TimeProfiler::m_speedAv = 0;
 long TimeProfiler::m_speedCount = 0;
 float TimeProfiler::m_pppAv = 0;

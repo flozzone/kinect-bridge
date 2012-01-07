@@ -97,8 +97,7 @@ void client::handle_connect(const boost::system::error_code& e,
 /// Handle completion of a read operation.
 void client::handle_read(const boost::system::error_code& e)
 {
-    float sec = TimeProfiler::stop("read Package");
-    TimeProfiler::setPPP(sec);
+	TimeProfiler::t_status status = TimeProfiler::stop("read Package");
 
     //DBG_ENTER("Finished reading package");
     if (e.value() == 0)
@@ -111,8 +110,7 @@ void client::handle_read(const boost::system::error_code& e)
 	//m_buffer.pop_back();
 
 	char tmp[255];
-	sprintf(tmp, "Read package (%i) took: %.5f sec speed: %0.2f pack/sec", package->m_header.m_version, sec, TimeProfiler::getPPP());
-	//sprintf(tmp, "Read package (%i) took: SEC sec speed: SPEED pack/sec", package->m_header.m_version);
+	sprintf(tmp, "Read package (%i) took: %.3f sec speed: %0.2f pkg/sec, %0.2f kB/sec", package->m_header.m_version, status.timeDiff, 1/status.timeDiff, status.speed/1000);
 	DBG_INFO(tmp);
 
 	assert(package->m_color.empty() == false);

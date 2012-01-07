@@ -129,6 +129,7 @@ public:
 		    const boost::system::error_code&,
 		    T&, boost::tuple<Handler>)
 		= &connection::handle_read_header<T, Handler>;
+	TimeProfiler::start("read header");
 	boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
 				boost::bind(f,
 					    this, boost::asio::placeholders::error, boost::ref(t),
@@ -149,6 +150,9 @@ public:
 	}
 	else
 	{
+		TimeProfiler::setBytes("read header", header_length);
+		TimeProfiler::stop("read header", TimeProfiler::print_all);
+		TimeProfiler::setBytes("read Package", header_length);
 	    // Determine the length of the serialized data.
 	    std::istringstream is(std::string(inbound_header_, header_length));
 	    std::size_t inbound_data_size = 0;
@@ -167,6 +171,8 @@ public:
 			const boost::system::error_code&,
 			T&, boost::tuple<Handler>)
 		    = &connection::handle_read_data<T, Handler>;
+
+		TimeProfiler::start("read data");
 	    boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_),
 				    boost::bind(f, this,
 						boost::asio::placeholders::error, boost::ref(t), handler));
@@ -185,7 +191,11 @@ public:
 	}
 	else
 	{
+		TimeProfiler::setBytes("read data", inbound_data_.size());
+		TimeProfiler::stop("read data", TimeProfiler::print_all);
+		TimeProfiler::setBytes("read Package", inbound_data_.size());
 	    // Extract the data structure from the data just received.
+		TimeProfiler::start("init deserialization");
 	    Package* package = new Package();
 	    try
 	    {
@@ -196,13 +206,16 @@ public:
 		boost::iostreams::filtering_istream in;
 		//in.push(boost::iostreams::zlib_decompressor());
 		in.push(archive_stream);
-
+		TimeProfiler::stop("init deserialization", TimeProfiler::print_time_only);
+		TimeProfiler::start("deserialize");
 		{
 		    //boost::archive::text_iarchive archive(in);
 		    //boost::archive::binary_iarchive archive(in);
 		    portable_binary_iarchive archive(in);
 		    archive >> *package;
 		}
+		TimeProfiler::stop("deserialize", TimeProfiler::print_time_only);
+		
 
 		//t.push_back(package);
 		t = package;

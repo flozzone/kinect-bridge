@@ -74,12 +74,26 @@ class TimeProfiler {
 	typedef long t_ms;
 #endif // _MSC_VER
 
+	
 	static std::map<std::string, t_ms> m_times;
+	static std::map<std::string, long> m_bytes;
     static float m_speedAv;
     static long m_speedCount;
     static float m_pppAv;
     static long m_pppCount;
 public:
+	typedef struct s_status {
+		float timeDiff;
+		float speed;
+		long bytes;
+	} t_status;
+
+	enum e_print {
+		print_none,
+		print_all,
+		print_time_only,
+	};
+
     static void setSpeed(size_t size, float sec);
 
     static float getSpeed();
@@ -89,8 +103,9 @@ public:
     static float getPPP();
 
     static void start(const char* id);
+	static void setBytes(const char* id, long bytes);
 
-    static float stop(const char* id);
+    static t_status stop(const char* id, enum e_print print = print_none);
 private:
 #ifdef _MSC_VER // Identifies MS compilers
 	static ULONGLONG getMsec();
