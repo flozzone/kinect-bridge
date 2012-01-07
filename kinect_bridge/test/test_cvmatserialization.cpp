@@ -21,6 +21,15 @@
 
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
 
+
+#define OARCHIVE boost::archive::binary_oarchive
+#define IARCHIVE boost::archive::binary_iarchive
+#define STREAM_FLAGS  | std::ios::binary
+#define SOARCHIVE OARCHIVE oa(ofs);
+#define SIARCHIVE IARCHIVE ia(ifs);
+#define FOARCHIVE OARCHIVE oa(out);
+#define FIARCHIVE IARCHIVE ia(in);
+
 using namespace std;
 
 struct Fixture {
@@ -92,15 +101,15 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerialized)
     cvReleaseImage(&image);
     BOOST_CHECK(this->tempImage.empty() == false);
 
-    std::ofstream ofs("test_matrices_JpegToMat.bin", std::ios::out);
+	std::ofstream ofs("test_matrices_JpegToMat.bin", std::ios::out STREAM_FLAGS);
 
     { // use scope to ensure archive goes out of scope before stream
 
 	try {
-	    boost::archive::text_oarchive oa(ofs);
+	    SOARCHIVE
 	    oa << this->tempImage;
 	} catch (boost::archive::archive_exception e) {
-	    BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
+	    BOOST_FAIL(string("archive_exception:") << e.what());
 	}
 
 	ofs.close();
@@ -111,13 +120,13 @@ BOOST_AUTO_TEST_CASE(loadSerializedConvertToIplAndDisplay)
 {
     BOOST_CHECK(this->tempImage.empty() == true);
 
-    std::ifstream ifs("test_matrices_JpegToMat.bin", std::ios::in);
+	std::ifstream ifs("test_matrices_JpegToMat.bin", std::ios::in STREAM_FLAGS);
 
     try {
-	boost::archive::text_iarchive ia(ifs);
+	SIARCHIVE
 	ia >> this->tempImage;
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
+		BOOST_FAIL(string("archive_exception:") << e.what());
     }
 
     ifs.close();
@@ -150,18 +159,19 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerializedCompressed)
     cvReleaseImage(&image);
     BOOST_CHECK(this->tempImage.empty() == false);
 
-    std::ofstream ofs("test_matrices_JpegToMatCompressed.bin", std::ios::out);
+    std::ofstream ofs("test_matrices_JpegToMatCompressed.bin", std::ios::out STREAM_FLAGS);
 
     try {
 	namespace io = boost::iostreams;
 	io::filtering_ostream out;
 	//out.push(io::zlib_compressor(io::zlib::best_speed));
 	out.push(ofs);
-
-	boost::archive::text_oarchive oa(out);
-	oa << this->tempImage;
+	{
+		FOARCHIVE
+		oa << this->tempImage;
+	}
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
+	BOOST_FAIL(string("archive_exception:") << e.what());
     }
 
     ofs.close();
@@ -172,7 +182,7 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
 {
     BOOST_CHECK(this->tempImage.empty() == true);
 
-    std::ifstream ifs("test_matrices_JpegToMatCompressed.bin", std::ios::in);
+    std::ifstream ifs("test_matrices_JpegToMatCompressed.bin", std::ios::in STREAM_FLAGS);
 
     try {
 	namespace io = boost::iostreams;
@@ -180,11 +190,12 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
 	//in.push(io::zlib_decompressor());
 	in.push(ifs);
 
-	boost::archive::text_iarchive ia(in);
-
-	ia >> this->tempImage;
+	{
+		FIARCHIVE
+		ia >> this->tempImage;
+	}
     } catch (boost::archive::archive_exception e) {
-	BOOST_FAIL(string("archive has thrown exception with code" + e.code).c_str());
+	BOOST_FAIL(string("archive_exception:") << e.what());
     }
 
     ifs.close();
