@@ -197,12 +197,13 @@ int main(int argc, char* argv[])
 	return 1;
     }
 
-	std::cout << "load logging" << std::endl;
-	kbDebug_init();
-	kbDebug_loadConfig(argv[3]);
-	std::cout << "finished loading logging" << std::endl;
-	DBG_INFO("Starting grabber");
-	std::cout << "testlog" << std::endl;
+    std::cout << "load logging" << std::endl;
+    kbDebug_init();
+    kbDebug_loadConfig(argv[3]);
+    std::cout << "finished loading logging" << std::endl;
+    DBG_INFO("Starting grabber");
+    std::cout << "testlog" << std::endl;
+
 
     kb::PackageGrabber pgrabber(argv[1], argv[2]);
     //pgrabber.setPackageHandler(&myPackage);
