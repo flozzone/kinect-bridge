@@ -21,6 +21,11 @@
 #include <log4cplus/helpers/loglog.h>
 #include <iomanip>
 
+#ifdef _MSC_VER // Identifies MS compilers
+# include "Windows.h"
+#endif
+#include <ctime>
+
 using namespace log4cplus;
 using namespace std;
 
@@ -63,8 +68,13 @@ void kbDebug_loadConfig(const string &filename, bool forceAdditivityOff = true);
 
 
 class TimeProfiler {
-    static map<string, long> times;
+#ifdef _MSC_VER // Identifies MS compilers
+	typedef ULONGLONG t_ms;
+#else
+	typedef long t_ms;
+#endif // _MSC_VER
 
+	static std::map<std::string, t_ms> m_times;
     static float m_speedAv;
     static long m_speedCount;
     static float m_pppAv;
@@ -81,6 +91,12 @@ public:
     static void start(const char* id);
 
     static float stop(const char* id);
+private:
+#ifdef _MSC_VER // Identifies MS compilers
+	static ULONGLONG getMsec();
+#else
+	static long getMsec();
+#endif // _MSC_VER
 };
 
 

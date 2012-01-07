@@ -1,5 +1,10 @@
 #include "kbDebug.h"
 
+#ifdef _MSC_VER // Identifies MS compilers
+# include "Windows.h"
+#endif
+#include <ctime>
+
 DBG_IMPL_DEBUG_MODULE(KinectBridgeDebug);
 
 void kbDebug_init()
@@ -46,27 +51,49 @@ float TimeProfiler::getPPP() {
 }
 
 void TimeProfiler::start(const char* id) {
-    long usec = helpers::Time::gettimeofday().usec();
-    usec += (helpers::Time::gettimeofday().sec() * 1000000);
-	DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
-    times[string(id)] = usec;
+	m_times[string(id)] = getMsec();
 }
 
 float TimeProfiler::stop(const char* id) {
-    if (times[string(id)] != 0) {
-	long usec = helpers::Time::gettimeofday().usec();
-	usec += (helpers::Time::gettimeofday().sec() * 1000000);
-	long diff = (usec - times[string(id)]);
+	if (m_times[string(id)] != 0) {
+		t_ms msec = getMsec();
+	t_ms diff = (msec - m_times[string(id)]);
 	float sec = diff / 1000000.0;
 
-	times.erase(string(id));
+	m_times.erase(string(id));
 
 	return sec;
     }
     return -1;
 }
 
-std::map<std::string, long> TimeProfiler::times = std::map<std::string, long>();
+#ifdef _MSC_VER // Identifies MS compilers
+ULONGLONG TimeProfiler::getMsec()
+{
+	SYSTEMTIME systemTime;
+	GetSystemTime(&systemTime);
+
+	FILETIME fileTime;
+	SystemTimeToFileTime(&systemTime, &fileTime);
+
+	ULARGE_INTEGER uli;
+	uli.LowPart = fileTime.dwLowDateTime;
+	uli.HighPart = fileTime.dwHighDateTime;
+
+	return uli.QuadPart/10;
+}
+std::map<std::string, ULONGLONG> TimeProfiler::m_times = std::map<std::string, ULONGLONG>();
+#else
+long TimeProfiler::getMsec()
+{
+	long usec = helpers::Time::gettimeofday().usec();
+    usec += (helpers::Time::gettimeofday().sec() * 1000000);
+	DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
+    return usec;
+}
+std::map<std::string, long> TimeProfiler::m_times = std::map<std::string, long>();
+#endif // _MSC_VER
+
 float TimeProfiler::m_speedAv = 0;
 long TimeProfiler::m_speedCount = 0;
 float TimeProfiler::m_pppAv = 0;
