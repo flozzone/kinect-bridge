@@ -7,6 +7,10 @@
 #include <boost/archive/archive_exception.hpp>
 #include <fstream>
 
+#include "kbDebug.h"
+
+//DBG_IMPL_DEBUG_MODULE(KinectBridgeSerialization);
+
 BOOST_SERIALIZATION_SPLIT_FREE(::cv::Mat);
 namespace boost {
 namespace serialization {
@@ -23,6 +27,7 @@ void save(Archive & ar, const ::cv::Mat& m, const unsigned int version)
     ar & elem_type;
 
     const size_t data_size = m.cols * m.rows * elem_size;
+
     ar & boost::serialization::make_array(m.ptr(), data_size);
 }
 
@@ -41,7 +46,15 @@ void load(Archive & ar, ::cv::Mat& m, const unsigned int version)
     m.create(rows, cols, elem_type);
 
     size_t data_size = m.cols * m.rows * elem_size;
+
+    stringstream log;
+    log << "cv::Mat::load: version:" << version << " data_size:" << data_size/1024 << " kB";
+    TimeProfiler::debug(log.str().c_str());
+    TimeProfiler::start("deserialize make_array");
+
     ar & boost::serialization::make_array(m.ptr(), data_size);
+
+    TimeProfiler::stop("deserialize make_array", TimeProfiler::print_time_only);
 }
 // Try read next object from archive
 template<class Archive>

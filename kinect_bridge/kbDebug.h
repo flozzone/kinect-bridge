@@ -94,16 +94,9 @@ public:
 		print_time_only,
 	};
 
-    static void setSpeed(size_t size, float sec);
-
-    static float getSpeed();
-
-    static void setPPP(float sec);
-
-    static float getPPP();
-
     static void start(const char* id);
-	static void setBytes(const char* id, long bytes);
+    static void setBytes(const char* id, long bytes);
+    static void debug(const char* str);
 
     static t_status stop(const char* id, enum e_print print = print_none);
 private:

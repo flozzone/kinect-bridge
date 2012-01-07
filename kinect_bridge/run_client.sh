@@ -12,7 +12,12 @@ pushd "${CMAKE_BINARY_DIR}/bin" 1>/dev/null
 if [ "$1" == "-d" ]; then
 	gdb --args kinect_bridge_client $ARGS
 else
-        ./kinect_bridge_client $ARGS
+	if [ "$1" == "-cg" ]; then
+		CG_ARGS="--separate-threads=yes"
+		valgrind --tool=callgrind $CG_ARGS ./kinect_bridge_client $ARGS
+	else	
+	        ./kinect_bridge_client $ARGS
+	fi
 fi
 popd
 

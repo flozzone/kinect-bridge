@@ -11,7 +11,6 @@ void kbDebug_init()
 {
 }
 
-
 void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff)
 {
 
@@ -32,24 +31,6 @@ void kbDebug_loadConfig(const std::string &filename, bool forceAdditivityOff)
     }
 }
 
-void TimeProfiler::setSpeed(size_t size, float sec) {
-    m_speedCount++;
-    m_speedAv += ((float)size / sec);
-}
-
-float TimeProfiler::getSpeed() {
-    return (m_speedAv / m_speedCount);
-}
-
-void TimeProfiler::setPPP(float sec) {
-    m_pppCount++;
-    m_pppAv += ((float)1/sec);
-}
-
-float TimeProfiler::getPPP() {
-    return (m_pppAv / m_pppCount);
-}
-
 void TimeProfiler::start(const char* id) {
 	m_times[string(id)] = getMsec();
 	m_bytes[string(id)] = 0;
@@ -64,6 +45,11 @@ void TimeProfiler::setBytes(const char*id, long bytes)
 
 	m_bytes[string(id)] += bytes;
 	return;
+}
+
+void TimeProfiler::debug(const char* str)
+{
+    DBG_ERROR(str);
 }
 
 TimeProfiler::t_status TimeProfiler::stop(const char* id, TimeProfiler::e_print print) {
@@ -93,18 +79,20 @@ TimeProfiler::t_status TimeProfiler::stop(const char* id, TimeProfiler::e_print 
 	switch (print)
 	{
 	case print_all : {
-		sprintf(tmp, "TP[%s] took: %.3f sec, %0.2f kB/sec"
-			, id, status.timeDiff, status.speed/1000);
+		sprintf(tmp, "TP[%s] took: %.3f sec, %0.2f kB/sec size: %i kB"
+			, id, status.timeDiff, status.speed/1024, status.bytes/1024);
 		DBG_INFO(tmp);
 		break;
 	}
 	case print_time_only : {
 		sprintf(tmp, "TP[%s] took: %.3f sec"
 			, id, status.timeDiff);
-		DBG_INFO(tmp);
+		DBG_ERROR(tmp);
 		break;
 
 	}
+	case print_none : break;
+	default : break;
 	}
 
 	m_times.erase(string(id));
@@ -133,7 +121,7 @@ long TimeProfiler::getMsec()
 {
 	long usec = helpers::Time::gettimeofday().usec();
     usec += (helpers::Time::gettimeofday().sec() * 1000000);
-	DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
+	//DBG_TRACE("t.sec=" << helpers::Time::gettimeofday().sec() << " t.usecusec=" << helpers::Time::gettimeofday().sec() << " usec=" << usec);
     return usec;
 }
 std::map<std::string, long> TimeProfiler::m_times = std::map<std::string, long>();
