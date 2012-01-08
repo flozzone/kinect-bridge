@@ -2,6 +2,10 @@
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
+
+#include "kinect_bridge/portable_binary_iarchive.hpp"
+#include "kinect_bridge/portable_binary_oarchive.hpp"
+
 #include <boost/archive/archive_exception.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
 #include <boost/iostreams/filter/zlib.hpp>
@@ -24,8 +28,11 @@
 
 //#define OARCHIVE boost::archive::binary_oarchive
 //#define IARCHIVE boost::archive::binary_iarchive
-#define OARCHIVE boost::archive::text_oarchive
-#define IARCHIVE boost::archive::text_iarchive
+//#define OARCHIVE boost::archive::text_oarchive
+//#define IARCHIVE boost::archive::text_iarchive
+#define OARCHIVE portable_binary_oarchive
+#define IARCHIVE portable_binary_iarchive
+
 #define STREAM_FLAGS  | std::ios::binary
 #define SOARCHIVE OARCHIVE oa(ofs);
 #define SIARCHIVE IARCHIVE ia(ifs);

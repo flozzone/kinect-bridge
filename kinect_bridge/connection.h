@@ -36,10 +36,12 @@
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
 
-#define OARCHIVE boost::archive::text_oarchive
-#define IARCHIVE boost::archive::text_iarchive
 //#define OARCHIVE boost::archive::text_oarchive
 //#define IARCHIVE boost::archive::text_iarchive
+//#define OARCHIVE boost::archive::binary_oarchive
+//#define IARCHIVE boost::archive::binary_iarchive
+#define OARCHIVE portable_binary_oarchive
+#define IARCHIVE portable_binary_iarchive
 
 #define STREAM_FLAGS  | std::ios::binary
 #define FOARCHIVE OARCHIVE archive(out);
