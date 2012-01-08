@@ -1,0 +1,1787 @@
+~/projects/kinect-bridge ~/projects/kinect-bridge/kinect_bridge
+~/projects/kinect-bridge/kinect_bridge
+starting client
+load logging
+Using log configuration at /home/flozzone/projects/kinect-bridge/kinect_bridge/log.properties
+finished loading logging
+17:19:21,817 KinectBridgeClient INFO : Starting grabber
+testlog
+17:19:21,817 KinectBridgeClient TRACE: Enter operator(): 
+17:19:21,817 KinectBridgeClient TRACE: create client
+17:19:21,818 KinectBridgeClient TRACE: Enter client: 
+17:19:21,818 KinectBridgeClient TRACE: create namedWindows
+17:19:21,884 KinectBridgeClient TRACE: Resolve host name
+17:19:21,884 KinectBridgeClient TRACE: end create client
+17:19:21,909 KinectBridgeDebug INFO : TP[read header] took: 0.025 sec, 0.31 kB/sec size: 0 kB
+17:19:21,913 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 535760.94 kB/sec size: 1200 kB
+17:19:21,915 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:21,915 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:21,916 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:21,916 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:21,917 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:21,917 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:21,917 KinectBridgeClient INFO : Read package (1) took: 0.033 sec speed: 30.47 pkg/sec, 37442.95 kB/sec
+17:19:21,962 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 91.91 kB/sec size: 0 kB
+17:19:21,963 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1659895.62 kB/sec size: 1200 kB
+17:19:21,964 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:21,965 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:21,965 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:21,965 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:21,966 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:21,966 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:21,966 KinectBridgeClient INFO : Read package (2) took: 0.004 sec speed: 238.78 pkg/sec, 293437.19 kB/sec
+17:19:22,030 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 116.60 kB/sec size: 0 kB
+17:19:22,030 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2339385.00 kB/sec size: 1200 kB
+17:19:22,031 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,032 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,032 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,032 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,032 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,032 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,032 KinectBridgeClient INFO : Read package (3) took: 0.003 sec speed: 337.84 pkg/sec, 415173.97 kB/sec
+17:19:22,067 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 126.01 kB/sec size: 0 kB
+17:19:22,068 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1967384.50 kB/sec size: 1200 kB
+17:19:22,069 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,069 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,070 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,070 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,070 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,070 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,070 KinectBridgeClient INFO : Read package (4) took: 0.003 sec speed: 300.21 pkg/sec, 368932.78 kB/sec
+17:19:22,106 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 61.52 kB/sec size: 0 kB
+17:19:22,107 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2316804.00 kB/sec size: 1200 kB
+17:19:22,107 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,107 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,108 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,108 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,108 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,108 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,108 KinectBridgeClient INFO : Read package (5) took: 0.002 sec speed: 427.53 pkg/sec, 525401.88 kB/sec
+17:19:22,147 KinectBridgeDebug INFO : TP[read header] took: 0.004 sec, 2.22 kB/sec size: 0 kB
+17:19:22,148 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1683176.00 kB/sec size: 1200 kB
+17:19:22,149 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,149 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,150 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,150 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,150 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,150 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,150 KinectBridgeClient INFO : Read package (6) took: 0.006 sec speed: 155.64 pkg/sec, 191270.81 kB/sec
+17:19:22,185 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 107.02 kB/sec size: 0 kB
+17:19:22,186 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1793878.25 kB/sec size: 1200 kB
+17:19:22,187 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,187 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,187 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,188 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,188 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,188 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,188 KinectBridgeClient INFO : Read package (7) took: 0.003 sec speed: 368.87 pkg/sec, 453306.91 kB/sec
+17:19:22,223 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 61.52 kB/sec size: 0 kB
+17:19:22,224 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1502008.12 kB/sec size: 1200 kB
+17:19:22,225 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,225 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,228 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:22,228 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,228 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,228 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:22,229 KinectBridgeClient INFO : Read package (8) took: 0.006 sec speed: 175.87 pkg/sec, 216129.97 kB/sec
+17:19:22,264 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 52.08 kB/sec size: 0 kB
+17:19:22,264 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1907956.25 kB/sec size: 1200 kB
+17:19:22,265 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,266 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,267 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:22,267 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,268 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,268 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:22,268 KinectBridgeClient INFO : Read package (9) took: 0.005 sec speed: 207.30 pkg/sec, 254750.20 kB/sec
+17:19:22,320 KinectBridgeDebug INFO : TP[read header] took: 0.016 sec, 0.48 kB/sec size: 0 kB
+17:19:22,321 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1465329.00 kB/sec size: 1200 kB
+17:19:22,323 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,323 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,323 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,324 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,324 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,324 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,324 KinectBridgeClient INFO : Read package (10) took: 0.020 sec speed: 49.92 pkg/sec, 61344.53 kB/sec
+17:19:22,359 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 58.30 kB/sec size: 0 kB
+17:19:22,360 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2174102.25 kB/sec size: 1200 kB
+17:19:22,361 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,361 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,362 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,362 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,363 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,363 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,363 KinectBridgeClient INFO : Read package (11) took: 0.003 sec speed: 302.02 pkg/sec, 371161.28 kB/sec
+17:19:22,397 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 100.16 kB/sec size: 0 kB
+17:19:22,398 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1089024.00 kB/sec size: 1200 kB
+17:19:22,400 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,400 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,402 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,402 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,402 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,403 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,403 KinectBridgeClient INFO : Read package (12) took: 0.006 sec speed: 172.35 pkg/sec, 211808.86 kB/sec
+17:19:22,438 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 100.16 kB/sec size: 0 kB
+17:19:22,439 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2400208.75 kB/sec size: 1200 kB
+17:19:22,440 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,440 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,442 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,442 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,442 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,442 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,442 KinectBridgeClient INFO : Read package (13) took: 0.004 sec speed: 251.45 pkg/sec, 309005.53 kB/sec
+17:19:22,478 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 124.01 kB/sec size: 0 kB
+17:19:22,479 KinectBridgeDebug INFO : TP[read data] took: 0.000 sec, 2505437.25 kB/sec size: 1200 kB
+17:19:22,479 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,479 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,480 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,480 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,480 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,480 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,481 KinectBridgeClient INFO : Read package (14) took: 0.003 sec speed: 376.51 pkg/sec, 462693.91 kB/sec
+17:19:22,515 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 43.65 kB/sec size: 0 kB
+17:19:22,517 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 655078.88 kB/sec size: 1200 kB
+17:19:22,518 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,518 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,520 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,520 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,520 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,520 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,520 KinectBridgeClient INFO : Read package (15) took: 0.005 sec speed: 200.76 pkg/sec, 246720.55 kB/sec
+17:19:22,556 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 85.85 kB/sec size: 0 kB
+17:19:22,557 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2076305.38 kB/sec size: 1200 kB
+17:19:22,558 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,558 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,559 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,559 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,559 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,559 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,559 KinectBridgeClient INFO : Read package (16) took: 0.003 sec speed: 310.75 pkg/sec, 381887.81 kB/sec
+17:19:22,595 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 84.92 kB/sec size: 0 kB
+17:19:22,596 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1707118.75 kB/sec size: 1200 kB
+17:19:22,597 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,597 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,598 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,598 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,598 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,598 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,598 KinectBridgeClient INFO : Read package (17) took: 0.003 sec speed: 299.49 pkg/sec, 368048.81 kB/sec
+17:19:22,633 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 56.61 kB/sec size: 0 kB
+17:19:22,635 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1076326.88 kB/sec size: 1200 kB
+17:19:22,636 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,636 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,637 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,637 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,638 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,638 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,638 KinectBridgeClient INFO : Read package (18) took: 0.005 sec speed: 212.36 pkg/sec, 260971.55 kB/sec
+17:19:22,673 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 69.75 kB/sec size: 0 kB
+17:19:22,674 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1449401.50 kB/sec size: 1200 kB
+17:19:22,675 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,675 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,677 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,677 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,677 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,677 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,677 KinectBridgeClient INFO : Read package (19) took: 0.004 sec speed: 242.66 pkg/sec, 298207.97 kB/sec
+17:19:22,712 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 128.07 kB/sec size: 0 kB
+17:19:22,713 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2321285.50 kB/sec size: 1200 kB
+17:19:22,714 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,714 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,715 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,715 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,715 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,715 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,715 KinectBridgeClient INFO : Read package (20) took: 0.003 sec speed: 327.65 pkg/sec, 402658.91 kB/sec
+17:19:22,751 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 17.88 kB/sec size: 0 kB
+17:19:22,752 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1515283.50 kB/sec size: 1200 kB
+17:19:22,753 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,753 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,754 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,754 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,755 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,755 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,755 KinectBridgeClient INFO : Read package (21) took: 0.004 sec speed: 225.78 pkg/sec, 277470.09 kB/sec
+17:19:22,790 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 110.04 kB/sec size: 0 kB
+17:19:22,791 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1734255.12 kB/sec size: 1200 kB
+17:19:22,792 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,792 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,793 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,793 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,793 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,793 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:22,793 KinectBridgeClient INFO : Read package (22) took: 0.003 sec speed: 300.21 pkg/sec, 368932.78 kB/sec
+17:19:22,828 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 110.04 kB/sec size: 0 kB
+17:19:22,828 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2193975.50 kB/sec size: 1200 kB
+17:19:22,829 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,829 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,830 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,831 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,831 KinectBridgeClient INFO : Read package (23) took: 0.003 sec speed: 318.98 pkg/sec, 391998.44 kB/sec
+17:19:22,868 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 73.70 kB/sec size: 0 kB
+17:19:22,869 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2065584.38 kB/sec size: 1200 kB
+17:19:22,869 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,870 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,870 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,871 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,871 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,871 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,871 KinectBridgeClient INFO : Read package (24) took: 0.003 sec speed: 296.21 pkg/sec, 364015.09 kB/sec
+17:19:22,907 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 49.14 kB/sec size: 0 kB
+17:19:22,908 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1169692.50 kB/sec size: 1200 kB
+17:19:22,910 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,910 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,911 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,911 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,911 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,911 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,911 KinectBridgeClient INFO : Read package (25) took: 0.005 sec speed: 211.37 pkg/sec, 259757.98 kB/sec
+17:19:22,947 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 62.00 kB/sec size: 0 kB
+17:19:22,948 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1522975.25 kB/sec size: 1200 kB
+17:19:22,949 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,949 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,950 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,950 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,951 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,951 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,951 KinectBridgeClient INFO : Read package (26) took: 0.004 sec speed: 230.52 pkg/sec, 283290.69 kB/sec
+17:19:22,986 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 55.41 kB/sec size: 0 kB
+17:19:22,988 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1348432.00 kB/sec size: 1200 kB
+17:19:22,988 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:22,989 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:22,989 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:22,990 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:22,990 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:22,990 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:22,990 KinectBridgeClient INFO : Read package (27) took: 0.004 sec speed: 261.78 pkg/sec, 321705.50 kB/sec
+17:19:23,025 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 64.04 kB/sec size: 0 kB
+17:19:23,027 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1149525.38 kB/sec size: 1200 kB
+17:19:23,028 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,028 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,030 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,030 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,030 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,030 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,030 KinectBridgeClient INFO : Read package (28) took: 0.005 sec speed: 200.44 pkg/sec, 246324.91 kB/sec
+17:19:23,065 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 68.53 kB/sec size: 0 kB
+17:19:23,066 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1097991.25 kB/sec size: 1200 kB
+17:19:23,067 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,067 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,069 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,069 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,070 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,070 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,070 KinectBridgeClient INFO : Read package (29) took: 0.005 sec speed: 204.29 pkg/sec, 251055.17 kB/sec
+17:19:23,105 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 76.59 kB/sec size: 0 kB
+17:19:23,106 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 903013.19 kB/sec size: 1200 kB
+17:19:23,107 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,108 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,109 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,109 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,110 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,110 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,110 KinectBridgeClient INFO : Read package (30) took: 0.005 sec speed: 185.87 pkg/sec, 228422.86 kB/sec
+17:19:23,146 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 69.75 kB/sec size: 0 kB
+17:19:23,148 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 908481.81 kB/sec size: 1200 kB
+17:19:23,149 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,149 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,150 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,150 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,150 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,150 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,150 KinectBridgeClient INFO : Read package (31) took: 0.005 sec speed: 220.07 pkg/sec, 270447.84 kB/sec
+17:19:23,185 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 211.15 kB/sec size: 0 kB
+17:19:23,187 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1149525.38 kB/sec size: 1200 kB
+17:19:23,188 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,188 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,190 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,190 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,190 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,190 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:23,190 KinectBridgeClient INFO : Read package (32) took: 0.005 sec speed: 199.64 pkg/sec, 245341.38 kB/sec
+17:19:23,225 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 153.19 kB/sec size: 0 kB
+17:19:23,226 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1945064.00 kB/sec size: 1200 kB
+17:19:23,227 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,227 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,227 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,227 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,228 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,228 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,228 KinectBridgeClient INFO : Read package (33) took: 0.002 sec speed: 414.59 pkg/sec, 509500.41 kB/sec
+17:19:23,262 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 252.02 kB/sec size: 0 kB
+17:19:23,263 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2090774.38 kB/sec size: 1200 kB
+17:19:23,264 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,264 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,264 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,265 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,265 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,265 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,265 KinectBridgeClient INFO : Read package (34) took: 0.003 sec speed: 371.75 pkg/sec, 456845.72 kB/sec
+17:19:23,300 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:23,301 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1757107.50 kB/sec size: 1200 kB
+17:19:23,302 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,302 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,303 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,303 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,304 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,304 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,304 KinectBridgeClient INFO : Read package (35) took: 0.004 sec speed: 276.93 pkg/sec, 340325.41 kB/sec
+17:19:23,340 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:23,341 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 933933.44 kB/sec size: 1200 kB
+17:19:23,342 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,342 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,343 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,344 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,344 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,344 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,344 KinectBridgeClient INFO : Read package (36) took: 0.004 sec speed: 225.02 pkg/sec, 276533.53 kB/sec
+17:19:23,379 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:23,380 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1171977.00 kB/sec size: 1200 kB
+17:19:23,381 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,381 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,382 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,382 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,383 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,383 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,383 KinectBridgeClient INFO : Read package (37) took: 0.004 sec speed: 261.85 pkg/sec, 321789.72 kB/sec
+17:19:23,419 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 71.02 kB/sec size: 0 kB
+17:19:23,420 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1220859.00 kB/sec size: 1200 kB
+17:19:23,421 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,421 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,422 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,422 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,423 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,423 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,423 KinectBridgeClient INFO : Read package (38) took: 0.004 sec speed: 230.04 pkg/sec, 282704.19 kB/sec
+17:19:23,458 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 89.80 kB/sec size: 0 kB
+17:19:23,460 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1107107.50 kB/sec size: 1200 kB
+17:19:23,461 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,461 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,461 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,461 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,462 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,462 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,462 KinectBridgeClient INFO : Read package (39) took: 0.003 sec speed: 302.39 pkg/sec, 371610.22 kB/sec
+17:19:23,496 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 137.06 kB/sec size: 0 kB
+17:19:23,498 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1174270.50 kB/sec size: 1200 kB
+17:19:23,499 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,499 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,501 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:23,501 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,501 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,502 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:23,502 KinectBridgeClient INFO : Read package (40) took: 0.005 sec speed: 188.22 pkg/sec, 231303.39 kB/sec
+17:19:23,538 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 260.42 kB/sec size: 0 kB
+17:19:23,540 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 941258.38 kB/sec size: 1200 kB
+17:19:23,541 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,541 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,542 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,542 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,543 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,543 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,543 KinectBridgeClient INFO : Read package (41) took: 0.005 sec speed: 216.83 pkg/sec, 266460.31 kB/sec
+17:19:23,578 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 84.01 kB/sec size: 0 kB
+17:19:23,579 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1161766.25 kB/sec size: 1200 kB
+17:19:23,580 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,580 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,581 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,581 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,582 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,582 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,582 KinectBridgeClient INFO : Read package (42) took: 0.004 sec speed: 233.59 pkg/sec, 287062.62 kB/sec
+17:19:23,617 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:23,619 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1005955.12 kB/sec size: 1200 kB
+17:19:23,620 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,620 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,621 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,621 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,621 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,621 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,621 KinectBridgeClient INFO : Read package (43) took: 0.004 sec speed: 239.75 pkg/sec, 294633.19 kB/sec
+17:19:23,656 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:23,657 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1403631.00 kB/sec size: 1200 kB
+17:19:23,658 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,658 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,659 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,659 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,659 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,659 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,659 KinectBridgeClient INFO : Read package (44) took: 0.003 sec speed: 314.66 pkg/sec, 386694.47 kB/sec
+17:19:23,694 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 137.06 kB/sec size: 0 kB
+17:19:23,695 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1697460.38 kB/sec size: 1200 kB
+17:19:23,696 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,696 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,697 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,697 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,697 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,697 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,697 KinectBridgeClient INFO : Read package (45) took: 0.003 sec speed: 357.27 pkg/sec, 439055.03 kB/sec
+17:19:23,731 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:23,732 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1986928.00 kB/sec size: 1200 kB
+17:19:23,733 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,733 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,736 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.003 sec
+17:19:23,736 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,737 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,737 KinectBridgeDebug ERROR: TP[deserialize] took: 0.005 sec
+17:19:23,738 KinectBridgeClient INFO : Read package (46) took: 0.006 sec speed: 156.37 pkg/sec, 192168.09 kB/sec
+17:19:23,775 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 110.04 kB/sec size: 0 kB
+17:19:23,776 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1123693.38 kB/sec size: 1200 kB
+17:19:23,778 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:23,778 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,779 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,780 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,780 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,780 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,780 KinectBridgeClient INFO : Read package (47) took: 0.005 sec speed: 185.22 pkg/sec, 227619.02 kB/sec
+17:19:23,815 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 156.25 kB/sec size: 0 kB
+17:19:23,816 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1772680.25 kB/sec size: 1200 kB
+17:19:23,817 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,817 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,818 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,818 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,818 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,818 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,818 KinectBridgeClient INFO : Read package (48) took: 0.003 sec speed: 338.07 pkg/sec, 415454.72 kB/sec
+17:19:23,852 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 110.04 kB/sec size: 0 kB
+17:19:23,854 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1184703.38 kB/sec size: 1200 kB
+17:19:23,855 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,855 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,856 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,856 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,857 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,857 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,857 KinectBridgeClient INFO : Read package (49) took: 0.005 sec speed: 219.39 pkg/sec, 269617.19 kB/sec
+17:19:23,893 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 137.06 kB/sec size: 0 kB
+17:19:23,894 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1377846.75 kB/sec size: 1200 kB
+17:19:23,895 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,895 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,895 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,895 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,895 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,896 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,896 KinectBridgeClient INFO : Read package (50) took: 0.003 sec speed: 319.80 pkg/sec, 393001.28 kB/sec
+17:19:23,930 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 177.56 kB/sec size: 0 kB
+17:19:23,931 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1657602.88 kB/sec size: 1200 kB
+17:19:23,932 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,932 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,933 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,934 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,934 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,934 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:23,934 KinectBridgeClient INFO : Read package (51) took: 0.004 sec speed: 240.10 pkg/sec, 295057.62 kB/sec
+17:19:23,970 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 325.52 kB/sec size: 0 kB
+17:19:23,971 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1793878.25 kB/sec size: 1200 kB
+17:19:23,972 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:23,972 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:23,972 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:23,973 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:23,973 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:23,973 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:23,973 KinectBridgeClient INFO : Read package (52) took: 0.003 sec speed: 395.10 pkg/sec, 485545.25 kB/sec
+17:19:24,007 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 93.01 kB/sec size: 0 kB
+17:19:24,009 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1261939.50 kB/sec size: 1200 kB
+17:19:24,010 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,010 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,011 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,011 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,011 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,011 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,011 KinectBridgeClient INFO : Read package (53) took: 0.004 sec speed: 269.61 pkg/sec, 331333.25 kB/sec
+17:19:24,045 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 166.22 kB/sec size: 0 kB
+17:19:24,047 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1215911.38 kB/sec size: 1200 kB
+17:19:24,048 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,048 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,049 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,049 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,050 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,050 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,050 KinectBridgeClient INFO : Read package (54) took: 0.005 sec speed: 212.54 pkg/sec, 261193.39 kB/sec
+17:19:24,087 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 107.02 kB/sec size: 0 kB
+17:19:24,088 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1138619.12 kB/sec size: 1200 kB
+17:19:24,090 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,090 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,091 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,091 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,091 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,091 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,091 KinectBridgeClient INFO : Read package (55) took: 0.004 sec speed: 240.04 pkg/sec, 294986.78 kB/sec
+17:19:24,125 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:24,126 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1610878.50 kB/sec size: 1200 kB
+17:19:24,127 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,127 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,128 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,128 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,128 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,128 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,128 KinectBridgeClient INFO : Read package (56) took: 0.003 sec speed: 343.52 pkg/sec, 422162.50 kB/sec
+17:19:24,163 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:24,164 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1275350.12 kB/sec size: 1200 kB
+17:19:24,165 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,165 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,166 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,166 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,166 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,166 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,167 KinectBridgeClient INFO : Read package (57) took: 0.003 sec speed: 287.44 pkg/sec, 353238.03 kB/sec
+17:19:24,201 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 139.51 kB/sec size: 0 kB
+17:19:24,203 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 959316.19 kB/sec size: 1200 kB
+17:19:24,204 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,204 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,206 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:24,206 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,207 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,207 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:24,207 KinectBridgeClient INFO : Read package (58) took: 0.006 sec speed: 167.20 pkg/sec, 205469.83 kB/sec
+17:19:24,244 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 107.02 kB/sec size: 0 kB
+17:19:24,246 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1121593.00 kB/sec size: 1200 kB
+17:19:24,247 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,247 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,248 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,248 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,248 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,248 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,248 KinectBridgeClient INFO : Read package (59) took: 0.004 sec speed: 243.78 pkg/sec, 299589.22 kB/sec
+17:19:24,284 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 200.32 kB/sec size: 0 kB
+17:19:24,285 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1068659.38 kB/sec size: 1200 kB
+17:19:24,286 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,286 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,288 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,288 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,288 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,288 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,288 KinectBridgeClient INFO : Read package (60) took: 0.005 sec speed: 209.21 pkg/sec, 257095.19 kB/sec
+17:19:24,324 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 217.01 kB/sec size: 0 kB
+17:19:24,325 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1494526.12 kB/sec size: 1200 kB
+17:19:24,326 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,326 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,327 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,327 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,327 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,327 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,327 KinectBridgeClient INFO : Read package (61) took: 0.003 sec speed: 305.72 pkg/sec, 375700.09 kB/sec
+17:19:24,363 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 116.60 kB/sec size: 0 kB
+17:19:24,364 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1260614.00 kB/sec size: 1200 kB
+17:19:24,365 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,365 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,366 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,366 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,366 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,366 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,366 KinectBridgeClient INFO : Read package (62) took: 0.003 sec speed: 298.06 pkg/sec, 366293.59 kB/sec
+17:19:24,402 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 211.15 kB/sec size: 0 kB
+17:19:24,402 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1886956.75 kB/sec size: 1200 kB
+17:19:24,403 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,403 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,404 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,404 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,404 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,404 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,404 KinectBridgeClient INFO : Read package (63) took: 0.003 sec speed: 381.68 pkg/sec, 469051.56 kB/sec
+17:19:24,439 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 78.91 kB/sec size: 0 kB
+17:19:24,440 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1964164.50 kB/sec size: 1200 kB
+17:19:24,440 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,440 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,441 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,441 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,441 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,441 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,441 KinectBridgeClient INFO : Read package (64) took: 0.003 sec speed: 399.04 pkg/sec, 490389.06 kB/sec
+17:19:24,476 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 312.50 kB/sec size: 0 kB
+17:19:24,477 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1548521.88 kB/sec size: 1200 kB
+17:19:24,478 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,478 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,479 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,479 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,479 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,479 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,479 KinectBridgeClient INFO : Read package (65) took: 0.003 sec speed: 322.79 pkg/sec, 396680.09 kB/sec
+17:19:24,513 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 110.04 kB/sec size: 0 kB
+17:19:24,514 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1690288.00 kB/sec size: 1200 kB
+17:19:24,515 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,516 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,517 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,517 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,517 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,518 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,518 KinectBridgeClient INFO : Read package (66) took: 0.005 sec speed: 219.11 pkg/sec, 269262.72 kB/sec
+17:19:24,553 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 166.22 kB/sec size: 0 kB
+17:19:24,555 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 901656.25 kB/sec size: 1200 kB
+17:19:24,556 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,556 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,558 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,558 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,558 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,559 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,559 KinectBridgeClient INFO : Read package (67) took: 0.006 sec speed: 175.78 pkg/sec, 216016.00 kB/sec
+17:19:24,594 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:24,595 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1695062.88 kB/sec size: 1200 kB
+17:19:24,596 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,596 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,596 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,596 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,597 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,597 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,597 KinectBridgeClient INFO : Read package (68) took: 0.003 sec speed: 357.91 pkg/sec, 439840.72 kB/sec
+17:19:24,632 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:24,633 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 884380.62 kB/sec size: 1200 kB
+17:19:24,635 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,635 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,639 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,639 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,639 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,640 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:24,640 KinectBridgeClient INFO : Read package (69) took: 0.008 sec speed: 122.85 pkg/sec, 150972.38 kB/sec
+17:19:24,678 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 260.42 kB/sec size: 0 kB
+17:19:24,678 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1673785.88 kB/sec size: 1200 kB
+17:19:24,679 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,679 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,681 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,681 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,681 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,681 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,681 KinectBridgeClient INFO : Read package (70) took: 0.004 sec speed: 257.73 pkg/sec, 316730.69 kB/sec
+17:19:24,717 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 108.51 kB/sec size: 0 kB
+17:19:24,718 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1151731.75 kB/sec size: 1200 kB
+17:19:24,720 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,720 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,721 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,721 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,721 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,721 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,721 KinectBridgeClient INFO : Read package (71) took: 0.004 sec speed: 246.97 pkg/sec, 303510.75 kB/sec
+17:19:24,756 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 107.02 kB/sec size: 0 kB
+17:19:24,757 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 995111.50 kB/sec size: 1200 kB
+17:19:24,759 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,759 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,760 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,760 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,760 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,760 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,760 KinectBridgeClient INFO : Read package (72) took: 0.005 sec speed: 218.96 pkg/sec, 269085.81 kB/sec
+17:19:24,796 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 153.19 kB/sec size: 0 kB
+17:19:24,797 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1711989.38 kB/sec size: 1200 kB
+17:19:24,798 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,798 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,800 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,800 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,800 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,801 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,801 KinectBridgeClient INFO : Read package (73) took: 0.005 sec speed: 217.49 pkg/sec, 267271.62 kB/sec
+17:19:24,837 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 147.41 kB/sec size: 0 kB
+17:19:24,838 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1901909.00 kB/sec size: 1200 kB
+17:19:24,840 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:24,840 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,844 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.003 sec
+17:19:24,844 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,844 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,845 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:24,845 KinectBridgeClient INFO : Read package (74) took: 0.008 sec speed: 130.16 pkg/sec, 159952.50 kB/sec
+17:19:24,883 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 229.78 kB/sec size: 0 kB
+17:19:24,884 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1296009.12 kB/sec size: 1200 kB
+17:19:24,885 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,885 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,886 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,886 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,887 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,887 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:24,887 KinectBridgeClient INFO : Read package (75) took: 0.004 sec speed: 240.85 pkg/sec, 295981.47 kB/sec
+17:19:24,922 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 132.42 kB/sec size: 0 kB
+17:19:24,923 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1346918.62 kB/sec size: 1200 kB
+17:19:24,924 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,924 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,925 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,925 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,925 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,925 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,925 KinectBridgeClient INFO : Read package (76) took: 0.004 sec speed: 275.03 pkg/sec, 337985.44 kB/sec
+17:19:24,960 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:24,961 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1397094.88 kB/sec size: 1200 kB
+17:19:24,962 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:24,962 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:24,963 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:24,963 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:24,963 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:24,963 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:24,963 KinectBridgeClient INFO : Read package (77) took: 0.003 sec speed: 344.35 pkg/sec, 423180.09 kB/sec
+17:19:24,998 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 89.80 kB/sec size: 0 kB
+17:19:24,999 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1646233.88 kB/sec size: 1200 kB
+17:19:25,000 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,001 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,002 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:25,003 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,003 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,003 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:25,003 KinectBridgeClient INFO : Read package (78) took: 0.005 sec speed: 187.41 pkg/sec, 230306.41 kB/sec
+17:19:25,040 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 55.41 kB/sec size: 0 kB
+17:19:25,042 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 648354.69 kB/sec size: 1200 kB
+17:19:25,043 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,044 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,045 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:25,046 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,046 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,046 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,046 KinectBridgeClient INFO : Read package (79) took: 0.006 sec speed: 157.41 pkg/sec, 193438.53 kB/sec
+17:19:25,080 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:25,081 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1423611.50 kB/sec size: 1200 kB
+17:19:25,083 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,083 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,084 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,084 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,084 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,084 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,085 KinectBridgeClient INFO : Read package (80) took: 0.004 sec speed: 243.90 pkg/sec, 299735.38 kB/sec
+17:19:25,119 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 260.42 kB/sec size: 0 kB
+17:19:25,120 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1472520.88 kB/sec size: 1200 kB
+17:19:25,121 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,121 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,122 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,122 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,122 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,122 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,122 KinectBridgeClient INFO : Read package (81) took: 0.003 sec speed: 331.35 pkg/sec, 407195.16 kB/sec
+17:19:25,157 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 132.42 kB/sec size: 0 kB
+17:19:25,158 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1222102.25 kB/sec size: 1200 kB
+17:19:25,159 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,159 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,163 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.003 sec
+17:19:25,163 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,163 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,163 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:25,163 KinectBridgeClient INFO : Read package (82) took: 0.007 sec speed: 150.53 pkg/sec, 184993.98 kB/sec
+17:19:25,199 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:25,200 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 983692.25 kB/sec size: 1200 kB
+17:19:25,201 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,201 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,203 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,203 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,203 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,204 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,204 KinectBridgeClient INFO : Read package (83) took: 0.005 sec speed: 202.43 pkg/sec, 248768.22 kB/sec
+17:19:25,240 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 120.19 kB/sec size: 0 kB
+17:19:25,242 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 753834.50 kB/sec size: 1200 kB
+17:19:25,243 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,244 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,245 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:25,246 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,246 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,246 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,246 KinectBridgeClient INFO : Read package (84) took: 0.006 sec speed: 166.25 pkg/sec, 204308.41 kB/sec
+17:19:25,281 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:25,282 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1284908.38 kB/sec size: 1200 kB
+17:19:25,283 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,284 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,285 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,285 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,286 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,286 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,286 KinectBridgeClient INFO : Read package (85) took: 0.005 sec speed: 213.54 pkg/sec, 262420.44 kB/sec
+17:19:25,321 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 252.02 kB/sec size: 0 kB
+17:19:25,322 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1437250.88 kB/sec size: 1200 kB
+17:19:25,323 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,323 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,324 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,324 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,324 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,324 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,325 KinectBridgeClient INFO : Read package (86) took: 0.003 sec speed: 292.65 pkg/sec, 359647.38 kB/sec
+17:19:25,360 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:25,360 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1526850.50 kB/sec size: 1200 kB
+17:19:25,361 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,361 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,362 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,362 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,362 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,362 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,362 KinectBridgeClient INFO : Read package (87) took: 0.003 sec speed: 350.14 pkg/sec, 430292.34 kB/sec
+17:19:25,397 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 84.01 kB/sec size: 0 kB
+17:19:25,398 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1227100.75 kB/sec size: 1200 kB
+17:19:25,399 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,399 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,400 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,400 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,400 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,400 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,400 KinectBridgeClient INFO : Read package (88) took: 0.003 sec speed: 308.55 pkg/sec, 379177.72 kB/sec
+17:19:25,435 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 144.68 kB/sec size: 0 kB
+17:19:25,436 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2214215.00 kB/sec size: 1200 kB
+17:19:25,437 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,437 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,437 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,438 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,439 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,439 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,439 KinectBridgeClient INFO : Read package (89) took: 0.004 sec speed: 274.42 pkg/sec, 337243.44 kB/sec
+17:19:25,476 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:25,477 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1116376.25 kB/sec size: 1200 kB
+17:19:25,478 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,478 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,479 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,479 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,479 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,480 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,480 KinectBridgeClient INFO : Read package (90) took: 0.004 sec speed: 242.31 pkg/sec, 297774.41 kB/sec
+17:19:25,515 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:25,516 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1470716.38 kB/sec size: 1200 kB
+17:19:25,517 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,517 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,518 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,518 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,518 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,518 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,519 KinectBridgeClient INFO : Read package (91) took: 0.003 sec speed: 308.55 pkg/sec, 379177.72 kB/sec
+17:19:25,553 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 96.45 kB/sec size: 0 kB
+17:19:25,555 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 936849.75 kB/sec size: 1200 kB
+17:19:25,556 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,556 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,557 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,557 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,557 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,557 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,557 KinectBridgeClient INFO : Read package (92) took: 0.004 sec speed: 251.00 pkg/sec, 308462.59 kB/sec
+17:19:25,592 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 312.50 kB/sec size: 0 kB
+17:19:25,593 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1653036.50 kB/sec size: 1200 kB
+17:19:25,594 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,594 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,595 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,595 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,596 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,596 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,596 KinectBridgeClient INFO : Read package (93) took: 0.004 sec speed: 269.61 pkg/sec, 331333.25 kB/sec
+17:19:25,631 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 217.01 kB/sec size: 0 kB
+17:19:25,632 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1653036.50 kB/sec size: 1200 kB
+17:19:25,633 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,633 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,635 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:25,635 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,636 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,636 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:25,636 KinectBridgeClient INFO : Read package (94) took: 0.005 sec speed: 198.77 pkg/sec, 244268.55 kB/sec
+17:19:25,673 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:25,674 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2037528.88 kB/sec size: 1200 kB
+17:19:25,674 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,674 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,675 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,675 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,676 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,676 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,676 KinectBridgeClient INFO : Read package (95) took: 0.003 sec speed: 337.61 pkg/sec, 414893.66 kB/sec
+17:19:25,712 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 147.41 kB/sec size: 0 kB
+17:19:25,714 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1352992.62 kB/sec size: 1200 kB
+17:19:25,714 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,715 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,715 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,715 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,716 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,716 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,716 KinectBridgeClient INFO : Read package (96) took: 0.003 sec speed: 290.11 pkg/sec, 356517.28 kB/sec
+17:19:25,751 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 82.24 kB/sec size: 0 kB
+17:19:25,753 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1011040.06 kB/sec size: 1200 kB
+17:19:25,754 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,754 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,755 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,755 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,756 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,756 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,756 KinectBridgeClient INFO : Read package (97) took: 0.005 sec speed: 218.53 pkg/sec, 268556.59 kB/sec
+17:19:25,790 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 156.25 kB/sec size: 0 kB
+17:19:25,791 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1589542.38 kB/sec size: 1200 kB
+17:19:25,792 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,792 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,793 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,793 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,793 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,793 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,793 KinectBridgeClient INFO : Read package (98) took: 0.003 sec speed: 365.63 pkg/sec, 449329.06 kB/sec
+17:19:25,827 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 139.51 kB/sec size: 0 kB
+17:19:25,828 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1500130.62 kB/sec size: 1200 kB
+17:19:25,829 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,829 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,830 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,830 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,830 KinectBridgeClient INFO : Read package (99) took: 0.003 sec speed: 338.75 pkg/sec, 416299.12 kB/sec
+17:19:25,865 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 130.21 kB/sec size: 0 kB
+17:19:25,867 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1039951.88 kB/sec size: 1200 kB
+17:19:25,868 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,868 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,869 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,869 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,870 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,870 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:25,870 KinectBridgeClient INFO : Read package (100) took: 0.004 sec speed: 227.48 pkg/sec, 279553.00 kB/sec
+17:19:25,904 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 75.85 kB/sec size: 0 kB
+17:19:25,906 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 725138.62 kB/sec size: 1200 kB
+17:19:25,907 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,907 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,908 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,908 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,909 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,909 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,909 KinectBridgeClient INFO : Read package (101) took: 0.004 sec speed: 225.99 pkg/sec, 277720.91 kB/sec
+17:19:25,944 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 142.05 kB/sec size: 0 kB
+17:19:25,945 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1294611.12 kB/sec size: 1200 kB
+17:19:25,946 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,946 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,947 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,947 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,947 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,947 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,947 KinectBridgeClient INFO : Read package (102) took: 0.003 sec speed: 321.65 pkg/sec, 395276.62 kB/sec
+17:19:25,982 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 186.01 kB/sec size: 0 kB
+17:19:25,982 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1556555.75 kB/sec size: 1200 kB
+17:19:25,983 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:25,984 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:25,984 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:25,984 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:25,985 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:25,985 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:25,985 KinectBridgeClient INFO : Read package (103) took: 0.003 sec speed: 301.11 pkg/sec, 370043.69 kB/sec
+17:19:26,020 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 260.42 kB/sec size: 0 kB
+17:19:26,021 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1225847.25 kB/sec size: 1200 kB
+17:19:26,022 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,023 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,024 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,024 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,024 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,024 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,024 KinectBridgeClient INFO : Read package (104) took: 0.004 sec speed: 267.52 pkg/sec, 328762.69 kB/sec
+17:19:26,059 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 236.74 kB/sec size: 0 kB
+17:19:26,060 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1536625.50 kB/sec size: 1200 kB
+17:19:26,061 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,061 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,062 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,062 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,062 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,063 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,063 KinectBridgeClient INFO : Read package (105) took: 0.003 sec speed: 297.00 pkg/sec, 364988.12 kB/sec
+17:19:26,098 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 147.41 kB/sec size: 0 kB
+17:19:26,099 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1812846.75 kB/sec size: 1200 kB
+17:19:26,099 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,100 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,100 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,100 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,100 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,100 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,100 KinectBridgeClient INFO : Read package (106) took: 0.003 sec speed: 359.45 pkg/sec, 441737.94 kB/sec
+17:19:26,136 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 76.59 kB/sec size: 0 kB
+17:19:26,137 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1191762.12 kB/sec size: 1200 kB
+17:19:26,138 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,138 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,140 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:26,140 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,141 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,141 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:26,141 KinectBridgeClient INFO : Read package (107) took: 0.005 sec speed: 183.08 pkg/sec, 224993.58 kB/sec
+17:19:26,178 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:26,180 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 767330.25 kB/sec size: 1200 kB
+17:19:26,181 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,181 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,183 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,183 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,183 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,184 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,184 KinectBridgeClient INFO : Read package (108) took: 0.005 sec speed: 182.85 pkg/sec, 224705.61 kB/sec
+17:19:26,220 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 104.17 kB/sec size: 0 kB
+17:19:26,222 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 640055.75 kB/sec size: 1200 kB
+17:19:26,223 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,224 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,224 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,225 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,225 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,225 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,225 KinectBridgeClient INFO : Read package (109) took: 0.005 sec speed: 202.06 pkg/sec, 248315.81 kB/sec
+17:19:26,261 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:26,261 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1610878.50 kB/sec size: 1200 kB
+17:19:26,262 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,263 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,263 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,263 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,263 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,263 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,263 KinectBridgeClient INFO : Read package (110) took: 0.003 sec speed: 350.02 pkg/sec, 430141.72 kB/sec
+17:19:26,298 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 150.24 kB/sec size: 0 kB
+17:19:26,299 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1602275.75 kB/sec size: 1200 kB
+17:19:26,299 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,300 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,300 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,300 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,300 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,300 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,300 KinectBridgeClient INFO : Read package (111) took: 0.003 sec speed: 344.59 pkg/sec, 423471.75 kB/sec
+17:19:26,338 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 82.24 kB/sec size: 0 kB
+17:19:26,339 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1685540.00 kB/sec size: 1200 kB
+17:19:26,340 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,340 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,340 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,341 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,341 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,341 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,341 KinectBridgeClient INFO : Read package (112) took: 0.003 sec speed: 345.66 pkg/sec, 424789.16 kB/sec
+17:19:26,378 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 63.00 kB/sec size: 0 kB
+17:19:26,379 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 790582.62 kB/sec size: 1200 kB
+17:19:26,381 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:26,381 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,384 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:26,384 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,386 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:26,386 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:26,386 KinectBridgeClient INFO : Read package (113) took: 0.009 sec speed: 116.12 pkg/sec, 142697.97 kB/sec
+17:19:26,424 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 186.01 kB/sec size: 0 kB
+17:19:26,425 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1115338.75 kB/sec size: 1200 kB
+17:19:26,426 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,427 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,428 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,428 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,428 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,428 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,429 KinectBridgeClient INFO : Read package (114) took: 0.005 sec speed: 218.20 pkg/sec, 268146.41 kB/sec
+17:19:26,463 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 186.01 kB/sec size: 0 kB
+17:19:26,464 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1320247.00 kB/sec size: 1200 kB
+17:19:26,465 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,465 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,466 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,467 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,467 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,467 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,467 KinectBridgeClient INFO : Read package (115) took: 0.004 sec speed: 253.61 pkg/sec, 311670.06 kB/sec
+17:19:26,503 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 223.21 kB/sec size: 0 kB
+17:19:26,504 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1901909.00 kB/sec size: 1200 kB
+17:19:26,505 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,505 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,506 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,506 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,506 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,506 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,506 KinectBridgeClient INFO : Read package (116) took: 0.003 sec speed: 381.10 pkg/sec, 468336.50 kB/sec
+17:19:26,541 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:26,542 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1283534.25 kB/sec size: 1200 kB
+17:19:26,543 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,544 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,545 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,545 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,545 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,545 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,545 KinectBridgeClient INFO : Read package (117) took: 0.004 sec speed: 228.36 pkg/sec, 280638.28 kB/sec
+17:19:26,580 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:26,581 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1376266.62 kB/sec size: 1200 kB
+17:19:26,582 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,582 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,583 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,583 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,583 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,583 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,583 KinectBridgeClient INFO : Read package (118) took: 0.003 sec speed: 337.72 pkg/sec, 415033.78 kB/sec
+17:19:26,619 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 66.21 kB/sec size: 0 kB
+17:19:26,620 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1085085.38 kB/sec size: 1200 kB
+17:19:26,621 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,621 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,622 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,622 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,623 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,623 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,623 KinectBridgeClient INFO : Read package (119) took: 0.005 sec speed: 212.18 pkg/sec, 260750.06 kB/sec
+17:19:26,660 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 269.40 kB/sec size: 0 kB
+17:19:26,660 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1857747.00 kB/sec size: 1200 kB
+17:19:26,661 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,661 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,662 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,662 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,662 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,662 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,662 KinectBridgeClient INFO : Read package (120) took: 0.003 sec speed: 371.47 pkg/sec, 456506.31 kB/sec
+17:19:26,697 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:26,698 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1852013.12 kB/sec size: 1200 kB
+17:19:26,699 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,699 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,699 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,699 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,700 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,700 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,700 KinectBridgeClient INFO : Read package (121) took: 0.003 sec speed: 363.11 pkg/sec, 446229.12 kB/sec
+17:19:26,736 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 130.21 kB/sec size: 0 kB
+17:19:26,737 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 887651.19 kB/sec size: 1200 kB
+17:19:26,739 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,739 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,741 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:26,741 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,742 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,742 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:26,743 KinectBridgeClient INFO : Read package (122) took: 0.007 sec speed: 141.28 pkg/sec, 173624.61 kB/sec
+17:19:26,780 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 116.60 kB/sec size: 0 kB
+17:19:26,782 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 603978.12 kB/sec size: 1200 kB
+17:19:26,784 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,790 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,791 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,791 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,791 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,791 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,791 KinectBridgeClient INFO : Read package (123) took: 0.011 sec speed: 87.26 pkg/sec, 107235.17 kB/sec
+17:19:26,827 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 130.21 kB/sec size: 0 kB
+17:19:26,828 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1823867.00 kB/sec size: 1200 kB
+17:19:26,829 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,829 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,830 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,830 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,830 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,830 KinectBridgeClient INFO : Read package (124) took: 0.003 sec speed: 296.82 pkg/sec, 364771.47 kB/sec
+17:19:26,866 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:26,867 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1507669.00 kB/sec size: 1200 kB
+17:19:26,868 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,868 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,869 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,869 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,869 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,869 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,869 KinectBridgeClient INFO : Read package (125) took: 0.003 sec speed: 303.21 pkg/sec, 372624.31 kB/sec
+17:19:26,905 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 114.89 kB/sec size: 0 kB
+17:19:26,906 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1390619.38 kB/sec size: 1200 kB
+17:19:26,907 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,907 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,908 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,908 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,909 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,909 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,909 KinectBridgeClient INFO : Read package (126) took: 0.004 sec speed: 278.32 pkg/sec, 342030.34 kB/sec
+17:19:26,945 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 91.91 kB/sec size: 0 kB
+17:19:26,946 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1749423.50 kB/sec size: 1200 kB
+17:19:26,947 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,947 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,948 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,948 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,948 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,948 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:26,948 KinectBridgeClient INFO : Read package (127) took: 0.003 sec speed: 313.77 pkg/sec, 385602.44 kB/sec
+17:19:26,983 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 211.15 kB/sec size: 0 kB
+17:19:26,984 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1418563.25 kB/sec size: 1200 kB
+17:19:26,985 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:26,985 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:26,986 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:26,987 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:26,987 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:26,987 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:26,987 KinectBridgeClient INFO : Read package (128) took: 0.004 sec speed: 244.02 pkg/sec, 299881.66 kB/sec
+17:19:27,023 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 132.42 kB/sec size: 0 kB
+17:19:27,024 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1608719.25 kB/sec size: 1200 kB
+17:19:27,025 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,025 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,027 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,027 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,027 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,027 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,027 KinectBridgeClient INFO : Read package (129) took: 0.004 sec speed: 254.84 pkg/sec, 313179.12 kB/sec
+17:19:27,062 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:27,063 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1630576.75 kB/sec size: 1200 kB
+17:19:27,064 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,064 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,065 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,065 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,065 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,065 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,065 KinectBridgeClient INFO : Read package (130) took: 0.003 sec speed: 355.75 pkg/sec, 437180.75 kB/sec
+17:19:27,100 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:27,101 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1568764.00 kB/sec size: 1200 kB
+17:19:27,102 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,102 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,103 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,103 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,103 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,103 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,103 KinectBridgeClient INFO : Read package (131) took: 0.003 sec speed: 349.77 pkg/sec, 429840.88 kB/sec
+17:19:27,138 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 88.78 kB/sec size: 0 kB
+17:19:27,139 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1343902.00 kB/sec size: 1200 kB
+17:19:27,140 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,140 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,142 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:27,142 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,143 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,143 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:27,143 KinectBridgeClient INFO : Read package (132) took: 0.005 sec speed: 183.79 pkg/sec, 225861.97 kB/sec
+17:19:27,180 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 49.76 kB/sec size: 0 kB
+17:19:27,182 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 698141.06 kB/sec size: 1200 kB
+17:19:27,183 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,183 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,184 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,184 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,184 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,184 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,185 KinectBridgeClient INFO : Read package (133) took: 0.005 sec speed: 204.50 pkg/sec, 251311.86 kB/sec
+17:19:27,219 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 84.01 kB/sec size: 0 kB
+17:19:27,221 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 837477.00 kB/sec size: 1200 kB
+17:19:27,222 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,222 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,223 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,223 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,224 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,224 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,224 KinectBridgeClient INFO : Read package (134) took: 0.005 sec speed: 199.44 pkg/sec, 245096.73 kB/sec
+17:19:27,259 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 82.24 kB/sec size: 0 kB
+17:19:27,260 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1235947.00 kB/sec size: 1200 kB
+17:19:27,262 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,262 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,263 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,263 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,263 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,263 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,263 KinectBridgeClient INFO : Read package (135) took: 0.004 sec speed: 243.19 pkg/sec, 298860.62 kB/sec
+17:19:27,298 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:27,299 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1494526.12 kB/sec size: 1200 kB
+17:19:27,300 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,300 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,300 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,300 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,301 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,301 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,301 KinectBridgeClient INFO : Read package (136) took: 0.003 sec speed: 329.27 pkg/sec, 404647.69 kB/sec
+17:19:27,336 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 111.61 kB/sec size: 0 kB
+17:19:27,338 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 662675.00 kB/sec size: 1200 kB
+17:19:27,340 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:27,340 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,343 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:27,343 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,344 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,344 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:27,344 KinectBridgeClient INFO : Read package (137) took: 0.008 sec speed: 120.02 pkg/sec, 147493.39 kB/sec
+17:19:27,383 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 142.05 kB/sec size: 0 kB
+17:19:27,383 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1577009.88 kB/sec size: 1200 kB
+17:19:27,384 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,384 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,385 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,385 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,385 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,385 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,385 KinectBridgeClient INFO : Read package (138) took: 0.003 sec speed: 336.25 pkg/sec, 413219.56 kB/sec
+17:19:27,420 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:27,421 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1272645.25 kB/sec size: 1200 kB
+17:19:27,422 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,422 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,423 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,423 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,424 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,424 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,424 KinectBridgeClient INFO : Read package (139) took: 0.004 sec speed: 225.48 pkg/sec, 277094.69 kB/sec
+17:19:27,459 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 84.01 kB/sec size: 0 kB
+17:19:27,460 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1474329.75 kB/sec size: 1200 kB
+17:19:27,461 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,461 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,462 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,462 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,462 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,462 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,462 KinectBridgeClient INFO : Read package (140) took: 0.003 sec speed: 330.91 pkg/sec, 406656.19 kB/sec
+17:19:27,498 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 107.02 kB/sec size: 0 kB
+17:19:27,500 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1406922.12 kB/sec size: 1200 kB
+17:19:27,501 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,501 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,501 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,502 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,502 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,502 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,502 KinectBridgeClient INFO : Read package (141) took: 0.004 sec speed: 231.32 pkg/sec, 284273.62 kB/sec
+17:19:27,537 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 139.51 kB/sec size: 0 kB
+17:19:27,537 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1990223.00 kB/sec size: 1200 kB
+17:19:27,538 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,538 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,539 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,539 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,539 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,540 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,540 KinectBridgeClient INFO : Read package (142) took: 0.003 sec speed: 336.70 pkg/sec, 413776.09 kB/sec
+17:19:27,577 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 114.89 kB/sec size: 0 kB
+17:19:27,578 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 892934.88 kB/sec size: 1200 kB
+17:19:27,579 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,580 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,581 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:27,581 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,582 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,582 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:27,582 KinectBridgeClient INFO : Read package (143) took: 0.005 sec speed: 188.32 pkg/sec, 231434.09 kB/sec
+17:19:27,618 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 118.37 kB/sec size: 0 kB
+17:19:27,619 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1326082.25 kB/sec size: 1200 kB
+17:19:27,620 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,620 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,620 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,620 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,621 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,621 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,621 KinectBridgeClient INFO : Read package (144) took: 0.003 sec speed: 328.95 pkg/sec, 404248.34 kB/sec
+17:19:27,655 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 166.22 kB/sec size: 0 kB
+17:19:27,656 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 987740.25 kB/sec size: 1200 kB
+17:19:27,658 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,658 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,659 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,660 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,660 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,660 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,660 KinectBridgeClient INFO : Read package (145) took: 0.005 sec speed: 197.28 pkg/sec, 242437.36 kB/sec
+17:19:27,695 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 236.74 kB/sec size: 0 kB
+17:19:27,696 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1438974.25 kB/sec size: 1200 kB
+17:19:27,697 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,697 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,698 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,698 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,698 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,698 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,698 KinectBridgeClient INFO : Read package (146) took: 0.003 sec speed: 293.69 pkg/sec, 360914.81 kB/sec
+17:19:27,734 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 173.61 kB/sec size: 0 kB
+17:19:27,735 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1150627.50 kB/sec size: 1200 kB
+17:19:27,736 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,736 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,737 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,738 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,738 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,738 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,738 KinectBridgeClient INFO : Read package (147) took: 0.005 sec speed: 212.22 pkg/sec, 260805.39 kB/sec
+17:19:27,774 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 126.01 kB/sec size: 0 kB
+17:19:27,776 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 829374.25 kB/sec size: 1200 kB
+17:19:27,777 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,777 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,778 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,778 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,778 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,778 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,778 KinectBridgeClient INFO : Read package (148) took: 0.004 sec speed: 226.96 pkg/sec, 278918.53 kB/sec
+17:19:27,813 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:27,815 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 995111.50 kB/sec size: 1200 kB
+17:19:27,815 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,816 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,817 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,817 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,817 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,817 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,817 KinectBridgeClient INFO : Read package (149) took: 0.004 sec speed: 235.40 pkg/sec, 289292.59 kB/sec
+17:19:27,852 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:27,853 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1653036.50 kB/sec size: 1200 kB
+17:19:27,854 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,854 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,855 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,855 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,855 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,855 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,856 KinectBridgeClient INFO : Read package (150) took: 0.003 sec speed: 307.88 pkg/sec, 378360.50 kB/sec
+17:19:27,890 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 252.02 kB/sec size: 0 kB
+17:19:27,891 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1327549.25 kB/sec size: 1200 kB
+17:19:27,892 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,892 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,893 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,893 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,894 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,894 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:27,894 KinectBridgeClient INFO : Read package (151) took: 0.004 sec speed: 255.04 pkg/sec, 313418.78 kB/sec
+17:19:27,929 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 95.27 kB/sec size: 0 kB
+17:19:27,930 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1796563.50 kB/sec size: 1200 kB
+17:19:27,931 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,931 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,932 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,932 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,932 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,932 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,932 KinectBridgeClient INFO : Read package (152) took: 0.003 sec speed: 330.47 pkg/sec, 406118.62 kB/sec
+17:19:27,968 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 153.19 kB/sec size: 0 kB
+17:19:27,969 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1721814.12 kB/sec size: 1200 kB
+17:19:27,970 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:27,970 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:27,970 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:27,970 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:27,971 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:27,971 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:27,971 KinectBridgeClient INFO : Read package (153) took: 0.003 sec speed: 355.24 pkg/sec, 436559.50 kB/sec
+17:19:28,005 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 166.22 kB/sec size: 0 kB
+17:19:28,006 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1376266.62 kB/sec size: 1200 kB
+17:19:28,007 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,007 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,008 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,009 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,009 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,009 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,009 KinectBridgeClient INFO : Read package (154) took: 0.004 sec speed: 263.44 pkg/sec, 323739.47 kB/sec
+17:19:28,045 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 89.80 kB/sec size: 0 kB
+17:19:28,046 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1132174.00 kB/sec size: 1200 kB
+17:19:28,047 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,047 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,050 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:28,050 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,050 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,050 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:28,050 KinectBridgeClient INFO : Read package (155) took: 0.005 sec speed: 192.53 pkg/sec, 236602.81 kB/sec
+17:19:28,086 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 139.51 kB/sec size: 0 kB
+17:19:28,087 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1572876.12 kB/sec size: 1200 kB
+17:19:28,088 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,088 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,089 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,089 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,089 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,089 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,090 KinectBridgeClient INFO : Read package (156) took: 0.004 sec speed: 277.47 pkg/sec, 340986.41 kB/sec
+17:19:28,125 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 169.84 kB/sec size: 0 kB
+17:19:28,126 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1581165.25 kB/sec size: 1200 kB
+17:19:28,127 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,127 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,127 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,127 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,128 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,128 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,128 KinectBridgeClient INFO : Read package (157) took: 0.003 sec speed: 347.46 pkg/sec, 427003.12 kB/sec
+17:19:28,163 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 147.41 kB/sec size: 0 kB
+17:19:28,163 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1734255.12 kB/sec size: 1200 kB
+17:19:28,164 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,165 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,165 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,165 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,165 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,165 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,165 KinectBridgeClient INFO : Read package (158) took: 0.003 sec speed: 339.33 pkg/sec, 417005.41 kB/sec
+17:19:28,200 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 312.50 kB/sec size: 0 kB
+17:19:28,201 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1702275.88 kB/sec size: 1200 kB
+17:19:28,202 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,202 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,203 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,203 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,203 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,204 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,204 KinectBridgeClient INFO : Read package (159) took: 0.004 sec speed: 264.20 pkg/sec, 324680.31 kB/sec
+17:19:28,239 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 67.93 kB/sec size: 0 kB
+17:19:28,241 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 701815.50 kB/sec size: 1200 kB
+17:19:28,242 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,242 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,245 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:28,245 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,246 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,246 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:28,247 KinectBridgeClient INFO : Read package (160) took: 0.008 sec speed: 122.38 pkg/sec, 150399.58 kB/sec
+17:19:28,283 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:28,284 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1639487.00 kB/sec size: 1200 kB
+17:19:28,285 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,285 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,286 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,286 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,286 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,286 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,287 KinectBridgeClient INFO : Read package (161) took: 0.003 sec speed: 316.96 pkg/sec, 389513.47 kB/sec
+17:19:28,321 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 137.06 kB/sec size: 0 kB
+17:19:28,322 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1540570.62 kB/sec size: 1200 kB
+17:19:28,323 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,323 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,324 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,324 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,324 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,324 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,324 KinectBridgeClient INFO : Read package (162) took: 0.003 sec speed: 330.25 pkg/sec, 405850.41 kB/sec
+17:19:28,359 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 77.35 kB/sec size: 0 kB
+17:19:28,360 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1082150.12 kB/sec size: 1200 kB
+17:19:28,361 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,362 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,362 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,362 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,363 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,363 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,363 KinectBridgeClient INFO : Read package (163) took: 0.004 sec speed: 253.94 pkg/sec, 312065.75 kB/sec
+17:19:28,399 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 114.89 kB/sec size: 0 kB
+17:19:28,400 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1632795.25 kB/sec size: 1200 kB
+17:19:28,401 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,401 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,402 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,402 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,403 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,403 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,403 KinectBridgeClient INFO : Read package (164) took: 0.004 sec speed: 252.84 pkg/sec, 310724.38 kB/sec
+17:19:28,438 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 142.05 kB/sec size: 0 kB
+17:19:28,438 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1973856.12 kB/sec size: 1200 kB
+17:19:28,439 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,439 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,440 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,440 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,440 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,440 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,440 KinectBridgeClient INFO : Read package (165) took: 0.002 sec speed: 415.80 pkg/sec, 510983.41 kB/sec
+17:19:28,475 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 114.89 kB/sec size: 0 kB
+17:19:28,477 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 725577.06 kB/sec size: 1200 kB
+17:19:28,478 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,478 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,480 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:28,481 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,481 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,481 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:28,481 KinectBridgeClient INFO : Read package (166) took: 0.007 sec speed: 149.68 pkg/sec, 183941.78 kB/sec
+17:19:28,517 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:28,518 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1223348.12 kB/sec size: 1200 kB
+17:19:28,519 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,519 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,520 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,520 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,521 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,521 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,521 KinectBridgeClient INFO : Read package (167) took: 0.004 sec speed: 240.33 pkg/sec, 295341.28 kB/sec
+17:19:28,556 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 139.51 kB/sec size: 0 kB
+17:19:28,557 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1165150.00 kB/sec size: 1200 kB
+17:19:28,558 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,559 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,560 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,560 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,560 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,560 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,560 KinectBridgeClient INFO : Read package (168) took: 0.004 sec speed: 226.50 pkg/sec, 278349.94 kB/sec
+17:19:28,595 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:28,596 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1398723.12 kB/sec size: 1200 kB
+17:19:28,597 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,597 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,597 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,598 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,598 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,598 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,598 KinectBridgeClient INFO : Read package (169) took: 0.003 sec speed: 286.53 pkg/sec, 352124.62 kB/sec
+17:19:28,633 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:28,634 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1556555.75 kB/sec size: 1200 kB
+17:19:28,635 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,635 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,636 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,636 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,636 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,636 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,636 KinectBridgeClient INFO : Read package (170) took: 0.003 sec speed: 338.64 pkg/sec, 416158.16 kB/sec
+17:19:28,671 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 260.42 kB/sec size: 0 kB
+17:19:28,672 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1883994.38 kB/sec size: 1200 kB
+17:19:28,673 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,673 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,674 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,674 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,675 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,675 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,675 KinectBridgeClient INFO : Read package (171) took: 0.004 sec speed: 254.91 pkg/sec, 313259.00 kB/sec
+17:19:28,711 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 217.01 kB/sec size: 0 kB
+17:19:28,712 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1500130.62 kB/sec size: 1200 kB
+17:19:28,713 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,713 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,715 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,715 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,716 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,716 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:28,716 KinectBridgeClient INFO : Read package (172) took: 0.005 sec speed: 213.72 pkg/sec, 262644.81 kB/sec
+17:19:28,751 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 126.01 kB/sec size: 0 kB
+17:19:28,753 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 694504.94 kB/sec size: 1200 kB
+17:19:28,754 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,754 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,754 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,754 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,755 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,755 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,755 KinectBridgeClient INFO : Read package (173) took: 0.004 sec speed: 251.19 pkg/sec, 308695.06 kB/sec
+17:19:28,790 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 289.35 kB/sec size: 0 kB
+17:19:28,791 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1579084.75 kB/sec size: 1200 kB
+17:19:28,792 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,792 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,793 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,793 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,794 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,794 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:28,794 KinectBridgeClient INFO : Read package (174) took: 0.004 sec speed: 266.17 pkg/sec, 327100.09 kB/sec
+17:19:28,829 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 101.46 kB/sec size: 0 kB
+17:19:28,830 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1558577.25 kB/sec size: 1200 kB
+17:19:28,831 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,831 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,831 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,831 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,832 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,832 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,832 KinectBridgeClient INFO : Read package (175) took: 0.003 sec speed: 376.08 pkg/sec, 462171.88 kB/sec
+17:19:28,866 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 134.70 kB/sec size: 0 kB
+17:19:28,867 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1886956.75 kB/sec size: 1200 kB
+17:19:28,868 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,868 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,868 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,869 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,869 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,869 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,869 KinectBridgeClient INFO : Read package (176) took: 0.002 sec speed: 407.00 pkg/sec, 500168.91 kB/sec
+17:19:28,904 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:28,904 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1932535.38 kB/sec size: 1200 kB
+17:19:28,907 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.002 sec
+17:19:28,907 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,909 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:28,909 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,910 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,910 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:28,910 KinectBridgeClient INFO : Read package (177) took: 0.006 sec speed: 158.58 pkg/sec, 194880.27 kB/sec
+17:19:28,945 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 113.22 kB/sec size: 0 kB
+17:19:28,946 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1169692.50 kB/sec size: 1200 kB
+17:19:28,947 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,947 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,949 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,949 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,950 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,950 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:28,950 KinectBridgeClient INFO : Read package (178) took: 0.005 sec speed: 181.98 pkg/sec, 223642.41 kB/sec
+17:19:28,987 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 244.14 kB/sec size: 0 kB
+17:19:28,989 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 767330.25 kB/sec size: 1200 kB
+17:19:28,990 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:28,990 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:28,990 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:28,990 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:28,991 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:28,991 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:28,991 KinectBridgeClient INFO : Read package (179) took: 0.004 sec speed: 260.82 pkg/sec, 320530.78 kB/sec
+17:19:29,026 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 217.01 kB/sec size: 0 kB
+17:19:29,027 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1320247.00 kB/sec size: 1200 kB
+17:19:29,028 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,028 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,029 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,029 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,029 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,029 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:29,030 KinectBridgeClient INFO : Read package (180) took: 0.004 sec speed: 244.14 pkg/sec, 300028.06 kB/sec
+17:19:29,064 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 279.02 kB/sec size: 0 kB
+17:19:29,065 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1521045.00 kB/sec size: 1200 kB
+17:19:29,066 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,066 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,067 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,067 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,067 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,067 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,067 KinectBridgeClient INFO : Read package (181) took: 0.003 sec speed: 354.61 pkg/sec, 435785.44 kB/sec
+17:19:29,102 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 144.68 kB/sec size: 0 kB
+17:19:29,103 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1283534.25 kB/sec size: 1200 kB
+17:19:29,104 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,104 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,105 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,106 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,106 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,106 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:29,106 KinectBridgeClient INFO : Read package (182) took: 0.005 sec speed: 196.70 pkg/sec, 241722.06 kB/sec
+17:19:29,142 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 79.72 kB/sec size: 0 kB
+17:19:29,143 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1164019.88 kB/sec size: 1200 kB
+17:19:29,144 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,144 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,146 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,146 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,146 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,147 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:29,147 KinectBridgeClient INFO : Read package (183) took: 0.005 sec speed: 212.95 pkg/sec, 261694.00 kB/sec
+17:19:29,182 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 195.31 kB/sec size: 0 kB
+17:19:29,183 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1377846.75 kB/sec size: 1200 kB
+17:19:29,184 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,184 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,185 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,186 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,186 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,186 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:29,186 KinectBridgeClient INFO : Read package (184) took: 0.004 sec speed: 241.31 pkg/sec, 296552.88 kB/sec
+17:19:29,222 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 217.01 kB/sec size: 0 kB
+17:19:29,223 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1587439.88 kB/sec size: 1200 kB
+17:19:29,227 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.004 sec
+17:19:29,227 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,229 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,229 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,230 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,230 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:29,230 KinectBridgeClient INFO : Read package (185) took: 0.008 sec speed: 129.22 pkg/sec, 158795.06 kB/sec
+17:19:29,265 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 300.48 kB/sec size: 0 kB
+17:19:29,266 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1702275.88 kB/sec size: 1200 kB
+17:19:29,266 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,267 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,267 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,267 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,267 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,267 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,267 KinectBridgeClient INFO : Read package (186) took: 0.003 sec speed: 366.03 pkg/sec, 449822.47 kB/sec
+17:19:29,302 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 190.55 kB/sec size: 0 kB
+17:19:29,303 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1467120.38 kB/sec size: 1200 kB
+17:19:29,304 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,304 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,305 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,305 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,305 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,306 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,306 KinectBridgeClient INFO : Read package (187) took: 0.003 sec speed: 302.85 pkg/sec, 372172.94 kB/sec
+17:19:29,341 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 144.68 kB/sec size: 0 kB
+17:19:29,342 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1804668.38 kB/sec size: 1200 kB
+17:19:29,343 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,343 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,343 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,343 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,344 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,344 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,344 KinectBridgeClient INFO : Read package (188) took: 0.003 sec speed: 354.74 pkg/sec, 435940.03 kB/sec
+17:19:29,380 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 17.21 kB/sec size: 0 kB
+17:19:29,382 KinectBridgeDebug INFO : TP[read data] took: 0.002 sec, 549750.06 kB/sec size: 1200 kB
+17:19:29,383 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,384 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,386 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:29,386 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,387 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,387 KinectBridgeDebug ERROR: TP[deserialize] took: 0.004 sec
+17:19:29,387 KinectBridgeClient INFO : Read package (189) took: 0.008 sec speed: 120.51 pkg/sec, 148097.73 kB/sec
+17:19:29,427 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 236.74 kB/sec size: 0 kB
+17:19:29,428 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1552528.38 kB/sec size: 1200 kB
+17:19:29,429 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,429 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,429 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,430 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,430 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,430 KinectBridgeDebug ERROR: TP[deserialize] took: 0.002 sec
+17:19:29,430 KinectBridgeClient INFO : Read package (190) took: 0.004 sec speed: 262.40 pkg/sec, 322465.25 kB/sec
+17:19:29,467 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 166.22 kB/sec size: 0 kB
+17:19:29,468 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1746877.00 kB/sec size: 1200 kB
+17:19:29,469 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,469 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,470 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,470 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,470 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,470 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,470 KinectBridgeClient INFO : Read package (191) took: 0.003 sec speed: 300.12 pkg/sec, 368822.03 kB/sec
+17:19:29,506 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 312.50 kB/sec size: 0 kB
+17:19:29,507 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1826643.12 kB/sec size: 1200 kB
+17:19:29,508 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,508 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,508 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,508 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,509 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,509 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,509 KinectBridgeClient INFO : Read package (192) took: 0.003 sec speed: 354.99 pkg/sec, 436249.53 kB/sec
+17:19:29,544 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 75.12 kB/sec size: 0 kB
+17:19:29,545 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 2112860.00 kB/sec size: 1200 kB
+17:19:29,545 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,545 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,546 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,546 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,546 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,546 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,546 KinectBridgeClient INFO : Read package (193) took: 0.003 sec speed: 398.09 pkg/sec, 489217.75 kB/sec
+17:19:29,581 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 142.05 kB/sec size: 0 kB
+17:19:29,583 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 988553.94 kB/sec size: 1200 kB
+17:19:29,584 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,584 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,586 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.002 sec
+17:19:29,586 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,587 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,587 KinectBridgeDebug ERROR: TP[deserialize] took: 0.003 sec
+17:19:29,587 KinectBridgeClient INFO : Read package (194) took: 0.006 sec speed: 164.42 pkg/sec, 202057.72 kB/sec
+17:19:29,624 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 229.78 kB/sec size: 0 kB
+17:19:29,625 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1286285.62 kB/sec size: 1200 kB
+17:19:29,627 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,627 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,627 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,628 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,628 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,628 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,628 KinectBridgeClient INFO : Read package (195) took: 0.004 sec speed: 252.65 pkg/sec, 310488.91 kB/sec
+17:19:29,663 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 325.52 kB/sec size: 0 kB
+17:19:29,664 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1393849.62 kB/sec size: 1200 kB
+17:19:29,665 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,665 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,665 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,665 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,666 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,666 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,666 KinectBridgeClient INFO : Read package (196) took: 0.003 sec speed: 338.98 pkg/sec, 416581.34 kB/sec
+17:19:29,700 KinectBridgeDebug INFO : TP[read header] took: 0.000 sec, 269.40 kB/sec size: 0 kB
+17:19:29,701 KinectBridgeDebug INFO : TP[read data] took: 0.001 sec, 1540570.62 kB/sec size: 1200 kB
+17:19:29,702 KinectBridgeDebug ERROR: TP[init deserialization] took: 0.001 sec
+17:19:29,702 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:900 kB
+17:19:29,703 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.001 sec
+17:19:29,703 KinectBridgeDebug ERROR: cv::Mat::load: version:0 data_size:300 kB
+17:19:29,703 KinectBridgeDebug ERROR: TP[deserialize make_array] took: 0.000 sec
+17:19:29,704 KinectBridgeDebug ERROR: TP[deserialize] took: 0.001 sec
+17:19:29,704 KinectBridgeClient INFO : Read package (197) took: 0.003 sec speed: 309.89 pkg/sec, 380822.75 kB/sec
