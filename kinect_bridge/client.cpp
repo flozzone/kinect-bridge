@@ -115,9 +115,9 @@ void client::handle_read(const boost::system::error_code& e)
 
 	assert(package->m_color.empty() == false);
 
-	//cv::imshow("color", package->m_color);
-	//cv::imshow("depth", package->m_depth);
-	//cv::waitKey(0);
+	cv::imshow("color", package->m_color);
+	cv::imshow("depth", package->m_depth);
+	char c = cv::waitKey(33);
 
 	assert(package->m_color.empty() == false);
 
