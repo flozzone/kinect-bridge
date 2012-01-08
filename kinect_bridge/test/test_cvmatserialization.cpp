@@ -22,8 +22,10 @@
 #define KINECT_BRIDGE_TEST_IMAGE "image.jpeg"
 
 
-#define OARCHIVE boost::archive::binary_oarchive
-#define IARCHIVE boost::archive::binary_iarchive
+//#define OARCHIVE boost::archive::binary_oarchive
+//#define IARCHIVE boost::archive::binary_iarchive
+#define OARCHIVE boost::archive::text_oarchive
+#define IARCHIVE boost::archive::text_iarchive
 #define STREAM_FLAGS  | std::ios::binary
 #define SOARCHIVE OARCHIVE oa(ofs);
 #define SIARCHIVE IARCHIVE ia(ifs);
@@ -101,32 +103,30 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerialized)
     cvReleaseImage(&image);
     BOOST_CHECK(this->tempImage.empty() == false);
 
-	std::ofstream ofs("test_matrices_JpegToMat.bin", std::ios::out STREAM_FLAGS);
+    std::ofstream ofs("test_matrices_JpegToMat.bin", std::ios::out STREAM_FLAGS);
 
-    { // use scope to ensure archive goes out of scope before stream
-
-	try {
-	    SOARCHIVE
-	    oa << this->tempImage;
-	} catch (boost::archive::archive_exception e) {
-	    BOOST_FAIL(string("archive_exception:") << e.what());
-	}
-
-	ofs.close();
+    try { // use scope to ensure archive goes out of scope before stream
+	SOARCHIVE;
+	oa << this->tempImage;
+    } catch (boost::archive::archive_exception e) {
+	BOOST_FAIL(string("archive_exception:") << e.what());
     }
+
+    ofs.close();
+
 }
 
 BOOST_AUTO_TEST_CASE(loadSerializedConvertToIplAndDisplay)
 {
     BOOST_CHECK(this->tempImage.empty() == true);
 
-	std::ifstream ifs("test_matrices_JpegToMat.bin", std::ios::in STREAM_FLAGS);
+    std::ifstream ifs("test_matrices_JpegToMat.bin", std::ios::in STREAM_FLAGS);
 
     try {
 	SIARCHIVE
-	ia >> this->tempImage;
+		ia >> this->tempImage;
     } catch (boost::archive::archive_exception e) {
-		BOOST_FAIL(string("archive_exception:") << e.what());
+	BOOST_FAIL(string("archive_exception:") << e.what());
     }
 
     ifs.close();
@@ -167,8 +167,8 @@ BOOST_AUTO_TEST_CASE(loadJpegSaveSerializedCompressed)
 	//out.push(io::zlib_compressor(io::zlib::best_speed));
 	out.push(ofs);
 	{
-		FOARCHIVE
-		oa << this->tempImage;
+	    FOARCHIVE
+		    oa << this->tempImage;
 	}
     } catch (boost::archive::archive_exception e) {
 	BOOST_FAIL(string("archive_exception:") << e.what());
@@ -191,8 +191,8 @@ BOOST_AUTO_TEST_CASE(loadSerializedCompressedConvertToIplAndDisplay)
 	in.push(ifs);
 
 	{
-		FIARCHIVE
-		ia >> this->tempImage;
+	    FIARCHIVE
+		    ia >> this->tempImage;
 	}
     } catch (boost::archive::archive_exception e) {
 	BOOST_FAIL(string("archive_exception:") << e.what());

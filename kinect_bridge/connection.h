@@ -36,7 +36,14 @@
 #include "kinect_bridge/package.h"
 #include "kinect_bridge/package_buffer.h"
 
+#define OARCHIVE boost::archive::text_oarchive
+#define IARCHIVE boost::archive::text_iarchive
+//#define OARCHIVE boost::archive::text_oarchive
+//#define IARCHIVE boost::archive::text_iarchive
 
+#define STREAM_FLAGS  | std::ios::binary
+#define FOARCHIVE OARCHIVE archive(out);
+#define FIARCHIVE IARCHIVE archive(in);
 
 namespace kb {
 
@@ -91,7 +98,8 @@ public:
 		// Serialize the data first so we know how large it is.
 		//boost::archive::text_oarchive archive(out);
 		//boost::archive::binary_oarchive archive(out);
-		portable_binary_oarchive archive(out);
+		//portable_binary_oarchive archive(out);
+		FOARCHIVE;
 		archive << package;
 	    }
 
@@ -154,6 +162,7 @@ public:
 		TimeProfiler::stop("read header", TimeProfiler::print_all);
 		TimeProfiler::setBytes("read Package", header_length);
 	    // Determine the length of the serialized data.
+
 	    std::istringstream is(std::string(inbound_header_, header_length));
 	    std::size_t inbound_data_size = 0;
 	    if (!(is >> std::hex >> inbound_data_size))
@@ -211,7 +220,8 @@ public:
 		{
 		    //boost::archive::text_iarchive archive(in);
 		    //boost::archive::binary_iarchive archive(in);
-		    portable_binary_iarchive archive(in);
+		    //portable_binary_iarchive archive(in);
+		    FIARCHIVE;
 		    archive >> *package;
 		}
 		TimeProfiler::stop("deserialize", TimeProfiler::print_time_only);
